@@ -17,7 +17,7 @@ Route::group(['namespace' => 'App/Http/Controllers'], function(){
     // Homepage route
     Route::get('/', function () {return view('home');});
     // catalog route
-    Route::get('/catalog', 'CatalogController@show')->name('catalog.show');
+    Route::get('/catalog', 'ProductController@show')->name('catalog.show');
     // client as guest
     Route::group(['middleware'=>['guest']], function(){
         // Registing route
@@ -34,8 +34,8 @@ Route::group(['namespace' => 'App/Http/Controllers'], function(){
         // shop routing:
         // cart routing:
         Route::get('/cart', 'ProductController@cart')->name('cart');
-        Route::get('/add-t-cart/{id}', 'ProductController@addToCart')->name('add.to.cart');
-        Route::delete('/remove-from-cart/{id}', 'ProductController@remove')->name('remove.from.cart');
+        Route::get('/add-t-cart/{cusId}', 'ProductController@addToCart')->name('add.to.cart');
+        Route::delete('/remove-from-cart/{cusId}/{productId}', 'ProductController@remove')->name('remove.from.cart');
         // contact employee route:
         Route::post('/confirm-cart/{id}', 'CartController@confirm')->name('confirm.cart');
         Route::post('/confirm-payment/{id}', 'CartController@endComm')->name('confirm.payment');
