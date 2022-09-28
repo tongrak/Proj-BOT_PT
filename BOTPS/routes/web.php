@@ -33,7 +33,7 @@ Route::group(['namespace' => 'App/Http/Controllers'], function(){
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
         // shop routing:
         // cart routing:
-        Route::get('/cart', 'ProductController@cart')->name('cart');
+        Route::get('/cart', 'CartController@cart')->name('cart');
         Route::get('/add-t-cart/{cusId}', 'ProductController@addToCart')->name('add.to.cart');
         Route::delete('/remove-from-cart/{cusId}/{productId}', 'ProductController@remove')->name('remove.from.cart');
         // contact employee route:
