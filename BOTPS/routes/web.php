@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => 'App\Http\Controllers'], function(){
+
+    // Test route
+    Route::get('/test', function () {return view('TestingGround.home');});
+
     // Homepage route
     Route::get('/', function () {return view('home');});
     // catalog route
