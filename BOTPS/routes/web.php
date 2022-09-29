@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['namespace' => 'App/Http/Controllers'], function(){
+Route::group(['namespace' => 'App\Http\Controllers'], function(){
     // Homepage route
     Route::get('/', function () {return view('home');});
     // catalog route
