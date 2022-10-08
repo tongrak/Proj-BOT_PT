@@ -18,7 +18,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::get('/test', 'TestController@show')->name('test.show');
     Route::get('/test/create', 'TestController@showCreate')->name('test.show.create');
     Route::post('/test/create', 'TestController@create')->name('test.create');
-
+    
+    Route::get('test/register', 'RegisterController@showTest')->name('test.showRegister');
+    Route::post('/test/register', 'RegisterController@registerTest')->name('test.register');
 
 
     // Homepage route

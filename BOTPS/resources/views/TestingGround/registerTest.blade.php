@@ -29,6 +29,10 @@
 
             <div class="">
                 <h1 class="text-xl">Register</h1>
+                <form method="post" action="{{ route('test.register') }}" >
+                    @csrf
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+                </form>
             </div>
             <div class="">
                 This is test page
@@ -36,7 +40,7 @@
 
         </div>
     </div>
-    
+
 </body>
 
 </html>
