@@ -14,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => 'App\Http\Controllers'], function(){
+    // Testing
+    Route::get('/test', 'TestController@show')->name('test.show');
+    Route::get('/test/create', 'TestController@showCreate')->name('test.show.create');
+    Route::post('/test/create', 'TestController@create')->name('test.create');
 
-    // Test route
-    Route::get('/test', function () {return view('TestingGround.home');});
-    Route::get('/test/register', 'RegisterController@showTest')->name('test.register.show');
+
 
     // Homepage route
     Route::get('/', function () {return view('home');});
