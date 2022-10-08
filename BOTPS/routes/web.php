@@ -17,6 +17,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
     // Test route
     Route::get('/test', function () {return view('TestingGround.home');});
+    Route::get('/test/register', 'RegisterController@showTest')->name('test.register.show');
 
     // Homepage route
     Route::get('/', function () {return view('home');});
