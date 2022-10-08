@@ -13,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['namespace' => 'App/Http/Controllers'], function(){
+Route::group(['namespace' => 'App\Http\Controllers'], function(){
+    // Testing
+    Route::get('/test', 'TestController@show')->name('test.show');
+    Route::get('/test/create', 'TestController@showCreate')->name('test.show.create');
+    Route::post('/test/create', 'TestController@create')->name('test.create');
+
+
+
     // Homepage route
     Route::get('/', function () {return view('home');});
     // catalog route
