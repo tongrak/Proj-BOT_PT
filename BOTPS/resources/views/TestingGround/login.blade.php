@@ -27,22 +27,24 @@
     <!-- box-text-3 -->
     <div class="mt-8 rounded-lg bg-gray-50 mx-80">
         <div class="m-5 py-2 grid-flow-row auto-rows-max">
-
             <div class="m-1 justify-center flex">
                 <h1 class="text-xl">Login Page</h1>
             </div>
-            <div class="space-x-2 justify-center flex">
-                <h1>username</h1>
-                <input type="text" class="border-2">
-            </div>
-            <div class="space-x-2 mt-2 justify-center flex">
-                <h1>password</h1>
-                <input type="text" class="border-2">
-            </div>
-            <div class="justify-center flex my-5 space-x-2 pl-10">
-                <button class="bg-green-500 rounded-full p-1 px-2">Login</button>
-                <a href="{{ url('/register') }}" class="p-1 px-2">Register</a>
-            </div>
+            <form method="post" action="{{ route('test.login') }}" >
+            @csrf
+                <div class="space-x-2 justify-center flex">
+                    <h1>username</h1>
+                    <input type="text" class="border-2" name="username">
+                </div>
+                <div class="space-x-2 mt-2 justify-center flex">
+                    <h1>password</h1>
+                    <input type="text" class="border-2" name="password">
+                </div>
+                <div class="justify-center flex my-5 space-x-2 pl-10">
+                    <button class="bg-green-500 rounded-full p-1 px-2" type='submit'>Login</button>
+                    <a href="{{ url('/register') }}" class="p-1 px-2">Register</a>
+                </div>
+            </form>
             
 
 
