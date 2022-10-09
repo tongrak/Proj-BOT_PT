@@ -31,7 +31,7 @@
                 <h1 class="text-xl">Home</h1>
             </div>
             <div class="">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, fugit. Quod ea repellendus, possimus fugiat natus quae ullam veniam vitae rem sapiente illo aspernatur eum nesciunt dolorum deleniti facilis quisquam quis saepe voluptates provident? Culpa provident necessitatibus asperiores itaque ab nobis eaque dolore ipsum, deleniti nemo quasi dolorum debitis hic.
+                This is test page
             </div>
 
         </div>

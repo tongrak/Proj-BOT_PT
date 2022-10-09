@@ -15,7 +15,10 @@ class LoginRequest extends FormRequest
 
     public function rules()
     {
-        return ['username' => 'required', 'password' => 'required'];
+        return [
+            'username' => 'required', 
+            'password' => 'required'
+        ];
     }
 
     public function getCredentials()

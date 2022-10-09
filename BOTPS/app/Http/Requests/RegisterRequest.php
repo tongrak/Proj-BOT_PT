@@ -23,9 +23,16 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required|unique:users,username',
-            'password' => 'required|min:8',
-            'password_confirmation' => 'required|same:password'
+            'customerName' => 'required|min:8',
+            'contactLastName' => 'required|same:password',
+            'contactFirstName' => 'required',
+            'phone' => 'required',
+            'addressLine1' => 'required',
+            'addressLine2' => 'nullable',
+            'city' => 'required',
+            'state' => 'required',
+            'postalCode' => 'required',
+            'country' => 'required',
         ];
     }
 }
