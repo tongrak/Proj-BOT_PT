@@ -1,0 +1,508 @@
+/*
+	@name register_page
+*/
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; overflow-x:hidden; }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: block; position: relative; width: 1550px; width: 1550px; height: 1024px; overflow: hidden; display: block;  margin-left: auto; margin-right: auto;  }
+
+#_bg__register_page {
+	top: 0px;
+	left: 0px;
+	width: 1550px;
+	height: 1024px;
+	background:rgba(255,255,255,1);
+}
+
+#Home_btn{
+	width: 108px;
+	height: 46px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #ffffff;
+	background:rgba(81,133,236,1);
+}
+
+#login_here{
+	left: 45px;
+	width: 330px;
+	height: 55px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #001aff;
+	background:rgba(255,255,255,1);
+}
+
+
+#master_of_all_page {
+	top: 0px;
+	left: 0px;
+	width: 1550px;
+	height: 1024px;
+}
+
+#rectangle_1 {
+	top: 980px;
+	left: -1px;
+	width: 1550px;
+	height: 48px;
+	background:rgba(121.12,121.12,121.12,1);
+}
+
+
+#rectangle_2 {
+	top: 0px;
+	left: 0px;
+	width: 1550px;
+	height: 87px;
+	-ms-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
+	-o-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
+	-webkit-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
+	-moz-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
+	box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
+	background:rgba(81,133,236,1);
+}
+
+
+#team_ps_bot {
+	top: 993px;
+	left: 713px;
+	width: 163px;
+	height: 36px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: left;
+	color:#FFFFFF;
+}
+
+
+#rectangle_3 {
+	top: -1px;
+	left: 56px;
+	width: 126px;
+	height: 86px;
+	background:rgba(255,255,255,1);
+}
+
+
+#ps_bot_shop {
+	top: 18px;
+	left: 78px;
+	width: 82px;
+	height: 62px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: center;
+	color:#5185EC;
+}
+
+#frame_1 {
+	top: 21px;
+	left: 1321px;
+	width: 90px;
+	height: 44px;
+}
+
+#cart {
+	top: 10px;
+	left: 25px;
+	width: 65px;
+	height: 38px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: left;
+	color:#FFFFFF;
+}
+
+#frame_1_ek1 {
+	top: 21px;
+	left: 1174px;
+	width: 126px;
+	height: 44px;
+}
+
+#cart_ek1 {
+	top: 10px;
+	left: 25px;
+	width: 101px;
+	height: 38px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: left;
+	color:#FFFFFF;
+}
+
+#frame_1_ek2 {
+	top: 21px;
+	left: 1063px;
+	width: 101px;
+	height: 44px;
+}
+
+#cart_ek2 {
+	top: 10px;
+	left: 25px;
+	width: 76px;
+	height: 38px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: left;
+	color:#FFFFFF;
+}
+
+#frame_1_ek3_cls_a {
+	top: 21px;
+	left: 224px;
+	width: 106px;
+	height: 44px;
+	position: absolute;
+}
+
+#cart_ek3 {
+	top: 10px;
+	left: 25px;
+	width: 81px;
+	height: 38px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: left;
+	color:#FFFFFF;
+}
+
+
+#logo_1 {
+	top: 6px;
+	left: 697px;
+	width: 125px;
+	height: 88.71px;
+}
+
+
+#logo_2 {
+	top: 989px;
+	left: 663px;
+	width: 50px;
+	height: 35.48px;
+}
+
+
+#line_2 {
+	top: 414px;
+	left: 579px;
+	width: 371px;
+	height: 0.64px;
+	transform: rotate(90deg);
+}
+
+
+#already_have_an_account_ {
+	top: 735px;
+	left: 577px;
+	width: 402px;
+	height: 56px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 30px;
+	text-align: left;
+	color:#000000;
+}
+
+#frame_2_cls_a {
+	top: 805px;
+	left: 552px;
+	width: 333px;
+	height: 53px;
+	position: absolute;
+}
+
+#cart_ek4 {
+	top: 11.5px;
+	left: 150px;
+	width: 153.5px;
+	height: 47.5px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 25px;
+	text-align: left;
+	color:#0019FF;
+}
+
+
+#sign_up {
+	top: 138px;
+	left: 703px;
+	width: 149px;
+	height: 56px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 30px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#rectangle_6 {
+	top: 371px;
+	left: 293px;
+	width: 374px;
+	height: 38px;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_15 {
+	top: 236px;
+	left: 293px;
+	width: 374px;
+	height: 38px;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_7 {
+	top: 448px;
+	left: 293px;
+	width: 374px;
+	height: 38px;
+}
+
+
+#rectangle_16 {
+	top: 305px;
+	left: 293px;
+	width: 374px;
+	height: 38px;
+}
+
+
+#rectangle_8 {
+	top: 522px;
+	left: 293px;
+	width: 374px;
+	height: 38px;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_9 {
+	top: 234px;
+	left: 850px;
+	width: 374px;
+	height: 38px;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_10 {
+	top: 276px;
+	left: 850px;
+	width: 374px;
+	height: 38px;
+}
+
+
+#rectangle_11 {
+	top: 347px;
+	left: 850px;
+	width: 374px;
+	height: 38px;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_12 {
+	top: 422px;
+	left: 850px;
+	width: 374px;
+	height: 38px;
+}
+
+
+#rectangle_13 {
+	top: 493px;
+	left: 850px;
+	width: 374px;
+	height: 38px;
+	background:rgba(217,217,217,1);
+}
+
+
+#rectangle_14 {
+	top: 572px;
+	left: 850px;
+	width: 374px;
+	height: 38px;
+	background:rgba(217,217,217,1);
+}
+
+#frame_1_ek4_cls_a {
+	top: 656px;
+	left: 656px;
+	width: 126px;
+	height: 44px;
+	position: absolute;
+}
+
+#cart_ek5 {
+	top: 10px;
+	left: 25px;
+	width: 101px;
+	height: 38px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: left;
+	color:#FFFFFF;
+}
+
+
+#first_name {
+	top: 348px;
+	left: 293px;
+	width: 115px;
+	height: 34px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 18px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#username {
+	top: 213px;
+	left: 293px;
+	width: 109px;
+	height: 34px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 18px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#last_name {
+	top: 422px;
+	left: 293px;
+	width: 115px;
+	height: 34px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 18px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#password {
+	top: 279px;
+	left: 293px;
+	width: 105px;
+	height: 34px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 18px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#phone {
+	top: 499px;
+	left: 293px;
+	width: 76px;
+	height: 34px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 18px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#address {
+	top: 213px;
+	left: 850px;
+	width: 91px;
+	height: 34px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 18px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#city {
+	top: 322px;
+	left: 850px;
+	width: 55px;
+	height: 34px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 18px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#state {
+	top: 393px;
+	left: 850px;
+	width: 68px;
+	height: 34px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 18px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#postalcode {
+	top: 468px;
+	left: 850px;
+	width: 118px;
+	height: 34px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 18px;
+	text-align: left;
+	color:#000000;
+}
+
+
+#country {
+	top: 541px;
+	left: 850px;
+	width: 90px;
+	height: 34px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 18px;
+	text-align: left;
+	color:#000000;
+}
+
+
+
+/* Add your custom CSS here */
