@@ -57,56 +57,78 @@
         <div id="username">
             Username
         </div>
+        <div id="rectangle_15">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
+        </div>
+
         <div id="password">
             Password
         </div>
+        <div id="rectangle_16">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
+        </div>
+
         <div id="first_name">
             First Name
+        </div>
+        <div id="rectangle_6">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
         </div>
 
         <div id="last_name">
             Last Name
         </div>
+        <div id="rectangle_7">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
+        </div>
+
         <div id="phone">
             Phone
         </div>
-        <div id="rectangle_6"></div>
-        <div id="rectangle_15"></div>
-        <img src="skins/rectangle_7.png" id="rectangle_7" />
-        <img src="skins/rectangle_16.png" id="rectangle_16" />
-        <div id="rectangle_8"></div>
-
-
-        <div id="rectangle_9"></div>
-        <img src="skins/rectangle_10.png" id="rectangle_10" />
-        <div id="rectangle_11"></div>
-        <img src="skins/rectangle_12.png" id="rectangle_12" />
-        <div id="rectangle_13"></div>
-        <div id="rectangle_14"></div>
+        <div id="rectangle_8">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
+        </div>
 
         <a id="frame_1_ek4_cls_a" _par="" href="register">
+            <div id="sign_up_btn"></div>
             <div id="cart_ek5">
                 Sign-up
             </div>
-
         </a>
-
-
 
         <div id="address">
             Address
         </div>
+        <div id="rectangle_9">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
+        </div>
+
         <div id="city">
             City
         </div>
+        <div id="rectangle_11">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
+        </div>
+
         <div id="state">
             State
         </div>
+        <div id="rectangle_12">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
+        </div>
+
         <div id="postalcode">
             PostalCode
         </div>
+        <div id="rectangle_13">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
+        </div>
+
         <div id="country">
             Country
+        </div>
+        <div id="rectangle_14">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
         </div>
 
     </div>

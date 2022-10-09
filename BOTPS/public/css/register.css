@@ -32,6 +32,18 @@ div { position: absolute; }
 	background:rgba(81,133,236,1);
 }
 
+#sign_up_btn{
+	width: 128px;
+	height: 46px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #ffffff;
+	background:rgba(81,133,236,1);
+}
+
 #login_here{
 	left: 45px;
 	width: 330px;
@@ -264,7 +276,7 @@ div { position: absolute; }
 	left: 293px;
 	width: 374px;
 	height: 38px;
-	background:rgba(217,217,217,1);
+	/* background:rgba(217,217,217,1); */
 }
 
 
@@ -273,7 +285,7 @@ div { position: absolute; }
 	left: 293px;
 	width: 374px;
 	height: 38px;
-	background:rgba(217,217,217,1);
+	/* background:rgba(217,217,217,1); */
 }
 
 
@@ -298,7 +310,7 @@ div { position: absolute; }
 	left: 293px;
 	width: 374px;
 	height: 38px;
-	background:rgba(217,217,217,1);
+	/* background:rgba(217,217,217,1); */
 }
 
 
@@ -307,7 +319,7 @@ div { position: absolute; }
 	left: 850px;
 	width: 374px;
 	height: 38px;
-	background:rgba(217,217,217,1);
+	/* background:rgba(217,217,217,1); */
 }
 
 
@@ -320,16 +332,16 @@ div { position: absolute; }
 
 
 #rectangle_11 {
-	top: 347px;
+	top: 305px;
 	left: 850px;
 	width: 374px;
 	height: 38px;
-	background:rgba(217,217,217,1);
+	/* background:rgba(217,217,217,1); */
 }
 
 
 #rectangle_12 {
-	top: 422px;
+	top: 371px;
 	left: 850px;
 	width: 374px;
 	height: 38px;
@@ -337,25 +349,25 @@ div { position: absolute; }
 
 
 #rectangle_13 {
-	top: 493px;
+	top: 448px;
 	left: 850px;
 	width: 374px;
 	height: 38px;
-	background:rgba(217,217,217,1);
+	/* background:rgba(217,217,217,1); */
 }
 
 
 #rectangle_14 {
-	top: 572px;
+	top: 522px;
 	left: 850px;
 	width: 374px;
 	height: 38px;
-	background:rgba(217,217,217,1);
+	/* background:rgba(217,217,217,1); */
 }
 
 #frame_1_ek4_cls_a {
 	top: 656px;
-	left: 656px;
+	left: 696px;
 	width: 126px;
 	height: 44px;
 	position: absolute;
@@ -453,7 +465,7 @@ div { position: absolute; }
 
 
 #city {
-	top: 322px;
+	top: 279px;
 	left: 850px;
 	width: 55px;
 	height: 34px;
@@ -466,7 +478,7 @@ div { position: absolute; }
 
 
 #state {
-	top: 393px;
+	top: 348px;
 	left: 850px;
 	width: 68px;
 	height: 34px;
@@ -479,7 +491,7 @@ div { position: absolute; }
 
 
 #postalcode {
-	top: 468px;
+	top: 422px;
 	left: 850px;
 	width: 118px;
 	height: 34px;
@@ -492,7 +504,7 @@ div { position: absolute; }
 
 
 #country {
-	top: 541px;
+	top: 499px;
 	left: 850px;
 	width: 90px;
 	height: 34px;
