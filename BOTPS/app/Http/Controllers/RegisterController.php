@@ -7,6 +7,7 @@ use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 class RegisterController extends Controller
 {
@@ -53,13 +54,16 @@ class RegisterController extends Controller
         $newCustomer->save();
 
         $newUser = new User;
-        $newUser->customersID = $customerID;
+        $newUser->customerID = $customerID;
         $newUser->username = $lastname;
         $newUser->password = $customername;
         $newUser->isAdmin = 0;
         $newUser->timestamps=false;
         $newUser->save();
-        return redirect('/');
+        //if can register
+        $request->session()->put('login-id', $customerID);
+        $request->session()->put('isAdmin', 0);
+        return redirect('test/home');
     }
 
     public function register(RegisterRequest $request){

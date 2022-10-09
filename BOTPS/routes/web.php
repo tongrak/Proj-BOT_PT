@@ -19,9 +19,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::get('/test/create', 'TestController@showCreate')->name('test.show.create');
     Route::post('/test/create', 'TestController@create')->name('test.create');
     
-    Route::get('test/register', 'RegisterController@showTest')->name('test.showRegister');
+    Route::get('/test/register', 'RegisterController@showTest')->name('test.showRegister');
     Route::post('/test/register', 'RegisterController@registerTest')->name('test.register');
 
+    Route::get('/test/home', 'HomeController@show')->name('test.home');
+
+    Route::get('/test/logout', 'LogoutController@perform')->name('test.logout');
 
     // Homepage route
     Route::get('/', function () {return view('home');});

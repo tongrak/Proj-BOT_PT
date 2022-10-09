@@ -33,7 +33,25 @@
             <div class="">
                 This is test page
             </div>
-
+            <!-- if someone log in -->
+            @if(Session::has('login-id')){
+                <h1 class="text-xl">You are logged in</h1>
+                <!-- check role -->
+                @if(Session::has('isAdmin')){
+                    @if(Session::get('isAdmin') == 0){
+                        <h1 class="text-xl">You are uesr</h1>
+                    }
+                    @else{
+                        <h1 class="text-xl">You are admin</h1>
+                    }
+                    @endif
+                }
+                @endif
+                <a href="{{ url('/test/logout') }}"> 
+                    <h1 class="text-xl"> Log out </h1> 
+                </a>
+            }   
+            @endif
         </div>
     </div>
 
