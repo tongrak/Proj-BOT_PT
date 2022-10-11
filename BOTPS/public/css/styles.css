@@ -2,25 +2,48 @@
 	@name register_page
 */
 /* Only edit this if you know what you are doing! */
-body { margin: 0px; padding: 0px; font-family:"Arial"; overflow-x:hidden; }
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Arial";
+	overflow-x: hidden;
+}
 
 /* Only edit this if you know what you are doing! */
-img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+img {
+	position: absolute;
+	display: block;
+	margin: 0px;
+	border: none;
+	padding: 0px;
+}
 
 /* Only edit this if you know what you are doing! */
-div { position: absolute; }
+div {
+	position: absolute;
+}
 
-#content-container { display: block; position: relative; width: 1550px; width: 1550px; height: 1024px; overflow: hidden; display: block;  margin-left: auto; margin-right: auto;  }
+#content-container {
+	display: block;
+	position: relative;
+	width: 1550px;
+	width: 1550px;
+	height: 1024px;
+	overflow: hidden;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 #_bg__register_page {
 	top: 0px;
 	left: 0px;
 	width: 1550px;
 	height: 1024px;
-	background:rgba(255,255,255,1);
+	background: rgba(255, 255, 255, 1);
 }
 
-#Home_btn{
+#Home_btn_border {
 	width: 108px;
 	height: 46px;
 	-ms-border-radius: 15px;
@@ -29,10 +52,10 @@ div { position: absolute; }
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	border: 1px solid #ffffff;
-	background:rgba(81,133,236,1);
+	background: rgba(81, 133, 236, 1);
 }
 
-#sign_up_btn{
+#sign_up_btn_border {
 	width: 128px;
 	height: 46px;
 	-ms-border-radius: 15px;
@@ -41,12 +64,46 @@ div { position: absolute; }
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	border: 1px solid #ffffff;
-	background:rgba(81,133,236,1);
+	background: rgba(81, 133, 236, 1);
 }
 
-#login_here{
+#login_here {
 	left: 45px;
 	width: 330px;
+	height: 55px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #001aff;
+	background: rgba(255, 255, 255, 1);
+}
+
+#login {
+	top: 265px;
+	left: 371px;
+	width: 112px;
+	height: 56px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 30px;
+	text-align: left;
+	color:#000000;
+}
+
+#create_account_frame {
+	top: 459px;
+	left: 947px;
+	width: 333px;
+	height: 53px;
+	position: absolute;
+}
+
+#create_account_border {
+	/* top: 459px;
+	left: 907px; */
+	width: 335px;
 	height: 55px;
 	-ms-border-radius: 15px;
 	-o-border-radius: 15px;
@@ -58,6 +115,18 @@ div { position: absolute; }
 }
 
 
+#create_account_btn {
+	top: 11.5px;
+	left: 18.5px;
+	width: 326.5px;
+	height: 47.5px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 25px;
+	text-align: left;
+	color:#0019FF;
+}
+
 #master_of_all_page {
 	top: 0px;
 	left: 0px;
@@ -65,26 +134,26 @@ div { position: absolute; }
 	height: 1024px;
 }
 
-#rectangle_1 {
+#foot_bg {
 	top: 980px;
 	left: -1px;
 	width: 1550px;
 	height: 48px;
-	background:rgba(121.12,121.12,121.12,1);
+	background: rgba(121.12, 121.12, 121.12, 1);
 }
 
 
-#rectangle_2 {
+#nav_bg {
 	top: 0px;
 	left: 0px;
 	width: 1550px;
 	height: 87px;
-	-ms-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
-	-o-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
-	-webkit-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
-	-moz-box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
-	box-shadow:0px 4px 4px 1px rgba(0,0,0,0.25);
-	background:rgba(81,133,236,1);
+	-ms-box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+	-o-box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+	background: rgba(81, 133, 236, 1);
 }
 
 
@@ -97,16 +166,16 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 20px;
 	text-align: left;
-	color:#FFFFFF;
+	color: #FFFFFF;
 }
 
 
-#rectangle_3 {
+#shop_name_bg {
 	top: -1px;
 	left: 56px;
 	width: 126px;
 	height: 86px;
-	background:rgba(255,255,255,1);
+	background: rgba(255, 255, 255, 1);
 }
 
 
@@ -119,67 +188,10 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 20px;
 	text-align: center;
-	color:#5185EC;
+	color: #5185EC;
 }
 
-#frame_1 {
-	top: 21px;
-	left: 1321px;
-	width: 90px;
-	height: 44px;
-}
-
-#cart {
-	top: 10px;
-	left: 25px;
-	width: 65px;
-	height: 38px;
-	overflow: hidden;
-	font-family: ABeeZee;
-	font-size: 20px;
-	text-align: left;
-	color:#FFFFFF;
-}
-
-#frame_1_ek1 {
-	top: 21px;
-	left: 1174px;
-	width: 126px;
-	height: 44px;
-}
-
-#cart_ek1 {
-	top: 10px;
-	left: 25px;
-	width: 101px;
-	height: 38px;
-	overflow: hidden;
-	font-family: ABeeZee;
-	font-size: 20px;
-	text-align: left;
-	color:#FFFFFF;
-}
-
-#frame_1_ek2 {
-	top: 21px;
-	left: 1063px;
-	width: 101px;
-	height: 44px;
-}
-
-#cart_ek2 {
-	top: 10px;
-	left: 25px;
-	width: 76px;
-	height: 38px;
-	overflow: hidden;
-	font-family: ABeeZee;
-	font-size: 20px;
-	text-align: left;
-	color:#FFFFFF;
-}
-
-#frame_1_ek3_cls_a {
+#home_btn_frame {
 	top: 21px;
 	left: 224px;
 	width: 106px;
@@ -187,7 +199,7 @@ div { position: absolute; }
 	position: absolute;
 }
 
-#cart_ek3 {
+#home_btn {
 	top: 10px;
 	left: 25px;
 	width: 81px;
@@ -196,11 +208,11 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 20px;
 	text-align: left;
-	color:#FFFFFF;
+	color: #FFFFFF;
 }
 
 
-#logo_1 {
+#logo_header {
 	top: 6px;
 	left: 697px;
 	width: 125px;
@@ -208,7 +220,7 @@ div { position: absolute; }
 }
 
 
-#logo_2 {
+#logo_foot {
 	top: 989px;
 	left: 663px;
 	width: 50px;
@@ -216,12 +228,26 @@ div { position: absolute; }
 }
 
 
-#line_2 {
+#line_short {
 	top: 414px;
 	left: 579px;
 	width: 371px;
 	height: 0.64px;
 	transform: rotate(90deg);
+}
+
+#line_long {
+	top: 481px;
+	left: 463px;
+	width: 596px;
+	height: 1px;
+ 
+	-ms-transform:rotate(89.9deg);
+	-o-transform:rotate(89.9deg);
+	-webkit-transform:rotate(89.9deg);
+	-moz-transform:rotate(89.9deg);
+	transform:rotate(89.9deg);
+	background:#000000;
 }
 
 
@@ -234,10 +260,22 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 30px;
 	text-align: left;
+	color: #000000;
+}
+
+#don_t_have_an_account_ {
+	top: 265px;
+	left: 947px;
+	width: 368px;
+	height: 56px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 30px;
+	text-align: left;
 	color:#000000;
 }
 
-#frame_2_cls_a {
+#login_btn_frame {
 	top: 805px;
 	left: 552px;
 	width: 333px;
@@ -245,7 +283,7 @@ div { position: absolute; }
 	position: absolute;
 }
 
-#cart_ek4 {
+#login_btn {
 	top: 11.5px;
 	left: 150px;
 	width: 153.5px;
@@ -254,9 +292,40 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 25px;
 	text-align: left;
-	color:#0019FF;
+	color: #0019FF;
 }
 
+#login_log_frame {
+	top: 560px;
+	left: 359px;
+	width: 101px;
+	height: 44px;
+	position: absolute;
+}
+
+#login_log_btn {
+	top: 10px;
+	left: 25px;
+	width: 76px;
+	height: 38px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: left;
+	color:#FFFFFF;
+}
+
+#login_log_border {
+	width: 103px;
+	height: 46px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #ffffff;
+	background:rgba(81,133,236,1);
+}
 
 #sign_up {
 	top: 138px;
@@ -267,11 +336,11 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 30px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
-#rectangle_6 {
+#first_name_form {
 	top: 371px;
 	left: 293px;
 	width: 374px;
@@ -280,7 +349,7 @@ div { position: absolute; }
 }
 
 
-#rectangle_15 {
+#username_form {
 	top: 236px;
 	left: 293px;
 	width: 374px;
@@ -288,8 +357,15 @@ div { position: absolute; }
 	/* background:rgba(217,217,217,1); */
 }
 
+#username_login_form {
+	top: 358px;
+	left: 223px;
+	width: 374px;
+	height: 38px;
+}
 
-#rectangle_7 {
+
+#last_name_form {
 	top: 448px;
 	left: 293px;
 	width: 374px;
@@ -297,15 +373,22 @@ div { position: absolute; }
 }
 
 
-#rectangle_16 {
+#password_form {
 	top: 305px;
 	left: 293px;
 	width: 374px;
 	height: 38px;
 }
 
+#password_login_form {
+	top: 455px;
+	left: 223px;
+	width: 374px;
+	height: 38px;
+}
 
-#rectangle_8 {
+
+#phone_form {
 	top: 522px;
 	left: 293px;
 	width: 374px;
@@ -314,7 +397,7 @@ div { position: absolute; }
 }
 
 
-#rectangle_9 {
+#address_form {
 	top: 234px;
 	left: 850px;
 	width: 374px;
@@ -322,16 +405,7 @@ div { position: absolute; }
 	/* background:rgba(217,217,217,1); */
 }
 
-
-#rectangle_10 {
-	top: 276px;
-	left: 850px;
-	width: 374px;
-	height: 38px;
-}
-
-
-#rectangle_11 {
+#city_form {
 	top: 305px;
 	left: 850px;
 	width: 374px;
@@ -340,7 +414,7 @@ div { position: absolute; }
 }
 
 
-#rectangle_12 {
+#state_form {
 	top: 371px;
 	left: 850px;
 	width: 374px;
@@ -348,7 +422,7 @@ div { position: absolute; }
 }
 
 
-#rectangle_13 {
+#postal_code_form {
 	top: 448px;
 	left: 850px;
 	width: 374px;
@@ -357,7 +431,7 @@ div { position: absolute; }
 }
 
 
-#rectangle_14 {
+#country_form {
 	top: 522px;
 	left: 850px;
 	width: 374px;
@@ -365,7 +439,7 @@ div { position: absolute; }
 	/* background:rgba(217,217,217,1); */
 }
 
-#frame_1_ek4_cls_a {
+#sign_up_btn_frame {
 	top: 656px;
 	left: 696px;
 	width: 126px;
@@ -373,7 +447,7 @@ div { position: absolute; }
 	position: absolute;
 }
 
-#cart_ek5 {
+#sign_up_btn {
 	top: 10px;
 	left: 25px;
 	width: 101px;
@@ -382,7 +456,7 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 20px;
 	text-align: left;
-	color:#FFFFFF;
+	color: #FFFFFF;
 }
 
 
@@ -395,7 +469,7 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 18px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
@@ -407,6 +481,18 @@ div { position: absolute; }
 	overflow: hidden;
 	font-family: ABeeZee;
 	font-size: 18px;
+	text-align: left;
+	color: #000000;
+}
+
+#username_login {
+	top: 328px;
+	left: 223px;
+	width: 149.5px;
+	height: 47.5px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 25px;
 	text-align: left;
 	color:#000000;
 }
@@ -421,7 +507,7 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 18px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
@@ -433,6 +519,18 @@ div { position: absolute; }
 	overflow: hidden;
 	font-family: ABeeZee;
 	font-size: 18px;
+	text-align: left;
+	color: #000000;
+}
+
+#password_login {
+	top: 425px;
+	left: 223px;
+	width: 143.5px;
+	height: 47.5px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 25px;
 	text-align: left;
 	color:#000000;
 }
@@ -447,7 +545,7 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 18px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
@@ -460,7 +558,7 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 18px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
@@ -473,7 +571,7 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 18px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
@@ -486,7 +584,7 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 18px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
@@ -499,7 +597,7 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 18px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
@@ -512,7 +610,7 @@ div { position: absolute; }
 	font-family: ABeeZee;
 	font-size: 18px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 

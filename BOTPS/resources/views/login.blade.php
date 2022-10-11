@@ -2,53 +2,82 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <title>login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    @vite('resources/css/app.css')
+    <link rel="StyleSheet" href="{{ asset('css/styles.css') }}" />
+    <script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
+    <!-- Add your custom HEAD content here -->
+
 </head>
 
 <body>
-    <!-- navBar -->
-    <div class="justify-start flex bg-blue-300 pl-5 py-2 space-x-4">
-        <a href="{{ url('/home') }}">
-            <h1 class="text-xl font-bold font-mono text-gray-100">Home</h1>
-        </a>
-        <a href="{{ url('/login') }}">
-            <h1 class="text-xl font-bold font-mono text-gray-100">Login</h1>
-        </a>
-        <a href="{{ url('/register') }}">
-            <h1 class="text-xl font-bold font-mono text-gray-100">Register</h1>
-        </a>
-    </div>
+    <div id="content-container">
+        <div id="_bg__register_page"></div>
 
+        <div id="master_of_all_page">
+            <div id="foot_bg"></div>
+            <div id="nav_bg"></div>
+            <div id="team_ps_bot">
+                Team PS-BOT
+            </div>
+            <div id="shop_name_bg"></div>
+            <div id="ps_bot_shop">
+                PS BOT<br />SHOP
+            </div>
 
-    <!-- box-text-3 -->
-    <div class="mt-8 rounded-lg bg-gray-50 mx-80">
-        <div class="m-5 py-2 grid-flow-row auto-rows-max">
+            <a id="home_btn_frame" _par="" href="home">
+                <div id="Home_btn_border"></div>
+                <div id="home_btn">
+                    Home
+                </div>
 
-            <div class="m-1 justify-center flex">
-                <h1 class="text-xl">Login Page</h1>
-            </div>
-            <div class="space-x-2 justify-center flex">
-                <h1>username</h1>
-                <input type="text" class="border-2">
-            </div>
-            <div class="space-x-2 mt-2 justify-center flex">
-                <h1>password</h1>
-                <input type="text" class="border-2">
-            </div>
-            <div class="justify-center flex my-5 space-x-2 pl-10">
-                <button class="bg-green-500 rounded-full p-1 px-2">Login</button>
-                <a href="{{ url('/register') }}" class="p-1 px-2">Register</a>
-            </div>
-            
+            </a>
+            <img src="skins/logo_1.png" id="logo_header" />
+            <img src="skins/logo_2.png" id="logo_foot" />
 
+            <div id="line_long"></div>
+
+            <div id="don_t_have_an_account_">
+                Don't have an account?
+            </div>
+
+            <a id="create_account_frame" _par="" href="register">
+                <div id="create_account_border"></div>
+                <div id="create_account_btn">
+                    Create your account here
+                </div>
+            </a>
+
+            <div id="login">
+                Login
+            </div>
+
+            <div id="username_login">
+                Username
+            </div>
+            <div id="username_login_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
+            </div>
+
+            <div id="password_login">
+                Password
+            </div>
+            <div id="password_login_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="password" required="required" size="45" autofocus>
+            </div>
+
+            <a id="login_log_frame"  _par="" href="undefined" >
+                <div id="login_log_border"></div>
+				<div id="login_log_btn" >
+					Login
+				</div>
+
+			</a>
 
         </div>
-    </div>
 
+    </div>
 </body>
 
 </html>
