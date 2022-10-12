@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function show(){
         $products = Product::all();
-        return view('catalog', compact('products'));
+        return view('Catalog', compact('products'));
     }
 
     public function cart($cusId){
