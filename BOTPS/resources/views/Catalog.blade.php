@@ -11,7 +11,7 @@
 
 
 <head>
-    <title>Testing Page</title>
+    <title>Testing Pages</title>
 </head>
 
 <body>
