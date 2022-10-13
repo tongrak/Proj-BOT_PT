@@ -30,7 +30,7 @@
                     <h1 class="pl-2">SHOP</h1>
                 </div>
                 <div class="pt-5">
-                    <a href="{{ url('/home') }}">
+                    <a href="{{ url('/') }}">
                         <h1 class="text-xl font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Home</h1>
                     </a>
                 </div>
@@ -149,7 +149,7 @@
                     <div class="overlay">
                         <div class="textA">R-35 <br> sadasdasd </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
 
@@ -199,16 +199,8 @@
         });
     </script>
 
-    <!-- mouse event -->
-    <script>
-        function show(tag) {
-            const newContent = document.createTextNode("asdijfhksadhfhasdkjhfkjdsahfkjhsdakjlfhjk")
-
-
-        }
-    </script>
-
-
+    
+   
 
 </body>
 

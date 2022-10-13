@@ -16,6 +16,8 @@ use App\Http\Controllers\HomeController;
 
 Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
+    Route::get('/', 'ProductController@showHome')->name('home.show');
+
     Route::middleware('isGuest')->group(function() {
         
         Route::get('/test/login', 'LoginController@showLogin')->name('test.showLogin');
