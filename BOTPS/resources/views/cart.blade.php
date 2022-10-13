@@ -33,7 +33,7 @@
             </div>
 
             <!-- logo -->
-            <div class="pr-64">
+            <div class="pr-24">
                 <img src="skins/logo_1.png" id="logo_1" />
             </div>
 
@@ -52,7 +52,7 @@
         </div>
 
         <!-- contents -->
-        <div class="h-screen">
+        <div class="h-screen overflow-y-scroll">
 
             <!-- Title -->
             <div class="flex pl-64 pt-16 ">
@@ -60,7 +60,57 @@
             </div>
 
             <!-- contents -->
-            <div>
+            <div class="">
+
+                <!-- box 1 -->
+                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
+                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
+                </div>
+
+                <!-- box 2 -->
+                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
+                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
+                </div>
+
+                <!-- box 3 -->
+                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
+                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
+                </div>
+                
+                <!-- box 4 -->
+                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
+                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
+                </div>
+
+                <!-- box 5 -->
+                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
+                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
+                </div>
+
+                <!-- box 6 -->
+                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
+                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
+                </div>
+
+                <!-- box 7 -->
+                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
+                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
+                </div>
+
+                <!-- box 8 -->
+                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
+                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
+                </div>
+
+                <!-- box 9 -->
+                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
+                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
+                </div>
+
+                <!-- box 10 -->
+                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
+                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
+                </div>
 
             </div>
 
@@ -73,7 +123,7 @@
 
         </div>
         <!-- copyrigth -->
-        <div class="bg-slate-500 flex justify-center place-self-end h-10">
+        <div class="bg-slate-500 flex justify-center place-self-end h-10 mt-5">
             <img src="skins/logo_2.png" id="logo_2" />
             <h1 class="text-white pt-1">Team PS-BOT</h1>
         </div>
