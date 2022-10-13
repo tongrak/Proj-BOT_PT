@@ -35,6 +35,14 @@ class ProductController extends Controller
         return view('Home', compact('products'));
     }
 
+    public function showSearch(Request $req, $term){
+        // $term = $req->input('term');
+        // $strArr = array('%',$term,'%');
+        $str = $req->input('term');
+        $products = DB::select('SELECT * FROM products WHERE productName LIKE "%' . $str . '%"');
+        return view('Catalog', compact('products'));
+    }
+
     // !! Moving to Cart Controller.
     // public function addToCart($productId){
     //     $product = Product::findOrFail($productId);
