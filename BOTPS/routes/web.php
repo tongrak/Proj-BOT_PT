@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,5 +76,10 @@ Route::get('/login',function() { return view('login');});
 /**register route */
 Route::get('register',function() { return view('register');});
 
-/**register Home */
-Route::get('home',function() { return view('Home');});
+/**Home route*/
+Route::get('/home',[HomeController::class,'show']);
+
+/**Cart route*/
+Route::get('cart',function() { return view('cart');});
+
+
