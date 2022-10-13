@@ -30,7 +30,7 @@
                     <h1 class="pl-2">SHOP</h1>
                 </div>
                 <div class="pt-5">
-                    <a href="{{ url('/home') }}">
+                    <a href="{{ url('/') }}">
                         <h1 class="text-xl font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Home</h1>
                     </a>
                 </div>
@@ -73,7 +73,15 @@
 
             <!-- Products -->
             <div class="carousel flex pt-10">
+                @foreach($products as $product)
                 <div class="mx-10 container">
+                    <img src="/Models/1.jpeg" alt="" width="300" height="400" class="border-2 " onmouseover="show(this)">
+                    <div class="overlay">
+                        <div class="textA">{{$product->productName}}</div>
+                    </div>
+                </div>
+                @endforeach
+                <!-- <div class="mx-10 container">
                     <img src="/Models/1.jpeg" alt="" width="300" height="400" class="border-2 " onmouseover="show(this)">
                     <div class="overlay">
                         <div class="textA">deasdasdasdds</div>
@@ -138,7 +146,7 @@
                     <div class="overlay">
                         <div class="textA">deasdasdasdds</div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
 
