@@ -65,7 +65,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::get('/test/home', 'HomeController@show')->name('test.home');
 
     // Homepage route
-    Route::get('/', function () {return view('home');});
+    Route::get('/home', function () {return view('home');});
     // client as guest
     Route::group(['middleware'=>['guest']], function(){
     }); 
