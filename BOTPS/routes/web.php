@@ -84,23 +84,4 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     });
 
 
-<<<<<<< HEAD
 });
-
-
-/**login route */
-Route::get('/login',function() { return view('login');});
-
-/**register route */
-Route::get('register',function() { return view('register');});
-
-/**Home route*/
-Route::get('/home',[HomeController::class,'show']);
-
-/**Cart route*/
-Route::get('cart',function() { return view('cart');});
-
-
-=======
-});
->>>>>>> 25eba35c5bc1a158fdd8d49e449057e3298a5330
