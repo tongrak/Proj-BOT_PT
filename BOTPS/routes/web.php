@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
+    Route::get('/', 'ProductController@showHome')->name('home.show');
+
     Route::middleware('isGuest')->group(function() {
         
         Route::get('/test/login', 'LoginController@showLogin')->name('test.showLogin');
@@ -61,26 +63,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::get('/test', 'TestController@show')->name('test.show');
     Route::get('/test/create', 'TestController@showCreate')->name('test.show.create');
     Route::post('/test/create', 'TestController@create')->name('test.create');
-    Route::get('/test/home', 'HomeController@show')->name('test.home');
-
-    // Homepage route
-    Route::get('/', function () {return view('home');});
-    // client as guest
-    Route::group(['middleware'=>['guest']], function(){
-    }); 
-    // client as customer
-
-    Route::group(['middleware' => ['customer']], function(){
-        // Auth routing
-
-        // shop routing:
-
-    });
-    // client as employee
-    Route::group(['middleware'=>['employee']], function(){
-        // commsion broads route:
-        Route::get('/commissions', 'CommissionController@show')->name('commission.show');
-    });
-
+    Route::get('/test/home', 'ProductController@showHome')->name('test.home');
 
 });
