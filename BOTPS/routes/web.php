@@ -18,6 +18,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
     Route::get('/', 'ProductController@showHome')->name('home.show');
 
+    Route::get('/catalog', 'ProductController@showCatalog')->name('catalog.show');
+    Route::get('/catalog/search{term}', 'ProductController@showSearch')->name('catalog.search');
+
     Route::middleware('isGuest')->group(function() {
         
         Route::get('/test/login', 'LoginController@showLogin')->name('test.showLogin');
@@ -38,8 +41,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::middleware('isUser')->group(function() {
         // cart routing:
         Route::get('/cart', 'CartController@cart')->name('cart');
-        Route::get('/add-t-cart/{cusId}', 'ProductController@addToCart')->name('add.to.cart');
-        Route::delete('/remove-from-cart/{cusId}/{productId}', 'ProductController@remove')->name('remove.from.cart');
+        // TODO: Change to Cart Controller
+        // Route::get('/add-t-cart/{productId}', 'ProductController@addToCart')->name('add.to.cart');
+        // Route::delete('/remove-from-cart/{cusId}/{productId}', 'ProductController@remove')->name('remove.from.cart');
 
     });
 
@@ -55,7 +59,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
     Route::middleware('isUser', 'isAdmin')->group(function() {
         // catalog route
-        Route::get('/catalog', 'ProductController@show')->name('catalog.show');
+        
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
         Route::get('/test/logout', 'LogoutController@perform')->name('test.logout');
     });
