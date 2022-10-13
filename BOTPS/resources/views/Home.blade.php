@@ -149,7 +149,7 @@
                     <div class="overlay">
                         <div class="textA">R-35 <br> sadasdasd </div>
                     </div>
-                </div> -->
+                </div> 
 
             </div>
 
@@ -198,9 +198,6 @@
             ]
         });
     </script>
-
-    
-   
 
 </body>
 

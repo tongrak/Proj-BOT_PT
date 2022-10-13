@@ -36,7 +36,6 @@
 }
 
 .slick-prev {
-    background-image: url(/Models/arrow1.png);
     background-position: 0px;
     width: 30px;
     height: 50px;
@@ -53,7 +52,6 @@
 }
 
 .slick-next {
-    background: url(/Models/arrow2.png);
     background-position: 0px;
     width: 30px;
     height: 50px;
