@@ -17,7 +17,7 @@
 <body>
 
 
-    <div class="justify-between w-full">
+    <div class="justify-between w-full h-fit">
 
 
         <!-- navBar -->
@@ -75,80 +75,83 @@
 
             <!-- Products -->
             <div class="carousel flex pt-10">
-                @foreach($products as $product)
-                <div class="mx-10 container">
-                    <img src="/Models/1.jpeg" alt="" width="300" height="400" class="border-2 " onmouseover="show(this)">
+
+                <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/1.jpeg" alt="" class="border-2 " onmouseover="show(this)">
                     <div class="overlay">
-                        <div class="textA">{{$product->productName}}</div>
+                        <div class="textA">R-35 <br> sadasdasd </div>
                     </div>
                 </div>
-                @endforeach
-                <!-- <div class="mx-10 container">
-                    <img src="/Models/1.jpeg" alt="" width="300" height="400" class="border-2 " onmouseover="show(this)">
+
+                <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/9.jpeg" alt="" class="border-2 ">
                     <div class="overlay">
-                        <div class="textA">deasdasdasdds</div>
+                        <div class="textA">R-35 <br> sadasdasd </div>
                     </div>
                 </div>
-                <div class="mx-10 container">
-                    <img src="/Models/2.jpeg" alt="" width="300" height="400" class="border-2 ">
+
+                <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/2.jpeg" alt="" class="border-2 ">
                     <div class="overlay">
-                        <div class="textA">deasdasdasdds</div>
+                        <div class="textA">R-35 <br> sadasdasd </div>
                     </div>
                 </div>
-                <div class="mx-10 container">
-                    <img src="/Models/2.jpeg" alt="" width="300" height="400" class="border-2 ">
+
+                <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/8.jpeg" alt="" class="border-2 ">
                     <div class="overlay">
-                        <div class="textA">deasdasdasdds</div>
+                        <div class="textA">R-35 <br> sadasdasd </div>
                     </div>
                 </div>
-                <div class="mx-10 container">
-                    <img src="/Models/8.jpeg" alt="" width="300" height="400" class="border-2 ">
+
+                <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/1.jpeg" alt=""  class="border-2 ">
                     <div class="overlay">
-                        <div class="textA">deasdasdasdds</div>
+                        <div class="textA">R-35 <br> sadasdasd </div>
                     </div>
                 </div>
-                <div class="mx-10 container">
+
+                <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/9.jpeg" alt=""  class="border-2 ">
+                    <div class="overlay">
+                        <div class="textA">R-35 <br> sadasdasd </div>
+                    </div>
+                </div>
+
+                <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/5.jpeg" alt="" class="border-2 ">
+                    <div class="overlay">
+                        <div class="textA">R-35 <br> sadasdasd </div>
+                    </div>
+                </div>
+
+                <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/1.jpeg" alt=""class="border-2 ">
+                    <div class="overlay">
+                        <div class="textA">R-35 <br> sadasdasd </div>
+                    </div>
+                </div>
+
+                <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/9.jpeg" alt=""  class="border-2 ">
+                    <div class="overlay">
+                        <div class="textA">R-35 <br> sadasdasd </div>
+                    </div>
+                </div>
+
+                <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/2.jpeg" alt="" class="border-2 ">
+                    <div class="overlay">
+                        <div class="textA">R-35 <br> sadasdasd </div>
+                    </div>
+                </div>
+
+                <div class="mx-10 container" width="300" height="400">
                     <img src="/Models/1.jpeg" alt="" width="300" height="400" class="border-2 ">
                     <div class="overlay">
-                        <div class="textA">deasdasdasdds</div>
+                        <div class="textA">R-35 <br> sadasdasd </div>
                     </div>
-                </div>
-                <div class="mx-10 container">
-                    <img src="/Models/9.jpeg" alt="" width="300" height="400" class="border-2 ">
-                    <div class="overlay">
-                        <div class="textA">deasdasdasdds</div>
-                    </div>
-                </div>
-                <div class="mx-10 container">
-                    <img src="/Models/5.jpeg" alt="" width="300" height="400" class="border-2 ">
-                    <div class="overlay">
-                        <div class="textA">deasdasdasdds</div>
-                    </div>
-                </div>
-                <div class="mx-10 container">
-                    <img src="/Models/1.jpeg" alt="" width="300" height="400" class="border-2 ">
-                    <div class="overlay">
-                        <div class="textA">deasdasdasdds</div>
-                    </div>
-                </div>
-                <div class="mx-10 container">
-                    <img src="/Models/9.jpeg" alt="" width="300" height="400" class="border-2 ">
-                    <div class="overlay">
-                        <div class="textA">deasdasdasdds</div>
-                    </div>
-                </div>
-                <div class="mx-10 container">
-                    <img src="/Models/2.jpeg" alt="" width="300" height="400" class="border-2 ">
-                    <div class="overlay">
-                        <div class="textA">deasdasdasdds</div>
-                    </div>
-                </div>
-                <div class="mx-10 container">
-                    <img src="/Models/1.jpeg" alt="" width="300" height="400" class="border-2 ">
-                    <div class="overlay">
-                        <div class="textA">deasdasdasdds</div>
-                    </div>
-                </div> -->
+                </div> 
 
             </div>
 
@@ -193,24 +196,10 @@
                         slidesToShow: 1,
                         slidesToScroll: 1
                     }
-                }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
+                }             
             ]
         });
     </script>
-
-    <!-- mouse event -->
-    <script>
-        function show(tag) {
-            const newContent = document.createTextNode("asdijfhksadhfhasdkjhfkjdsahfkjhsdakjlfhjk")
-
-
-        }
-    </script>
-
-
 
 </body>
 

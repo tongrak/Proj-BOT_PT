@@ -68,6 +68,26 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::get('/test', 'TestController@show')->name('test.show');
     Route::get('/test/create', 'TestController@showCreate')->name('test.show.create');
     Route::post('/test/create', 'TestController@create')->name('test.create');
-    Route::get('/test/home', 'ProductController@showHome')->name('test.home');
+    Route::get('/test/home', 'HomeController@show')->name('test.home');
+
+    // Homepage route
+    Route::get('/home', function () {return view('home');});
+    // client as guest
+    Route::group(['middleware'=>['guest']], function(){
+    }); 
+    // client as customer
+
+    Route::group(['middleware' => ['customer']], function(){
+        // Auth routing
+
+        // shop routing:
+
+    });
+    // client as employee
+    Route::group(['middleware'=>['employee']], function(){
+        // commsion broads route:
+        Route::get('/commissions', 'CommissionController@show')->name('commission.show');
+    });
+
 
 });
