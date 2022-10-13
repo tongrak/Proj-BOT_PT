@@ -85,5 +85,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         Route::get('/commissions', 'CommissionController@show')->name('commission.show');
     });
 
+    Route::get('/cart', function () {return view('cart');});
 
 });

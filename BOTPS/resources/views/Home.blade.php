@@ -6,7 +6,6 @@
     <title>home_page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="StyleSheet" href="{{ asset('css/register.css') }}" /> -->
     <link rel="stylesheet" href="/css/slick.css">
     <link rel="stylesheet" href="/css/slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,14 +29,14 @@
                     <h1 class="pl-2">SHOP</h1>
                 </div>
                 <div class="pt-5">
-                    <a href="{{ url('/') }}">
+                    <!-- <a href="{{ url('/') }}">
                         <h1 class="text-xl font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Home</h1>
-                    </a>
+                    </a> -->
                 </div>
             </div>
 
             <!-- logo -->
-            <div class="pl-28">
+            <div class="pl-20">
                 <img src="skins/logo_1.png" id="logo_1" />
             </div>
 
@@ -49,9 +48,9 @@
                 <a href="{{ url('/register') }}">
                     <h1 class="text-xl font-bold font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Sign-up</h1>
                 </a>
-                <a href="{{ url('/cart') }}">
+                <!-- <a href="{{ url('/cart') }}">
                     <h1 class="text-xl font-bold font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Cart</h1>
-                </a>
+                </a> -->
             </div>
         </div>
 
@@ -66,7 +65,7 @@
 
             <!-- Top Hits -->
             <div class="flex pl-64 pt-16 space-x-2">
-                <h1 class="text-2xl">Top Hits</h1>
+                <h1 class="text-5xl underline underline-offset-1">Top Hits</h1>
                 <img src="/Models/fire.jpg" alt="" width="30px" height="20px" background-position="1500px">
             </div>
 
@@ -156,7 +155,7 @@
         </div>
 
         <!-- copyrigth -->
-        <div class="bg-slate-500 flex justify-center place-self-end">
+        <div class="bg-slate-500 flex justify-center place-self-end h-10">
             <img src="skins/logo_2.png" id="logo_2" />
             <h1 class="text-white pt-1">Team PS-BOT</h1>
         </div>
