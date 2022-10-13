@@ -340,7 +340,7 @@ div {
 }
 
 
-#first_name_form {
+#cop_name_form {
 	top: 371px;
 	left: 293px;
 	width: 374px;
@@ -349,7 +349,7 @@ div {
 }
 
 
-#username_form {
+#first_name_form {
 	top: 236px;
 	left: 293px;
 	width: 374px;
@@ -365,7 +365,7 @@ div {
 }
 
 
-#last_name_form {
+#address1_form {
 	top: 448px;
 	left: 293px;
 	width: 374px;
@@ -373,7 +373,7 @@ div {
 }
 
 
-#password_form {
+#last_name_form {
 	top: 305px;
 	left: 293px;
 	width: 374px;
@@ -388,7 +388,7 @@ div {
 }
 
 
-#phone_form {
+#address2_form {
 	top: 522px;
 	left: 293px;
 	width: 374px;
@@ -397,7 +397,7 @@ div {
 }
 
 
-#address_form {
+#phone_form {
 	top: 234px;
 	left: 850px;
 	width: 374px;
@@ -460,10 +460,9 @@ div {
 }
 
 
-#first_name {
+#cop_name {
 	top: 348px;
 	left: 293px;
-	width: 115px;
 	height: 34px;
 	overflow: hidden;
 	font-family: ABeeZee;
@@ -473,10 +472,9 @@ div {
 }
 
 
-#username {
+#first_name {
 	top: 213px;
 	left: 293px;
-	width: 109px;
 	height: 34px;
 	overflow: hidden;
 	font-family: ABeeZee;
@@ -498,10 +496,9 @@ div {
 }
 
 
-#last_name {
+#address1 {
 	top: 422px;
 	left: 293px;
-	width: 115px;
 	height: 34px;
 	overflow: hidden;
 	font-family: ABeeZee;
@@ -511,10 +508,9 @@ div {
 }
 
 
-#password {
+#last_name {
 	top: 279px;
 	left: 293px;
-	width: 105px;
 	height: 34px;
 	overflow: hidden;
 	font-family: ABeeZee;
@@ -536,10 +532,9 @@ div {
 }
 
 
-#phone {
+#address2 {
 	top: 499px;
 	left: 293px;
-	width: 76px;
 	height: 34px;
 	overflow: hidden;
 	font-family: ABeeZee;
@@ -549,7 +544,7 @@ div {
 }
 
 
-#address {
+#phone {
 	top: 213px;
 	left: 850px;
 	width: 91px;

@@ -54,39 +54,39 @@
         </div>
 
 
-        <div id="username">
-            Username
-        </div>
-        <div id="username_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
-        </div>
-
-        <div id="password">
-            Password
-        </div>
-        <div id="password_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="password" required="required" size="45" autofocus>
-        </div>
-
         <div id="first_name">
             First Name
         </div>
         <div id="first_name_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="firstname" required="required" size="45" autofocus>
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="contactFirstName" required="required" size="45" autofocus>
         </div>
 
         <div id="last_name">
-            Last Name
+            Last Name (used for username)
         </div>
         <div id="last_name_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="lastname" required="required" size="45" autofocus>
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="contactLastName" required="required" size="45" autofocus>
         </div>
 
-        <div id="phone">
-            Phone
+        <div id="cop_name">
+            Corporation Name (used for password)
         </div>
-        <div id="phone_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="phone" required="required" size="45" autofocus>
+        <div id="cop_name_form">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="customerName" required="required" size="45" autofocus>
+        </div>
+
+        <div id="address1">
+            Address Line 1
+        </div>
+        <div id="address1_form">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="addressLine1" required="required" size="45" autofocus>
+        </div>
+
+        <div id="address2">
+            Address Line 2
+        </div>
+        <div id="address2_form">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="addressLine2" required="required" size="45" autofocus>
         </div>
 
         <a id="sign_up_btn_frame" _par="" href="register">
@@ -96,11 +96,11 @@
             </div>
         </a>
 
-        <div id="address">
-            Address
+        <div id="phone">
+            Phone
         </div>
-        <div id="address_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="address" required="required" size="45" autofocus>
+        <div id="phone_form">
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="phone" required="required" size="45" autofocus>
         </div>
 
         <div id="city">
@@ -121,7 +121,7 @@
             PostalCode
         </div>
         <div id="postal_code_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="postal" required="required" size="45" autofocus>
+            <input style="height:31px; font-size:15px" type="text" class="form-control" name="postalCode" required="required" size="45" autofocus>
         </div>
 
         <div id="country">
