@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function show(){
-        return view('TestingGround.userHome');
+        return view('Home');
     }
+
 }
