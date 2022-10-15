@@ -1,0 +1,250 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Arial";
+	overflow-x: hidden;
+}
+
+.header_bg{
+    display: flex;
+	width: 1550px;
+	height: 87px;
+	-ms-box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+	-o-box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+	background: rgb(102, 81, 236);
+}
+
+.ps_bot_shop {
+    position: absolute;
+    top: 18px;
+	left: 78px;
+	width: 82px;
+	height: 62px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: center;
+	color: rgb(102, 81, 236);
+}
+
+.shop_name_bg {
+	width: 126px;
+	height: 85px;
+    margin-left: 56px;
+	background: rgba(255, 255, 255, 1);
+}
+
+.logo_header {
+    position: absolute;
+	top: 6px;
+	left: 697px;
+	width: 125px;
+	height: 88.71px;
+}
+
+.for_admin{
+	margin-left: 58px;
+	padding-top: 30px;
+	font-size: 20px;
+	color: white;
+}
+
+.logout_btn {
+	width: 81px;
+	height: 38px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: center;
+	color: #FFFFFF;
+	margin: auto;
+	padding-top: 10px;
+}
+
+.logout_btn_border {
+	width: 108px;
+	height: 46px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #ffffff;
+	background: rgb(102, 81, 236);
+	margin-left: 1000px;
+	margin-top: 21px;
+	text-decoration:none
+}
+
+.logout_btn_frame {
+	top: 21px;
+	left: 224px;
+	width: 106px;
+	height: 44px;
+	position: absolute;
+}
+
+.footer_frame{
+	bottom: 0;
+	width: 1550px;
+	height: 48px;
+	background: rgba(121.12, 121.12, 121.12, 1);
+}
+
+.logo_foot {
+	width: 50px;
+	height: 35.48px;
+}
+
+.footer_div{
+	display: flex;
+	margin: auto;
+	width: 200px;
+	padding-top: 15px;
+}
+
+.team_ps_bot {
+	top: 993px;
+	left: 713px;
+	width: 163px;
+	height: 36px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: left;
+	color: #FFFFFF;
+}
+
+.comm_div {
+	width: 1330px;
+	min-height: 175px;
+	background:#D9D9D9;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 25px;
+}
+
+.new_customer {
+	position: relative;
+	top: 25px;
+	left: 25px;
+	width: 1372px;
+	height: 102px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 36px;
+	text-align: left;
+	color:#000000;
+}
+
+.old_customer {
+	position: relative;
+	top: 25px;
+	left: 25px;
+	width: 1372px;
+	height: 102px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 36px;
+	text-align: left;
+	color:#000000;
+}
+
+.customer_name {
+	top: 206px;
+	left: 81px;
+	width: 264.9px;
+	height: 60.32px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 24px;
+	text-align: left;
+	color:#000000;
+}
+
+.product_description {
+	width: 587px;
+	height: 40.71px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: left;
+	color:#000000;
+	margin-left: 20px;
+}
+
+.quantity{
+	width: 519px;
+	height: 40.75px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: left;
+	color:#000000;
+}
+
+.price{
+	top: 243.19px;
+	left: 1187px;
+	width: 199.93px;
+	height: 40.75px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: left;
+	color:#000000;
+}
+
+.btn_frame{
+	display: flex;
+	justify-content: space-between;
+}
+
+.cancel_btn {
+	width: 162px;
+	height: 63px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #ffffff;
+	background:rgba(255,34,204,1);
+}
+.cancel_text{
+	padding-top: 18.5px;
+	width: 162px;
+	height: 38px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: center;
+	color:#FFFFFF;
+}
+
+.confirm_btn {
+	width: 162px;
+	height: 63px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #ffffff;
+	background:rgba(13.21,211.44,33.04,1);
+}
+
+.confirm_text{
+	padding-top: 18.5px;
+	width: 162px;
+	height: 38px;
+	overflow: hidden;
+	font-family: ABeeZee;
+	font-size: 20px;
+	text-align: center;
+	color:#FFFFFF;
+}

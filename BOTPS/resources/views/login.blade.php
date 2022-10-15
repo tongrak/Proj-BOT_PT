@@ -67,7 +67,7 @@
                 <input style="height:31px; font-size:15px" type="text" class="form-control" name="password" required="required" size="45" autofocus>
             </div>
 
-            <a id="login_log_frame"  _par="" href="undefined" >
+            <a id="login_log_frame"  _par="" href="home" >
                 <div id="login_log_border"></div>
 				<div id="login_log_btn" >
 					Login

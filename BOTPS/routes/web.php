@@ -77,3 +77,5 @@ Route::get('register',function() { return view('register');});
 
 /**register Home */
 Route::get('home',function() { return view('Home');});
+
+Route::get('test',function() { return view('Adminhome');});
