@@ -5,16 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cart extends Model
+class CartDetail extends Model
 {
     // use HasFactory;
-    protected $fillable = [
-        'customerNumber',
-        'cartNumber',
-        'custoConfirm',
-        'saleConfirm',
-        'salerepNumber'
-    ];
 
-    public $timestamps = false;
+    protected $fillable = [
+        'cartNumber',
+        'productCode',
+        'quantity'
+    ];
 }
