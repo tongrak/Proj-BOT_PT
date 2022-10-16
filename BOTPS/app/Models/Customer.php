@@ -23,4 +23,6 @@ class Customer extends Model
         'salesRepEmployeeNumber',
         'creditLimit'
     ];
+
+    public $timestamps = false;
 }

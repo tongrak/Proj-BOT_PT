@@ -15,4 +15,6 @@ class Cart extends Model
         'pricePerUnit',
         'confirmation'
     ];
+
+    public $timestamps = false;
 }
