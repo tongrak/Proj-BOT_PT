@@ -445,6 +445,7 @@ div {
 	width: 126px;
 	height: 44px;
 	position: absolute;
+	cursor: pointer;
 }
 
 #sign_up_btn {

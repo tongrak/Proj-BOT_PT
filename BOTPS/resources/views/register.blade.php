@@ -89,7 +89,7 @@
             <input style="height:31px; font-size:15px" type="text" class="form-control" name="addressLine2" required="required" size="45" autofocus>
         </div>
 
-        <a id="sign_up_btn_frame" _par="" href="register">
+        <a id="sign_up_btn_frame" _par="" onclick="alert('Complete!')">
             <div id="sign_up_btn_border"></div>
             <div id="sign_up_btn">
                 Sign-up
