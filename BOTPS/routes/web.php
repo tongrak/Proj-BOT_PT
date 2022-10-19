@@ -91,4 +91,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
     Route::get('/cart', function () {return view('cart');});
 
+
+    Route::get('/test', function () {return view('Adminhome');});
 });
