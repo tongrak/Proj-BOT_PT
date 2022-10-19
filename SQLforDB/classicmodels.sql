@@ -276,15 +276,18 @@ UNLOCK TABLES;
 -- Dump completed on 2019-10-14 16:31:16
 
 CREATE TABLE carts(
-    `customerNumber` int(11) NOT NULL,
     `cartNumber` int(11) NOT NULL,
+    `customerNumber` int(11) NOT NULL,
     `custoConfirm` boolean NOT NULL,
-    `saleConfirm` boolean NOT NULL,
     `salerepNumber` int(11),
+    `saleConfirm` boolean NOT NULL,
+    UNIQUE KEY `cartNumber` (`cartNumber`),
     CONSTRAINT pk_custocart PRIMARY KEY (`customerNumber`, `cartNumber`),
     CONSTRAINT fk_custoref FOREIGN KEY (`customerNumber`) REFERENCES `customers`(`customerNumber`),
     CONSTRAINT fk_saleref FOREIGN KEY (`salerepNumber`) REFERENCES `employees`(`employeeNumber`)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `carts` (`cartNumber`, `customerNumber`, `custoConfirm`, `salerepNumber`, `saleConfirm`) VALUES ('10421', '124', '0', '1165', '0');
 
 CREATE TABLE cartdetails(
 	`cartNumber` int(11) NOT NULL,
@@ -293,6 +296,9 @@ CREATE TABLE cartdetails(
   	PRIMARY KEY (`cartNumber`, `productCode`),
     KEY `cartNumber` (`cartNumber`),
     KEY `productCode` (`productCode`),
-  	-- CONSTRAINT `fk_cartNumRef` FOREIGN KEY (`cartNumber`) REFERENCES `carts`(`cartNumber`),
-  	-- CONSTRAINT `fk_productCoderef` FOREIGN KEY (`productCode`) REFERENCES `products`(`productCode`)
+  	CONSTRAINT `fk_cartNumRef` FOREIGN KEY (`cartNumber`) REFERENCES `carts`(`cartNumber`),
+  	CONSTRAINT `fk_productCoderef` FOREIGN KEY (`productCode`) REFERENCES `products`(`productCode`)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO cartdetails
+VALUES (10421, 'S18_2795', 35),(10421, 'S24_2022', 40);
