@@ -19,10 +19,15 @@ class CartController extends Controller
         return view('Cart', ['cartdetails'=>$cartDetails]);
     }
 
-    public function addToCart($productId){
-        $product = Product::findOrFail($productId);
-        if (!Session::has('login-id')) return view('login');
-        $cusId = Session::get('login-id');
+    private function getLastestCartNumber():int{
+        $lastest = DB::table('carts')->orderByDesc('cartNumber')->first('cartNumber');
+        return intval($lastest);
+    }
+
+    public function addToCart($pId){
+        $product = Product::findOrFail($pId);
+        if (!session()->has('login-id')) return view('login')->with('Login required');
+        $cusId = session()->get('login-id');
         $salerep = DB::table('customer')->where('customerNumber','like',$cusId)->first('salesRepEmployeeNumber');
         $cart = DB::table('carts')->where('customerNumber','Like',$cusId)->first();
         DB::transaction(function()use($product, $cart , $cusId, $salerep){
@@ -40,11 +45,10 @@ class CartController extends Controller
                     $cartDe->quantity   = $cartDe->quantity+1;
                 }
                 $cartDe->save();
-
             }else{
                 $cart = new Cart();
                 $cart->customerNumber   = $cusId;
-                $newCartNum = DB::table('carts')->get()->count() + 1;
+                $newCartNum = $this->getLastestCartNumber() + 1;
                 $cart->cartNumber       = $newCartNum;
                 $cart->custoConfirm     = False;
                 $cart->saleConfirm      = False;
@@ -61,7 +65,7 @@ class CartController extends Controller
                 $product->save();
         });
         
-        $this->showCartDetail($cusId);
+        $this->showCartDetail($cusId)->with('Success','an item have been added');
     }
 
     public function removeInCart($productId){
@@ -87,7 +91,7 @@ class CartController extends Controller
 
         $product->quantityInStock = $product->quantityInStock+1;
         $product->save();
-        $this->showCartDetail($cusId);
+        $this->showCartDetail($cusId)->with('Success', 'the item have been remove');
     }
 
     private function getCartOfSaleRep($salerepID = null){
@@ -118,7 +122,7 @@ class CartController extends Controller
     public function showCartOfSaleRep($salerepID){
         $cartNoRep = $this->getCartOfSaleRep(null);
         $cartWithRep = $this->getCartOfSaleRep($salerepID);
-        // return view('home',compact($cartNoRep),compact($cartWithRep));
+        return view('adminHome',compact($cartNoRep),compact($cartWithRep));
     }
 
     
