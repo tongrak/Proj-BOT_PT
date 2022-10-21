@@ -16,6 +16,9 @@ use App\Http\Controllers\HomeController;
 
 Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
+
+    // Homepage route
+    Route::get('/home', 'ProductController@showHome')->name('home.show');
     Route::get('/', 'ProductController@showHome')->name('home.show');
 
     Route::get('/catalog', 'ProductController@showCatalog')->name('catalog.show');
@@ -41,20 +44,19 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::middleware('isUser')->group(function() {
         // cart routing:
         Route::get('/cart', 'CartController@cart')->name('cart');
-        // TODO: Change to Cart Controller
-        // Route::get('/add-t-cart/{productId}', 'ProductController@addToCart')->name('add.to.cart');
-        // Route::delete('/remove-from-cart/{cusId}/{productId}', 'ProductController@remove')->name('remove.from.cart');
+
+        Route::get('/add-to-cart/{pId}', 'CartController@addToCart')->name('add.to.cart');
+        Route::delete('/remove-from-cart/{pId}', 'ProductController@remove')->name('remove.from.cart');
 
     });
 
     Route::middleware('isAdmin')->group(function() {
         // contact employee route:
-        Route::post('/confirm-cart/{id}', 'CartController@confirm')->name('confirm.cart');
-        Route::post('/confirm-payment/{id}', 'CartController@endComm')->name('confirm.payment');
+        // TODO: Yet to implement
+        // Route::post('/confirm-cart/{id}', 'CartController@confirm')->name('confirm.cart');
 
         // commsion action route:
-        Route::post('/confirm-commis/{id}', 'CommissionController@confirm')->name('commission.confirm');
-        Route::post('/confirm-comm-end/{id}', 'CommissionController@endComm')->name('commission.end.comm');
+        // Route::post('/confirm-commis/{id}', 'CommissionController@confirm')->name('commission.confirm');
     });
 
     Route::middleware('isUser', 'isAdmin')->group(function() {
@@ -70,8 +72,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::post('/test/create', 'TestController@create')->name('test.create');
     Route::get('/test/home', 'HomeController@show')->name('test.home');
 
-    // Homepage route
-    Route::get('/home', function () {return view('home');});
     // client as guest
     Route::group(['middleware'=>['guest']], function(){
     }); 
