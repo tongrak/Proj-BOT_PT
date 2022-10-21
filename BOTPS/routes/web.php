@@ -22,7 +22,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::get('/', 'ProductController@showHome')->name('home.show');
 
     Route::get('/catalog', 'ProductController@showCatalog')->name('catalog.show');
-    Route::get('/catalog/search{term}', 'ProductController@showSearch')->name('catalog.search');
+    Route::get('/catalog/search{term}', 'ProductController@showSearch')->name('catalog.show.search');
+    Route::get('/catalog/category={category}', 'ProductController@showByCategory')->name('catelog.show.category');
 
     Route::middleware('isGuest')->group(function() {
         
@@ -67,10 +68,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     });
 
     // Testing
-    Route::get('/test', 'TestController@show')->name('test.show');
-    Route::get('/test/create', 'TestController@showCreate')->name('test.show.create');
-    Route::post('/test/create', 'TestController@create')->name('test.create');
-    Route::get('/test/home', 'HomeController@show')->name('test.home');
+    // Route::get('/test', 'TestController@show')->name('test.show');
+    // Route::get('/test/create', 'TestController@showCreate')->name('test.show.create');
+    // Route::post('/test/create', 'TestController@create')->name('test.create');
+    Route::get('/test/home', 'TestController@show')->name('test.home');
 
     // client as guest
     Route::group(['middleware'=>['guest']], function(){
