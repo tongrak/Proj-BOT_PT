@@ -28,17 +28,20 @@ class LoginController extends Controller
             ['username', '=', $request->username],
             ['password', '=', $request->password]
         ])->first();
+        //if user is client
         if($user){
             $request->session()->put('login-id', $user->CustomerID);
             $request->session()->put('isAdmin', $user->isAdmin);
             return redirect('/test/home')->with('success', 'You are logged in as user');
         }
         else{
+            //if user is admin
             if($admin){
                 $request->session()->put('login-id', $admin->EmployeeID);
                 $request->session()->put('isAdmin', $admin->isAdmin);
                 return redirect('/test/home')->with('success', 'You are logged in as admin');
             }
+            //if username or password is not in database.
             else{
                 return back()->with('fail', 'Not correct username or password.');
             }

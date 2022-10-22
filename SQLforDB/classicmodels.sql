@@ -302,3 +302,24 @@ CREATE TABLE cartdetails(
 
 INSERT INTO cartdetails
 VALUES (10421, 'S18_2795', 35),(10421, 'S24_2022', 40);
+
+CREATE TABLE Users (
+    CustomerID int(11) NOT NULL,
+    Username varchar(255) NOT NULL,
+    Password varchar(255) NOT NULL,
+		Foreign key (CustomerID) 
+			references Customers(CustomerNumber) 
+			on update CASCADE
+			on delete CASCADE
+);
+
+CREATE TABLE Users (
+    CustomerID int(11) NOT NULL,
+    Username varchar(255) NOT NULL,
+    Password varchar(255) NOT NULL,
+		Foreign key (CustomerID) 
+			references Customers(CustomerNumber) 
+			on update CASCADE
+			on delete CASCADE
+);
+
