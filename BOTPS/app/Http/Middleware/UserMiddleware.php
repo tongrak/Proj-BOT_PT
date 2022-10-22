@@ -16,11 +16,14 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next)
     {   
-        if($request->session()->get('isAdmin') == 0){
-            return $next($request);
-        } 
-        else{
-            return redirect('/')->with('fail', 'You are not user.');
+
+        if($request->session()->has('isAdmin')){
+            if($request->session()->get('isAdmin') == 0){
+                return $next($request);
+            }
         }
+        
+        return redirect('/home')->with('fail', 'You are not user.');
+            
     }
 }

@@ -18,7 +18,7 @@ class GuestMiddleware
     public function handle(Request $request, Closure $next)
     {
         if($request->session()->has('isAdmin')){
-            return redirect('/')->with('fail', 'You are already logged in.');
+            return redirect('/home')->with('fail', 'You are already logged in.');
         }
         else{
             return $next($request);

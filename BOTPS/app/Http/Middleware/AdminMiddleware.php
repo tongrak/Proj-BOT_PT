@@ -20,7 +20,7 @@ class AdminMiddleware
             return $next($request);
         } 
         else{
-            return redirect('/')->with('fail', 'You are not user.');
+            return redirect('/home')->with('fail', 'You are not user.');
         }
     }
 }

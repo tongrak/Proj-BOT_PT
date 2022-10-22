@@ -24,12 +24,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::get('/catalog', 'ProductController@showCatalog')->name('catalog.show');
     Route::get('/catalog/search{term}', 'ProductController@showSearch')->name('catalog.show.search');
     Route::get('/catalog/category={category}', 'ProductController@showByCategory')->name('catelog.show.category');
-
+    
+    //this route is for 'guest' only
     Route::middleware('isGuest')->group(function() {
         
         Route::get('/test/login', 'LoginController@showLogin')->name('test.showLogin');
         Route::post('/test/login', 'LoginController@login')->name('test.login');
-
+        
         Route::get('/test/register', 'RegisterController@showTest')->name('test.showRegister');
         Route::post('/test/register', 'RegisterController@registerTest')->name('test.register');
 
@@ -42,6 +43,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         Route::post('/login', 'LoginController@login')->name('login.perform');
     });
 
+    // this route is for 'user' only
     Route::middleware('isUser')->group(function() {
         // cart routing:
         Route::get('/cart', 'CartController@cart')->name('cart');
@@ -51,6 +53,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
     });
 
+    // this route is for 'admin' only
     Route::middleware('isAdmin')->group(function() {
         // contact employee route:
         // TODO: Yet to implement
@@ -58,8 +61,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
         // commsion action route:
         // Route::post('/confirm-commis/{id}', 'CommissionController@confirm')->name('commission.confirm');
+        Route::get('/commissions', 'CommissionController@show')->name('commission.show');
     });
 
+    //this route is for 'user or admin' only
     Route::middleware('isUser', 'isAdmin')->group(function() {
         // catalog route
         
@@ -72,23 +77,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     // Route::get('/test/create', 'TestController@showCreate')->name('test.show.create');
     // Route::post('/test/create', 'TestController@create')->name('test.create');
     Route::get('/test/home', 'TestController@show')->name('test.home');
-
-    // client as guest
-    Route::group(['middleware'=>['guest']], function(){
-    }); 
-    // client as customer
-
-    Route::group(['middleware' => ['customer']], function(){
-        // Auth routing
-
-        // shop routing:
-
-    });
-    // client as employee
-    Route::group(['middleware'=>['employee']], function(){
-        // commsion broads route:
-        Route::get('/commissions', 'CommissionController@show')->name('commission.show');
-    });
 
     Route::get('/cart', function () {return view('cart');});
 

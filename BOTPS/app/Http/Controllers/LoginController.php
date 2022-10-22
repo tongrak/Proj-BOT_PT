@@ -19,7 +19,7 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request)
     {
-        // $request->validate();
+        $request->validate();
         $user = DB::table('users')->select()->where([
             ['username', '=', $request->username],
             ['password', '=', $request->password]
@@ -43,7 +43,7 @@ class LoginController extends Controller
             }
             //if username or password is not in database.
             else{
-                return back()->with('fail', 'Not correct username or password.');
+                return redirect('/login')->with('fail', 'Not correct username or password.');
             }
         }   
     }
