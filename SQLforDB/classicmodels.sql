@@ -313,13 +313,13 @@ CREATE TABLE Users (
 			on delete CASCADE
 );
 
-CREATE TABLE Users (
-    CustomerID int(11) NOT NULL,
+CREATE TABLE Admins (
+    EmployeesID int(11) NOT NULL,
     Username varchar(255) NOT NULL,
     Password varchar(255) NOT NULL,
-		Foreign key (CustomerID) 
-			references Customers(CustomerNumber) 
-			on update CASCADE
-			on delete CASCADE
+		Foreign key (EmployeesID) 
+			references employees(employeeNumber)
+			on update CASCADE 
+			on delete cascade
 );
 
