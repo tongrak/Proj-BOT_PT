@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class UserMiddleware
 {
@@ -16,14 +17,16 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next)
     {   
-
-        if($request->session()->has('isAdmin')){
-            if($request->session()->get('isAdmin') == 0){
+        //if you are user
+        if(Session::has('isAdmin')){
+            if(Session::get('isAdmin') == 0){
                 return $next($request);
             }
         }
-        
-        return redirect('/home')->with('fail', 'You are not user.');
+        // if you are not user
+        else{
+            return redirect('test/home')->with('fail', 'You are not user.');
+        }
             
     }
 }
