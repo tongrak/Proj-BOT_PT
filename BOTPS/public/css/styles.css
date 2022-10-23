@@ -65,6 +65,10 @@ div {
 	border-radius: 15px;
 	border: 1px solid #ffffff;
 	background: rgba(81, 133, 236, 1);
+	top: 656px;
+	left: 696px;
+	position: absolute;
+	cursor: pointer;
 }
 
 #login_here {
