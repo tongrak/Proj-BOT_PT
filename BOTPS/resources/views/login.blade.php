@@ -53,7 +53,7 @@
                 Login
             </div>
 
-            <form method="post" action="{{ route('test.login') }}">
+            <form method="post" action="{{ route('login.perform') }}">
                 @csrf
                 <div id="username_login">
                     Username

@@ -67,35 +67,38 @@ class RegisterController extends Controller
     }
 
     public function register(RegisterRequest $request){
-        // $user = User::create($request->validated());
-        $request->validate();
         $newCustomer = new Customer;
-        $arrCustomerID = DB::table('customers')->select('customerNumber')->orderBy('customerNumber', 'desc')->first();
-        $customerID = ($arrCustomerID->customerNumber)+1;
-
-        $newCustomer->customerNumber = $customerID;
-        $newCustomer->customerName = $request->customername;
-        $newCustomer->contactLastName = $request->lastname;
-        $newCustomer->contactFirstName = $request->firstname;
-        $newCustomer->phone = $request->phone;
-        $newCustomer->addressLine1 = $request->addressLine1;
-        $newCustomer->addressLine2 = $request->addressLine2;
-        $newCustomer->city = $request->city;
-        $newCustomer->state = $request->state;
-        $newCustomer->postalCode = $request->postalCode;
-        $newCustomer->country = $request->country;
-        $newCustomer->salesRepEmployeeNumber = $request->salesRep;
-        $newCustomer->creditLimit = $request->creditLimit;
-        $newCustomer->timestamps=false;
-        $newCustomer->save();
-
         $newUser = new User;
-        $newUser->customerID = $customerID;
-        $newUser->username = $request->lastname;
-        $newUser->password = $request->customername;
-        $newUser->isAdmin = 0;
-        $newUser->timestamps=false;
-        $newUser->save();
+        
+        DB::transaction(function () use ($newCustomer,$newUser,$request) {
+            $arrCustomerID = DB::table('customers')->select('customerNumber')->orderBy('customerNumber', 'desc')->first();
+            $customerID = ($arrCustomerID->customerNumber)+1;
+    
+            $newCustomer->customerNumber = $customerID;
+            $newCustomer->customerName = $request->customerName;
+            $newCustomer->contactLastName = $request->contactLastName;
+            $newCustomer->contactFirstName = $request->contactFirstName;
+            $newCustomer->phone = $request->phone;
+            $newCustomer->addressLine1 = $request->addressLine1;
+            $newCustomer->addressLine2 = $request->addressLine2;
+            $newCustomer->city = $request->city;
+            $newCustomer->state = $request->state;
+            $newCustomer->postalCode = $request->postalCode;
+            $newCustomer->country = $request->country;
+            $newCustomer->timestamps=false;
+            $newCustomer->save();
+    
+            $newUser->customerID = $customerID;
+            $newUser->username = $request->contactLastName;
+            $newUser->password = $request->customerName;
+            $newUser->isAdmin = 0;
+            $newUser->timestamps=false;
+            $newUser->save();
+            
+            //if register success
+            $request->session()->put('login-id', $customerID);
+            $request->session()->put('isAdmin', 0);
+        });
         return redirect('/home')->with('success', 'Account successfully registered');
     }
 

@@ -23,15 +23,15 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'customerName' => 'required|min:8',
-            'contactLastName' => 'required|same:password',
+            'customerName' => 'required',
+            'contactLastName' => 'required',
             'contactFirstName' => 'required',
             'phone' => 'required',
             'addressLine1' => 'required',
             'addressLine2' => 'nullable',
             'city' => 'required',
-            'state' => 'required',
-            'postalCode' => 'required',
+            'state' => 'nullable',
+            'postalCode' => 'nullable',
             'country' => 'required',
         ];
     }

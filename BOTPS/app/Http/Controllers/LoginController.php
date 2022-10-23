@@ -20,7 +20,6 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request)
     {
-        // $request->validate();
         $user = DB::table('users')->select()->where([
             ['username', '=', $request->username],
             ['password', '=', $request->password]

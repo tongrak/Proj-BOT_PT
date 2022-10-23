@@ -54,7 +54,7 @@
         </div>
 
 
-        <form method="post" action="{{ route('test.register') }}">
+        <form method="post" action="{{ route('register.perform') }}">
             @csrf
             <div id="first_name">
                 First Name

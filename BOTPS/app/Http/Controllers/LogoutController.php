@@ -21,8 +21,8 @@ class LogoutController extends Controller
         // $request->session()->put('login-id', 0);
         Session::forget(['isAdmin', 'login-id']);
         // Session::put('login-id', 0);
-        $request->session()->flush();
+        // $request->session()->flush();
         Auth::logout();
-        return redirect('/test/login');
+        return redirect('/home');
     }
 }
