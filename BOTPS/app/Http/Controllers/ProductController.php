@@ -36,6 +36,11 @@ class ProductController extends Controller
         return view('Catalog', compact('products'));
     }
 
+    public function showByCategory($category){
+        $products = DB::table('products')->where('productLine','LIKE',$category)->get();
+        return view('Catalog', compact('products'));
+    }
+
     
 
 }

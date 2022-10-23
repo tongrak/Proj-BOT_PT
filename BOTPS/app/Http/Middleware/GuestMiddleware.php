@@ -3,7 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Contracts\Session\Session;
+// use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class GuestMiddleware
@@ -17,11 +18,13 @@ class GuestMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->session()->has('isAdmin')){
-            return redirect('/')->with('fail', 'You are already logged in.');
-        }
-        else{
+        //if you are guest
+        if(!Session::has('isAdmin')){
             return $next($request);
+        }
+        //if you are not guest
+        else{
+            return redirect('/home')->with('fail', 'You are already logged in.');
         }
     }
 }
