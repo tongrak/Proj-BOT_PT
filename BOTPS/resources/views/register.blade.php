@@ -88,7 +88,7 @@
                 Address Line 2
             </div>
             <div id="address2_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="addressLine2" required="required" size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="addressLine2"  size="45" autofocus>
             </div>
 
             <div id="phone">
@@ -109,14 +109,14 @@
                 State
             </div>
             <div id="state_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="state" required="required" size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="state"  size="45" autofocus>
             </div>
 
             <div id="postalcode">
                 PostalCode
             </div>
             <div id="postal_code_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="postalCode" required="required" size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="postalCode" size="45" autofocus>
             </div>
 
             <div id="country">
