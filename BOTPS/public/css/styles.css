@@ -316,6 +316,9 @@ div {
 }
 
 #login_log_border {
+	position: absolute;
+	top: 560px;
+	left: 359px;
 	width: 103px;
 	height: 46px;
 	-ms-border-radius: 15px;
@@ -325,6 +328,7 @@ div {
 	border-radius: 15px;
 	border: 1px solid #ffffff;
 	background:rgba(81,133,236,1);
+	cursor: pointer;
 }
 
 #sign_up {

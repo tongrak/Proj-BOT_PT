@@ -53,27 +53,29 @@
                 Login
             </div>
 
-            <div id="username_login">
-                Username
-            </div>
-            <div id="username_login_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
-            </div>
+            <form method="post" action="{{ route('test.login') }}">
+                @csrf
+                <div id="username_login">
+                    Username
+                </div>
+                <div id="username_login_form">
+                    <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
+                </div>
 
-            <div id="password_login">
-                Password
-            </div>
-            <div id="password_login_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="password" required="required" size="45" autofocus>
-            </div>
+                <div id="password_login">
+                    Password
+                </div>
+                <div id="password_login_form">
+                    <input style="height:31px; font-size:15px" type="text" class="form-control" name="password" required="required" size="45" autofocus>
+                </div>
 
-            <a id="login_log_frame"  _par="" href="home" >
-                <div id="login_log_border"></div>
-				<div id="login_log_btn" >
-					Login
-				</div>
-
-			</a>
+                <button id="login_log_border" type="submit">
+                    <div id="login_log_btn">
+                        Login
+                    </div>
+                </button>
+                
+            </form>
 
         </div>
 
