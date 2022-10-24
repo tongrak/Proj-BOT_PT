@@ -23,6 +23,11 @@ div {
 	position: absolute;
 }
 
+@font-face {
+	font-family: Dosis;
+	src: url(https://fonts.google.com/specimen/Dosis);
+  }
+
 #content-container {
 	display: block;
 	position: relative;
@@ -90,7 +95,7 @@ div {
 	width: 112px;
 	height: 56px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 30px;
 	text-align: left;
 	color:#000000;
@@ -125,7 +130,7 @@ div {
 	width: 326.5px;
 	height: 47.5px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 25px;
 	text-align: left;
 	color:#0019FF;
@@ -167,7 +172,7 @@ div {
 	width: 163px;
 	height: 36px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 20px;
 	text-align: left;
 	color: #FFFFFF;
@@ -184,12 +189,12 @@ div {
 
 
 #ps_bot_shop {
-	top: 18px;
+	top: 15px;
 	left: 78px;
 	width: 82px;
 	height: 62px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 20px;
 	text-align: center;
 	color: #5185EC;
@@ -205,11 +210,11 @@ div {
 
 #home_btn {
 	top: 10px;
-	left: 25px;
+	left: 32px;
 	width: 81px;
 	height: 38px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 20px;
 	text-align: left;
 	color: #FFFFFF;
@@ -257,11 +262,11 @@ div {
 
 #already_have_an_account_ {
 	top: 735px;
-	left: 577px;
+	left: 620px;
 	width: 402px;
 	height: 56px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 30px;
 	text-align: left;
 	color: #000000;
@@ -273,7 +278,7 @@ div {
 	width: 368px;
 	height: 56px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 30px;
 	text-align: left;
 	color:#000000;
@@ -289,11 +294,11 @@ div {
 
 #login_btn {
 	top: 11.5px;
-	left: 150px;
+	left: 160px;
 	width: 153.5px;
 	height: 47.5px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 25px;
 	text-align: left;
 	color: #0019FF;
@@ -313,7 +318,7 @@ div {
 	width: 76px;
 	height: 38px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 20px;
 	text-align: left;
 	color:#FFFFFF;
@@ -337,11 +342,11 @@ div {
 
 #sign_up {
 	top: 138px;
-	left: 703px;
+	left: 715px;
 	width: 149px;
 	height: 56px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 30px;
 	text-align: left;
 	color: #000000;
@@ -457,12 +462,12 @@ div {
 }
 
 #sign_up_btn {
-	top: 10px;
-	left: 25px;
+	top: 9px;
+	left: 33px;
 	width: 101px;
 	height: 38px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 20px;
 	text-align: left;
 	color: #FFFFFF;
@@ -474,7 +479,7 @@ div {
 	left: 293px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -486,7 +491,7 @@ div {
 	left: 293px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -498,7 +503,7 @@ div {
 	width: 149.5px;
 	height: 47.5px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 25px;
 	text-align: left;
 	color:#000000;
@@ -510,7 +515,7 @@ div {
 	left: 293px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -522,7 +527,7 @@ div {
 	left: 293px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -534,7 +539,7 @@ div {
 	width: 143.5px;
 	height: 47.5px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 25px;
 	text-align: left;
 	color:#000000;
@@ -546,7 +551,7 @@ div {
 	left: 293px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -559,7 +564,7 @@ div {
 	width: 91px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -572,7 +577,7 @@ div {
 	width: 55px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -585,7 +590,7 @@ div {
 	width: 68px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -598,7 +603,7 @@ div {
 	width: 118px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -611,7 +616,7 @@ div {
 	width: 90px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;

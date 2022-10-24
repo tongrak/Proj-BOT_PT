@@ -60,28 +60,28 @@
                 First Name
             </div>
             <div id="first_name_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="contactFirstName" required="required" size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="contactFirstName" required="required" placeholder="required" size="45" autofocus>
             </div>
 
             <div id="last_name">
                 Last Name (used for username)
             </div>
             <div id="last_name_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="contactLastName" required="required" size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="contactLastName" required="required" placeholder="required" size="45" autofocus>
             </div>
 
             <div id="cop_name">
                 Corporation Name (used for password)
             </div>
             <div id="cop_name_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="customerName" required="required" size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="customerName" required="required" placeholder="required" size="45" autofocus>
             </div>
 
             <div id="address1">
                 Address Line 1
             </div>
             <div id="address1_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="addressLine1" required="required" size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="addressLine1" required="required" placeholder="required" size="45" autofocus>
             </div>
 
             <div id="address2">
@@ -95,14 +95,14 @@
                 Phone
             </div>
             <div id="phone_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="phone" required="required" size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="phone" required="required" placeholder="required" size="45" autofocus>
             </div>
 
             <div id="city">
                 City
             </div>
             <div id="city_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="city" required="required" size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="city" required="required" placeholder="required" size="45" autofocus>
             </div>
 
             <div id="state">
@@ -123,7 +123,7 @@
                 Country
             </div>
             <div id="country_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="country" required="required" size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="country" required="required" placeholder="required" size="45" autofocus>
             </div>
 
             <button id="sign_up_btn_border" type="submit">
