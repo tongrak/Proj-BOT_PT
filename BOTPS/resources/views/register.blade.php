@@ -27,11 +27,7 @@
             </div>
 
             <a id="home_btn_frame" _par="" href="home">
-                <div id="Home_btn_border"></div>
-                <div id="home_btn">
                     Home
-                </div>
-
             </a>
             <img src="skins/logo_1.png" id="logo_header" />
             <img src="skins/logo_2.png" id="logo_foot" />

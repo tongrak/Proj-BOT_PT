@@ -48,18 +48,6 @@ div {
 	background: rgba(255, 255, 255, 1);
 }
 
-#Home_btn_border {
-	width: 108px;
-	height: 46px;
-	-ms-border-radius: 15px;
-	-o-border-radius: 15px;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
-	border: 1px solid #ffffff;
-	background: rgba(81, 133, 236, 1);
-}
-
 #sign_up_btn_border {
 	width: 128px;
 	height: 46px;
@@ -105,9 +93,31 @@ div {
 	top: 459px;
 	left: 947px;
 	width: 333px;
-	height: 53px;
+	height: 48px;
 	position: absolute;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #001aff;
+	background:rgba(255,255,255,1);
+
+	overflow: hidden;
+	font-family: Dosis;
+	font-size: 25px;
+	text-align: center;
+	color:#0019FF;
+	text-decoration: none;
+	padding-top: 10px;
 }
+
+#create_account_frame:hover {
+	background-color: rgba(81, 133, 236, 1);;
+	border: #ffffff;
+	color: white;
+}
+
 
 #create_account_border {
 	/* top: 459px;
@@ -121,19 +131,6 @@ div {
 	border-radius: 15px;
 	border: 1px solid #001aff;
 	background:rgba(255,255,255,1);
-}
-
-
-#create_account_btn {
-	top: 11.5px;
-	left: 50px;
-	width: 326.5px;
-	height: 47.5px;
-	overflow: hidden;
-	font-family: Dosis;
-	font-size: 25px;
-	text-align: left;
-	color:#0019FF;
 }
 
 #master_of_all_page {
@@ -203,21 +200,30 @@ div {
 #home_btn_frame {
 	top: 21px;
 	left: 224px;
-	width: 106px;
-	height: 44px;
 	position: absolute;
-}
 
-#home_btn {
-	top: 10px;
-	left: 32px;
-	width: 81px;
-	height: 38px;
+	width: 108px;
+	height: 37px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #ffffff;
+	background: rgba(81, 133, 236, 1);
+
 	overflow: hidden;
 	font-family: Dosis;
 	font-size: 20px;
-	text-align: left;
+	text-align: center;
 	color: #FFFFFF;
+	text-decoration: none;
+	padding-top: 8px;
+}
+
+#home_btn_frame:hover {
+	background-color: white;
+  	color: #5185EC;
 }
 
 
@@ -304,25 +310,6 @@ div {
 	color: #0019FF;
 }
 
-#login_log_frame {
-	top: 560px;
-	left: 359px;
-	width: 101px;
-	height: 44px;
-	position: absolute;
-}
-
-#login_log_btn {
-	top: 8px;
-	left: 30px;
-	width: 76px;
-	height: 38px;
-	overflow: hidden;
-	font-family: Dosis;
-	font-size: 20px;
-	text-align: left;
-	color:#FFFFFF;
-}
 
 #login_log_border {
 	position: absolute;
@@ -338,6 +325,17 @@ div {
 	border: 1px solid #ffffff;
 	background:rgba(81,133,236,1);
 	cursor: pointer;
+
+	overflow: hidden;
+	font-family: Dosis;
+	font-size: 20px;
+	text-align: center;
+	color:#FFFFFF;
+}
+
+#login_log_border:hover {
+	background-color: #4CAF50;
+  	color: black;
 }
 
 #sign_up {
