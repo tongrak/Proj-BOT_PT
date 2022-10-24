@@ -91,7 +91,7 @@ div {
 
 #login {
 	top: 265px;
-	left: 371px;
+	left: 380px;
 	width: 112px;
 	height: 56px;
 	overflow: hidden;
@@ -126,7 +126,7 @@ div {
 
 #create_account_btn {
 	top: 11.5px;
-	left: 18.5px;
+	left: 50px;
 	width: 326.5px;
 	height: 47.5px;
 	overflow: hidden;
@@ -274,7 +274,7 @@ div {
 
 #don_t_have_an_account_ {
 	top: 265px;
-	left: 947px;
+	left: 980px;
 	width: 368px;
 	height: 56px;
 	overflow: hidden;
@@ -313,8 +313,8 @@ div {
 }
 
 #login_log_btn {
-	top: 10px;
-	left: 25px;
+	top: 8px;
+	left: 30px;
 	width: 76px;
 	height: 38px;
 	overflow: hidden;
