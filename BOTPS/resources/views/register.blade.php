@@ -27,7 +27,7 @@
             </div>
 
             <a id="home_btn_frame" _par="" href="home">
-                    Home
+                Home
             </a>
             <img src="skins/logo_1.png" id="logo_header" />
             <img src="skins/logo_2.png" id="logo_foot" />
@@ -39,10 +39,7 @@
         </div>
 
         <a id="login_btn_frame" _par="" href="login">
-            <div id="login_here"></div>
-            <div id="login_btn">
-                Login here
-            </div>
+            Login here
         </a>
 
         <div id="sign_up">
@@ -84,7 +81,7 @@
                 Address Line 2
             </div>
             <div id="address2_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="addressLine2"  size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="addressLine2" size="45" autofocus>
             </div>
 
             <div id="phone">
@@ -105,7 +102,7 @@
                 State
             </div>
             <div id="state_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="state"  size="45" autofocus>
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="state" size="45" autofocus>
             </div>
 
             <div id="postalcode">
@@ -123,9 +120,7 @@
             </div>
 
             <button id="sign_up_btn_border" type="submit">
-                <div id="sign_up_btn">
-                    Sign-up
-                </div>
+                Sign-up
             </button>
         </form>
 

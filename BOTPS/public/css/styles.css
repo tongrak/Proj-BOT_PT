@@ -26,7 +26,7 @@ div {
 @font-face {
 	font-family: Dosis;
 	src: url(https://fonts.google.com/specimen/Dosis);
-  }
+}
 
 #content-container {
 	display: block;
@@ -62,19 +62,19 @@ div {
 	left: 696px;
 	position: absolute;
 	cursor: pointer;
+
+	overflow: hidden;
+	font-family: Dosis;
+	font-size: 20px;
+	text-align: center;
+	color: #FFFFFF;
+	text-decoration: none;
+	transition: 0.3s;
 }
 
-#login_here {
-	left: 45px;
-	width: 330px;
-	height: 55px;
-	-ms-border-radius: 15px;
-	-o-border-radius: 15px;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
-	border: 1px solid #001aff;
-	background: rgba(255, 255, 255, 1);
+#sign_up_btn_border:hover {
+	background-color: #4CAF50;
+	color: black;
 }
 
 #login {
@@ -86,7 +86,7 @@ div {
 	font-family: Dosis;
 	font-size: 30px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 #create_account_frame {
@@ -101,19 +101,20 @@ div {
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	border: 1px solid #001aff;
-	background:rgba(255,255,255,1);
+	background: rgba(255, 255, 255, 1);
 
 	overflow: hidden;
 	font-family: Dosis;
 	font-size: 25px;
 	text-align: center;
-	color:#0019FF;
+	color: #0019FF;
 	text-decoration: none;
 	padding-top: 10px;
+	transition: 0.3s;
 }
 
 #create_account_frame:hover {
-	background-color: rgba(81, 133, 236, 1);;
+	background-color: rgba(81, 133, 236, 1);
 	border: #ffffff;
 	color: white;
 }
@@ -130,7 +131,7 @@ div {
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	border: 1px solid #001aff;
-	background:rgba(255,255,255,1);
+	background: rgba(255, 255, 255, 1);
 }
 
 #master_of_all_page {
@@ -219,11 +220,12 @@ div {
 	color: #FFFFFF;
 	text-decoration: none;
 	padding-top: 8px;
+	transition: 0.3s;
 }
 
 #home_btn_frame:hover {
 	background-color: white;
-  	color: #5185EC;
+	color: #5185EC;
 }
 
 
@@ -256,13 +258,13 @@ div {
 	left: 463px;
 	width: 596px;
 	height: 1px;
- 
-	-ms-transform:rotate(89.9deg);
-	-o-transform:rotate(89.9deg);
-	-webkit-transform:rotate(89.9deg);
-	-moz-transform:rotate(89.9deg);
-	transform:rotate(89.9deg);
-	background:#000000;
+
+	-ms-transform: rotate(89.9deg);
+	-o-transform: rotate(89.9deg);
+	-webkit-transform: rotate(89.9deg);
+	-moz-transform: rotate(89.9deg);
+	transform: rotate(89.9deg);
+	background: #000000;
 }
 
 
@@ -287,29 +289,39 @@ div {
 	font-family: Dosis;
 	font-size: 30px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 #login_btn_frame {
 	top: 805px;
-	left: 552px;
+	left: 597px;
 	width: 333px;
-	height: 53px;
+	height: 44px;
 	position: absolute;
-}
 
-#login_btn {
-	top: 11.5px;
-	left: 160px;
-	width: 153.5px;
-	height: 47.5px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #001aff;
+	background: rgba(255, 255, 255, 1);
+
 	overflow: hidden;
 	font-family: Dosis;
 	font-size: 25px;
-	text-align: left;
+	text-align: center;
 	color: #0019FF;
+	text-decoration: none;
+	padding-top: 9px;
+	transition: 0.3s;
 }
 
+#login_btn_frame:hover {
+	background-color: rgba(81, 133, 236, 1);
+	border: #ffffff;
+	color: white;
+}
 
 #login_log_border {
 	position: absolute;
@@ -323,19 +335,20 @@ div {
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	border: 1px solid #ffffff;
-	background:rgba(81,133,236,1);
+	background: rgba(81, 133, 236, 1);
 	cursor: pointer;
 
 	overflow: hidden;
 	font-family: Dosis;
 	font-size: 20px;
 	text-align: center;
-	color:#FFFFFF;
+	color: #FFFFFF;
+	transition: 0.3s;
 }
 
 #login_log_border:hover {
 	background-color: #4CAF50;
-  	color: black;
+	color: black;
 }
 
 #sign_up {
@@ -504,7 +517,7 @@ div {
 	font-family: Dosis;
 	font-size: 25px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
@@ -540,7 +553,7 @@ div {
 	font-family: Dosis;
 	font-size: 25px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
