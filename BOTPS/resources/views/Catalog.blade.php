@@ -23,7 +23,8 @@
         @foreach($products as $product)
         <div class="bg-gray-700">
             <h4>Name: {{$product->productName}}</h4>
-            <p>Code: {{$product -> productCode}}</p>
+            <p>Description: {{$product -> productDescription}}</p>
+            <a href="{{route('add.to.cart', $product->productCode)}}">add to cart</a>
         </div>
         @endforeach
     </div>

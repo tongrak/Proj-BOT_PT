@@ -9,6 +9,7 @@ class Product extends Model
 {
 
     protected $table = 'products';
+    protected $primaryKey = 'productCode';
 
     // use HasFactory;
     protected $fillable = [
@@ -22,4 +23,6 @@ class Product extends Model
         'buyPrice',
         'MSRP'
     ];
+
+    public $timestamps = false;
 }
