@@ -36,37 +36,45 @@
         <div class="m-5 py-2">
             <row>
                 <col>
-                Classic cars |
+                <button>Classic cars</button> |
                 </col>
                 <col>
-                Motorcycles |
+                <button>Motorcycles</button> |
                 </col>
                 <col>
-                Plains |
+                <button>Plains</button> |
                 </col>
                 <col>
-                Ships
+                <button>Ships</button>
                 </col>
             </row>
         </div>
         <div class="m-5 py-2 grid-flow-row auto-rows-max">
             <row>
                 <col>
-                Trains |
+                <button>Trains</button> |
                 </col>
                 <col>
-                Trucks & Buses |
+                <button>Trucks & Buses</button> |
                 </col>
                 <col>
-                Vintage cars |
+                <button>Vintage cars</button>
                 </col>
-                <col>
-                More
-                </col>
+
             </row>
         </div>
     </div>
+    <div class="m-5 py-2 grid-flow-row auto-rows-max">
+        @foreach($products as $product)
+        <div class="bg-gray-700">
+            <h4>{{$product->productName}}</h4>
+            <p>----------------------------------</p>
+
+        </div>
+        @endforeach
     </div>
+    </div>
+
 
 
 </body>
