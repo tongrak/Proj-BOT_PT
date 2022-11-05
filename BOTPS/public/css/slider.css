@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Nunito:ital,wght@1,200&family=Prompt&display=swap');
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #848d91;
+}
+
+.container:hover .overlay {
+    opacity: 70%;
+}
+
+.container {
+    position: relative;
+    width: 50%;
+}
+
+.textA {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.fontA {
+    font-family: "dosis";
+}
+
+.slick-prev {
+    background-position: 0px;
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    display: block;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    z-index: 100;
+}
+
+.slick-next {
+    background-position: 0px;
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    top: 30%;
+    right: 0;
+    display: block;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    z-index: 100;
+}
+
+
+.slick-prev:before,
+.slick-next:before {
+    font-family: FontAwesome;
+    font-size: 40px;
+    line-height: 1;
+    color: rgb(99, 94, 94);
+    opacity: 0.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev:before {
+    content: "\f053";
+}
+
+[dir="rtl"] .slick-prev:before {
+    content: "\f054";
+}
+
+[dir="rtl"] .slick-next {
+    left: -10px;
+    top: 70px;
+    right: auto;
+}
+
+.slick-next:before {
+    content: "\f054";
+}
+
+[dir="rtl"] .slick-next:before {
+    content: "\f053";
+}
+
+
+
+@media only screen and (max-width: 1180px) {
+    .carousel {
+        width: 90%;
+    }
+}

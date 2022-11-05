@@ -3,26 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\DB;
 
 class CommissionController extends Controller
 {
-    public function show(){
-        // return view('commission')
+    public function customerConfirm(){
+        if (!Session::has('login-id')) return view('login');
+        $cusId = Session::get('login-id');
+        $cart = DB::table('carts')->where('customerNumber','Like',$cusId)->first();
+        $cart->custoConfirm = true;
+        $cart->save();
+        return redirect()->back()->with('success', 'cart have been confirm');
     }
 
-    public function confirm($id){
-        $carts = DB::select('
-            select *
-            from carts
-            customerNumber like ' + $id
-        );
-        $cart = $carts[0];
-        $cart->confirmation = true;
-        return redirect("/cart")->with('success', 'cart have been confirm');
+    public function salerepConfirm($cartID){
+        $cart = DB::table('carts')->where('cartNumber','Like',$cartID)->first();
+        $cart->salerepNumber = true;
+        $cart->save();
+        return view('Home')->with('success', 'cart have been confirm');
+
     }
-
-    // public function endComm($id){
-
-    // }
 }

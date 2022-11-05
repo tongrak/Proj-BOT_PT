@@ -67,9 +67,8 @@
     <div class="m-5 py-2 grid-flow-row auto-rows-max">
         @foreach($products as $product)
         <div class="bg-gray-700">
-            <h4>{{$product->productName}}</h4>
-            <p>----------------------------------</p>
-
+            <h4>Name: {{$product->productName}}</h4>
+            <p>Code: {{$product -> productCode}}</p>
         </div>
         @endforeach
     </div>

@@ -14,10 +14,15 @@ class LogoutController extends Controller
      *
      * @return \Illuminate\Routing\Redirector
      */
-    public function perform()
+    public function perform(Request $request)
     {
         Session::flush();
+        // $request->session()->forget(['isAdmin', 'login-id']);
+        // $request->session()->put('login-id', 0);
+        Session::forget(['isAdmin', 'login-id']);
+        // Session::put('login-id', 0);
+        // $request->session()->flush();
         Auth::logout();
-        return redirect('/test/home');
+        return redirect('/home');
     }
 }

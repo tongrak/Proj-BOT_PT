@@ -10,9 +10,11 @@ class Cart extends Model
     // use HasFactory;
     protected $fillable = [
         'customerNumber',
-        'productNumber',
-        'quantity',
-        'pricePerUnit',
-        'confirmation'
+        'cartNumber',
+        'custoConfirm',
+        'saleConfirm',
+        'salerepNumber'
     ];
+
+    public $timestamps = false;
 }

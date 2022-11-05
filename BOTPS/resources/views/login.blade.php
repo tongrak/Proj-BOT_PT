@@ -27,11 +27,7 @@
             </div>
 
             <a id="home_btn_frame" _par="" href="home">
-                <div id="Home_btn_border"></div>
-                <div id="home_btn">
-                    Home
-                </div>
-
+                Home
             </a>
             <img src="skins/logo_1.png" id="logo_header" />
             <img src="skins/logo_2.png" id="logo_foot" />
@@ -43,37 +39,34 @@
             </div>
 
             <a id="create_account_frame" _par="" href="register">
-                <div id="create_account_border"></div>
-                <div id="create_account_btn">
-                    Create your account here
-                </div>
+                Create your account here
             </a>
 
             <div id="login">
                 Login
             </div>
 
-            <div id="username_login">
-                Username
-            </div>
-            <div id="username_login_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
-            </div>
+            <form method="post" action="{{ route('login.perform') }}">
+                @csrf
+                <div id="username_login">
+                    Username
+                </div>
+                <div id="username_login_form">
+                    <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
+                </div>
 
-            <div id="password_login">
-                Password
-            </div>
-            <div id="password_login_form">
-                <input style="height:31px; font-size:15px" type="text" class="form-control" name="password" required="required" size="45" autofocus>
-            </div>
+                <div id="password_login">
+                    Password
+                </div>
+                <div id="password_login_form">
+                    <input style="height:31px; font-size:15px" type="text" class="form-control" name="password" required="required" size="45" autofocus>
+                </div>
 
-            <a id="login_log_frame"  _par="" href="undefined" >
-                <div id="login_log_border"></div>
-				<div id="login_log_btn" >
-					Login
-				</div>
+                <button id="login_log_border" type="submit">
+                        Login
+                </button>
 
-			</a>
+            </form>
 
         </div>
 

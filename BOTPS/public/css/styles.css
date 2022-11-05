@@ -23,6 +23,11 @@ div {
 	position: absolute;
 }
 
+@font-face {
+	font-family: Dosis;
+	src: url(https://fonts.google.com/specimen/Dosis);
+}
+
 #content-container {
 	display: block;
 	position: relative;
@@ -43,18 +48,6 @@ div {
 	background: rgba(255, 255, 255, 1);
 }
 
-#Home_btn_border {
-	width: 108px;
-	height: 46px;
-	-ms-border-radius: 15px;
-	-o-border-radius: 15px;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
-	border: 1px solid #ffffff;
-	background: rgba(81, 133, 236, 1);
-}
-
 #sign_up_btn_border {
 	width: 128px;
 	height: 46px;
@@ -65,12 +58,43 @@ div {
 	border-radius: 15px;
 	border: 1px solid #ffffff;
 	background: rgba(81, 133, 236, 1);
+	top: 656px;
+	left: 696px;
+	position: absolute;
+	cursor: pointer;
+
+	overflow: hidden;
+	font-family: Dosis;
+	font-size: 20px;
+	text-align: center;
+	color: #FFFFFF;
+	text-decoration: none;
+	transition: 0.3s;
 }
 
-#login_here {
-	left: 45px;
-	width: 330px;
-	height: 55px;
+#sign_up_btn_border:hover {
+	background-color: #4CAF50;
+	color: black;
+}
+
+#login {
+	top: 265px;
+	left: 380px;
+	width: 112px;
+	height: 56px;
+	overflow: hidden;
+	font-family: Dosis;
+	font-size: 30px;
+	text-align: left;
+	color: #000000;
+}
+
+#create_account_frame {
+	top: 459px;
+	left: 947px;
+	width: 333px;
+	height: 48px;
+	position: absolute;
 	-ms-border-radius: 15px;
 	-o-border-radius: 15px;
 	-moz-border-radius: 15px;
@@ -78,27 +102,23 @@ div {
 	border-radius: 15px;
 	border: 1px solid #001aff;
 	background: rgba(255, 255, 255, 1);
-}
 
-#login {
-	top: 265px;
-	left: 371px;
-	width: 112px;
-	height: 56px;
 	overflow: hidden;
-	font-family: ABeeZee;
-	font-size: 30px;
-	text-align: left;
-	color:#000000;
+	font-family: Dosis;
+	font-size: 25px;
+	text-align: center;
+	color: #0019FF;
+	text-decoration: none;
+	padding-top: 10px;
+	transition: 0.3s;
 }
 
-#create_account_frame {
-	top: 459px;
-	left: 947px;
-	width: 333px;
-	height: 53px;
-	position: absolute;
+#create_account_frame:hover {
+	background-color: rgba(81, 133, 236, 1);
+	border: #ffffff;
+	color: white;
 }
+
 
 #create_account_border {
 	/* top: 459px;
@@ -111,20 +131,7 @@ div {
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	border: 1px solid #001aff;
-	background:rgba(255,255,255,1);
-}
-
-
-#create_account_btn {
-	top: 11.5px;
-	left: 18.5px;
-	width: 326.5px;
-	height: 47.5px;
-	overflow: hidden;
-	font-family: ABeeZee;
-	font-size: 25px;
-	text-align: left;
-	color:#0019FF;
+	background: rgba(255, 255, 255, 1);
 }
 
 #master_of_all_page {
@@ -163,7 +170,7 @@ div {
 	width: 163px;
 	height: 36px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 20px;
 	text-align: left;
 	color: #FFFFFF;
@@ -180,12 +187,12 @@ div {
 
 
 #ps_bot_shop {
-	top: 18px;
+	top: 15px;
 	left: 78px;
 	width: 82px;
 	height: 62px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 20px;
 	text-align: center;
 	color: #5185EC;
@@ -194,21 +201,31 @@ div {
 #home_btn_frame {
 	top: 21px;
 	left: 224px;
-	width: 106px;
-	height: 44px;
 	position: absolute;
+
+	width: 108px;
+	height: 37px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #ffffff;
+	background: rgba(81, 133, 236, 1);
+
+	overflow: hidden;
+	font-family: Dosis;
+	font-size: 20px;
+	text-align: center;
+	color: #FFFFFF;
+	text-decoration: none;
+	padding-top: 8px;
+	transition: 0.3s;
 }
 
-#home_btn {
-	top: 10px;
-	left: 25px;
-	width: 81px;
-	height: 38px;
-	overflow: hidden;
-	font-family: ABeeZee;
-	font-size: 20px;
-	text-align: left;
-	color: #FFFFFF;
+#home_btn_frame:hover {
+	background-color: white;
+	color: #5185EC;
 }
 
 
@@ -241,23 +258,23 @@ div {
 	left: 463px;
 	width: 596px;
 	height: 1px;
- 
-	-ms-transform:rotate(89.9deg);
-	-o-transform:rotate(89.9deg);
-	-webkit-transform:rotate(89.9deg);
-	-moz-transform:rotate(89.9deg);
-	transform:rotate(89.9deg);
-	background:#000000;
+
+	-ms-transform: rotate(89.9deg);
+	-o-transform: rotate(89.9deg);
+	-webkit-transform: rotate(89.9deg);
+	-moz-transform: rotate(89.9deg);
+	transform: rotate(89.9deg);
+	background: #000000;
 }
 
 
 #already_have_an_account_ {
 	top: 735px;
-	left: 577px;
+	left: 620px;
 	width: 402px;
 	height: 56px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 30px;
 	text-align: left;
 	color: #000000;
@@ -265,57 +282,51 @@ div {
 
 #don_t_have_an_account_ {
 	top: 265px;
-	left: 947px;
+	left: 980px;
 	width: 368px;
 	height: 56px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 30px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 #login_btn_frame {
 	top: 805px;
-	left: 552px;
+	left: 597px;
 	width: 333px;
-	height: 53px;
-	position: absolute;
-}
-
-#login_btn {
-	top: 11.5px;
-	left: 150px;
-	width: 153.5px;
-	height: 47.5px;
-	overflow: hidden;
-	font-family: ABeeZee;
-	font-size: 25px;
-	text-align: left;
-	color: #0019FF;
-}
-
-#login_log_frame {
-	top: 560px;
-	left: 359px;
-	width: 101px;
 	height: 44px;
 	position: absolute;
+
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	border: 1px solid #001aff;
+	background: rgba(255, 255, 255, 1);
+
+	overflow: hidden;
+	font-family: Dosis;
+	font-size: 25px;
+	text-align: center;
+	color: #0019FF;
+	text-decoration: none;
+	padding-top: 9px;
+	transition: 0.3s;
 }
 
-#login_log_btn {
-	top: 10px;
-	left: 25px;
-	width: 76px;
-	height: 38px;
-	overflow: hidden;
-	font-family: ABeeZee;
-	font-size: 20px;
-	text-align: left;
-	color:#FFFFFF;
+#login_btn_frame:hover {
+	background-color: rgba(81, 133, 236, 1);
+	border: #ffffff;
+	color: white;
 }
 
 #login_log_border {
+	position: absolute;
+	top: 560px;
+	left: 359px;
 	width: 103px;
 	height: 46px;
 	-ms-border-radius: 15px;
@@ -324,23 +335,36 @@ div {
 	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	border: 1px solid #ffffff;
-	background:rgba(81,133,236,1);
+	background: rgba(81, 133, 236, 1);
+	cursor: pointer;
+
+	overflow: hidden;
+	font-family: Dosis;
+	font-size: 20px;
+	text-align: center;
+	color: #FFFFFF;
+	transition: 0.3s;
+}
+
+#login_log_border:hover {
+	background-color: #4CAF50;
+	color: black;
 }
 
 #sign_up {
 	top: 138px;
-	left: 703px;
+	left: 715px;
 	width: 149px;
 	height: 56px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 30px;
 	text-align: left;
 	color: #000000;
 }
 
 
-#first_name_form {
+#cop_name_form {
 	top: 371px;
 	left: 293px;
 	width: 374px;
@@ -349,7 +373,7 @@ div {
 }
 
 
-#username_form {
+#first_name_form {
 	top: 236px;
 	left: 293px;
 	width: 374px;
@@ -365,7 +389,7 @@ div {
 }
 
 
-#last_name_form {
+#address1_form {
 	top: 448px;
 	left: 293px;
 	width: 374px;
@@ -373,7 +397,7 @@ div {
 }
 
 
-#password_form {
+#last_name_form {
 	top: 305px;
 	left: 293px;
 	width: 374px;
@@ -388,7 +412,7 @@ div {
 }
 
 
-#phone_form {
+#address2_form {
 	top: 522px;
 	left: 293px;
 	width: 374px;
@@ -397,7 +421,7 @@ div {
 }
 
 
-#address_form {
+#phone_form {
 	top: 234px;
 	left: 850px;
 	width: 374px;
@@ -445,41 +469,40 @@ div {
 	width: 126px;
 	height: 44px;
 	position: absolute;
+	cursor: pointer;
 }
 
 #sign_up_btn {
-	top: 10px;
-	left: 25px;
+	top: 9px;
+	left: 33px;
 	width: 101px;
 	height: 38px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 20px;
 	text-align: left;
 	color: #FFFFFF;
 }
 
 
-#first_name {
+#cop_name {
 	top: 348px;
 	left: 293px;
-	width: 115px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
 }
 
 
-#username {
+#first_name {
 	top: 213px;
 	left: 293px;
-	width: 109px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -491,33 +514,31 @@ div {
 	width: 149.5px;
 	height: 47.5px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 25px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
-#last_name {
+#address1 {
 	top: 422px;
 	left: 293px;
-	width: 115px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
 }
 
 
-#password {
+#last_name {
 	top: 279px;
 	left: 293px;
-	width: 105px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -529,33 +550,32 @@ div {
 	width: 143.5px;
 	height: 47.5px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 25px;
 	text-align: left;
-	color:#000000;
+	color: #000000;
 }
 
 
-#phone {
+#address2 {
 	top: 499px;
 	left: 293px;
-	width: 76px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
 }
 
 
-#address {
+#phone {
 	top: 213px;
 	left: 850px;
 	width: 91px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -568,7 +588,7 @@ div {
 	width: 55px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -581,7 +601,7 @@ div {
 	width: 68px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -594,7 +614,7 @@ div {
 	width: 118px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;
@@ -607,7 +627,7 @@ div {
 	width: 90px;
 	height: 34px;
 	overflow: hidden;
-	font-family: ABeeZee;
+	font-family: Dosis;
 	font-size: 18px;
 	text-align: left;
 	color: #000000;

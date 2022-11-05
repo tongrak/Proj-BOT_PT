@@ -27,11 +27,7 @@
             </div>
 
             <a id="home_btn_frame" _par="" href="home">
-                <div id="Home_btn_border"></div>
-                <div id="home_btn">
-                    Home
-                </div>
-
+                Home
             </a>
             <img src="skins/logo_1.png" id="logo_header" />
             <img src="skins/logo_2.png" id="logo_foot" />
@@ -43,10 +39,7 @@
         </div>
 
         <a id="login_btn_frame" _par="" href="login">
-            <div id="login_here"></div>
-            <div id="login_btn">
-                Login here
-            </div>
+            Login here
         </a>
 
         <div id="sign_up">
@@ -54,82 +47,82 @@
         </div>
 
 
-        <div id="username">
-            Username
-        </div>
-        <div id="username_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="username" required="required" size="45" autofocus>
-        </div>
-
-        <div id="password">
-            Password
-        </div>
-        <div id="password_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="password" required="required" size="45" autofocus>
-        </div>
-
-        <div id="first_name">
-            First Name
-        </div>
-        <div id="first_name_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="firstname" required="required" size="45" autofocus>
-        </div>
-
-        <div id="last_name">
-            Last Name
-        </div>
-        <div id="last_name_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="lastname" required="required" size="45" autofocus>
-        </div>
-
-        <div id="phone">
-            Phone
-        </div>
-        <div id="phone_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="phone" required="required" size="45" autofocus>
-        </div>
-
-        <a id="sign_up_btn_frame" _par="" href="register">
-            <div id="sign_up_btn_border"></div>
-            <div id="sign_up_btn">
-                Sign-up
+        <form method="post" action="{{ route('register.perform') }}">
+            @csrf
+            <div id="first_name">
+                First Name
             </div>
-        </a>
+            <div id="first_name_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="contactFirstName" required="required" placeholder="required" size="45" autofocus>
+            </div>
 
-        <div id="address">
-            Address
-        </div>
-        <div id="address_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="address" required="required" size="45" autofocus>
-        </div>
+            <div id="last_name">
+                Last Name (used for username)
+            </div>
+            <div id="last_name_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="contactLastName" required="required" placeholder="required" size="45" autofocus>
+            </div>
 
-        <div id="city">
-            City
-        </div>
-        <div id="city_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="city" required="required" size="45" autofocus>
-        </div>
+            <div id="cop_name">
+                Corporation Name (used for password)
+            </div>
+            <div id="cop_name_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="customerName" required="required" placeholder="required" size="45" autofocus>
+            </div>
 
-        <div id="state">
-            State
-        </div>
-        <div id="state_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="state" required="required" size="45" autofocus>
-        </div>
+            <div id="address1">
+                Address Line 1
+            </div>
+            <div id="address1_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="addressLine1" required="required" placeholder="required" size="45" autofocus>
+            </div>
 
-        <div id="postalcode">
-            PostalCode
-        </div>
-        <div id="postal_code_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="postal" required="required" size="45" autofocus>
-        </div>
+            <div id="address2">
+                Address Line 2
+            </div>
+            <div id="address2_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="addressLine2" size="45" autofocus>
+            </div>
 
-        <div id="country">
-            Country
-        </div>
-        <div id="country_form">
-            <input style="height:31px; font-size:15px" type="text" class="form-control" name="country" required="required" size="45" autofocus>
-        </div>
+            <div id="phone">
+                Phone
+            </div>
+            <div id="phone_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="phone" required="required" placeholder="required" size="45" autofocus>
+            </div>
+
+            <div id="city">
+                City
+            </div>
+            <div id="city_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="city" required="required" placeholder="required" size="45" autofocus>
+            </div>
+
+            <div id="state">
+                State
+            </div>
+            <div id="state_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="state" size="45" autofocus>
+            </div>
+
+            <div id="postalcode">
+                PostalCode
+            </div>
+            <div id="postal_code_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="postalCode" size="45" autofocus>
+            </div>
+
+            <div id="country">
+                Country
+            </div>
+            <div id="country_form">
+                <input style="height:31px; font-size:15px" type="text" class="form-control" name="country" required="required" placeholder="required" size="45" autofocus>
+            </div>
+
+            <button id="sign_up_btn_border" type="submit">
+                Sign-up
+            </button>
+        </form>
 
     </div>
 </body>
