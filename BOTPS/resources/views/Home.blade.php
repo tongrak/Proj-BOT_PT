@@ -74,8 +74,29 @@
 
             <!-- Products -->
             <div class="carousel flex pt-10">
-
+                
+                <!-- @foreach($products as $product)
                 <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/1.jpeg" alt="" class="border-2 " onmouseover="show(this)">
+                    <div class="overlay">
+                        <div class="textA">Name: {{$product->productName}} <br> Code: {{$product -> productDescription}} </div>
+                    </div>
+                </div>
+                @endforeach -->
+
+                @for($i = 1;$i <= 10; $i++)
+                
+                <div class="mx-10 container" width="300" height="400">
+                    <img src="/Models/1.jpeg" alt="" class="border-2 " onmouseover="show(this)">
+                    <div class="overlay">
+                        <div class="textA">Name: {{$product->productName}} <br> Code: {{$product -> productDescription}} </div>
+                    </div>
+                </div>
+                @endfor
+                
+                
+
+                <!-- <div class="mx-10 container" width="300" height="400">
                     <img src="/Models/1.jpeg" alt="" class="border-2 " onmouseover="show(this)">
                     <div class="overlay">
                         <div class="textA">R-35 <br> sadasdasd </div>
@@ -150,7 +171,7 @@
                     <div class="overlay">
                         <div class="textA">R-35 <br> sadasdasd </div>
                     </div>
-                </div> 
+                </div>  -->
 
             </div>
 
