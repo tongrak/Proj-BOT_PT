@@ -116,10 +116,11 @@ class CartController extends Controller
         return $toRe;
     }
 
-    public function showCartOfSaleRep($salerepID){
+    public function showCartOfSaleRep(){
+        $saleId = Session::get('login-id');
         $cartNoRep = $this->getCartOfSaleRep(null);
-        $cartWithRep = $this->getCartOfSaleRep($salerepID);
-        return view('adminHome',compact($cartNoRep),compact($cartWithRep));
+        $cartWithRep = $this->getCartOfSaleRep($saleId);
+        return view('Adminhome',compact($cartNoRep),compact($cartWithRep));
     }
 
     
