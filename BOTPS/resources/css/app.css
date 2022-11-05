@@ -16,7 +16,7 @@
     }
 
     .tophit {
-        @apply text-5xl underline underline-offset-1;
+        @apply text-5xl text-red-500 ;
     }
 
     .nav {
