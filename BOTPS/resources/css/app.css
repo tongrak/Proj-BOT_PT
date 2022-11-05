@@ -20,7 +20,7 @@
     }
 
     .nav {
-        @apply flex bg-fuchsia-600 pl-16 shadow-2xl justify-between;
+        @apply flex bg-fuchsia-600 pl-16 shadow-2xl justify-between h-20;
     }
 
     .search {
@@ -29,5 +29,20 @@
 
     .catalog {
         @apply text-2xl text-white rounded-2xl px-36 py-2.5 ring-1 ring-fuchsia-600 transition ease-in-out  hover:scale-110 hover:text-fuchsia-600 hover:bg-white duration-100 bg-fuchsia-600;
+    }
+
+    .nav2{
+        @apply h-24;
+    }
+}
+
+
+@layer utilities{
+    .h-20{
+        height: 87px;
+    }
+
+    .h24{
+        height: 85px;
     }
 }

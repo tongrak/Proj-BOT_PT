@@ -25,7 +25,7 @@
             <!-- 2 box -->
             <div class="flex space-x-16 ">
                 <a href="{{ url('/') }}" class="px-5">
-                    <div class="text-fuchsia-600 bg-white px-9 py-6">
+                    <div class="text-fuchsia-600 bg-white px-9 h-20 pt-2 ">
                         <h1 class="text-lg font-medium">PS BOT</h1>
                         <h1 class="pl-2 text-lg font-medium">SHOP</h1>
                     </div>
@@ -54,7 +54,7 @@
                 </a>
             </div>
 
-            }
+            
             @else
             <div class="flex space-x-4 pt-5 pr-5">
                 <a href="{{ url('/login') }}">
