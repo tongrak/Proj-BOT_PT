@@ -64,7 +64,7 @@
         </form>
 
         <div class="m-5 py-2 grid-flow-row auto-rows-max">
-            <h1 class="new_customer">Product in Catalog</h1>
+            <h1 class="new_customer">Products in Catalog</h1>
         </div>
 
         <div class="comm_div">
