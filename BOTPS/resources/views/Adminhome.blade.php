@@ -41,14 +41,6 @@
         @endforeach
     </div>
     @endforeach
-=======
-
-    <x-order/>
->>>>>>> 050908ec5162150390e33584e352ed7a7af6e56d
-
-    @foreach($cartWithRep as $cwr)
-        <h1> {{ $cwr }} </h1>
-    @endforeach
 
     <div class="old_customer">Customer in Commissioned</div>
 

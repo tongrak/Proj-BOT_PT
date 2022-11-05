@@ -51,7 +51,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     // this route is for 'user' only
     Route::middleware('isUser')->group(function() {
         // cart routing:
-        Route::get('/cart', 'CartController@cart')->name('cart');
+        Route::get('/cart', 'CartController@showCartDetail')->name('cart');
 
         Route::get('/add-to-cart/{pId}', 'CartController@addToCart')->name('add.to.cart');
         Route::delete('/remove-from-cart/{pId}', 'ProductController@remove')->name('remove.from.cart');

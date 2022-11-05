@@ -103,10 +103,12 @@ class CartController extends Controller
             WHERE salerepNumber = '.$val
         );
         $toRe = array();
-        foreach ($customers as $customer => $cartNumber) {
+        foreach (compact($customers) as $customer) {
+            echo($customer->cartNumber);
+            $cartNumber = $customer->cartNumber;
             $res = DB::select('
                 SELECT productCode, quantity
-                FROM cartdetails
+                FROM cartdetailsD
                 WHERE cartNumber = '.$cartNumber
             );
             array_push($toRe,array($cartNumber=>compact($res)));
