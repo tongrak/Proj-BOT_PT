@@ -23,7 +23,7 @@
         <div class="nav">
 
             <!-- 2 box -->
-            <div class="flex space-x-16 ">
+            <div class="flex space-between">
                 <a href="{{ url('/') }}" class="px-5">
                     <div class="text-fuchsia-600 bg-white px-9 h-20 pt-2 ">
                         <h1 class="text-lg font-medium">PS BOT</h1>
@@ -54,7 +54,7 @@
                 </a>
             </div>
 
-            
+
             @else
             <div class="flex space-x-4 pt-5 pr-5">
                 <a href="{{ url('/login') }}">
@@ -67,7 +67,7 @@
 
 
             @endif
-            
+
         </div>
 
         <!-- contents -->
@@ -97,7 +97,7 @@
                             <input type="search" name="term" value="{{$products[$i]->productName}}" class="invisible">
                             <img src="{{$imageAddresses[$i]}}" alt="" class="border-2 " onmouseover="show(this)">
                             <div class="overlay">
-                                <div class="textA">Name: {{$products[$i]->productName}} <br> Code: {{$products[$i] -> productDescription}} </div>
+                                <div class="textA">Name: {{$products[$i]->productName}} <br> Description: {{$products[$i] -> productDescription}} </div>
                             </div>
                         </button>
 
