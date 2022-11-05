@@ -23,7 +23,7 @@
         @foreach($products as $product)
         <div class="bg-gray-700">
             <h4>Name: {{$product->productName}}</h4>
-            <p>Code: {{$product -> productCode}}</p>
+            <p>Code: {{$product -> productDescription}}</p>
         </div>
         @endforeach
     </div>
