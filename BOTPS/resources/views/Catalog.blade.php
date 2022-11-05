@@ -35,7 +35,7 @@
 
         <!-- logo -->
         <div class="logo">
-            <img src="skins/logo_1.png" id="logo_1" />
+            <img src="skins/logo_1.png" id="logo_1"/>
         </div>
 
         <!-- 3 box -->

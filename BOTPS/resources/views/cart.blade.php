@@ -6,39 +6,40 @@
     <title>Cart_page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/slider.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body class="fontA">
 
 
     <div class="justify-between w-full h-fit">
 
 
         <!-- navBar -->
-        <div class="flex bg-fuchsia-600 h-23 pl-16 shadow-2xl justify-between">
+        <div class="nav">
 
             <!-- 2 box -->
             <div class="flex space-x-16 ">
-                <div class="text-fuchsia-600 bg-white px-5 pt-3 mb-1 font-sans">
+                <div class="text-fuchsia-600 bg-white px-5 pt-3 mb-1">
                     <h1 class="">PS BOT</h1>
                     <h1 class="pl-2">SHOP</h1>
                 </div>
                 <div class="pt-5">
                     <a href="{{ url('/home') }}">
-                        <h1 class="text-xl font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Home</h1>
+                        <h1 class="btn_a">Home</h1>
                     </a>
                 </div>
             </div>
 
             <!-- logo -->
-            <div class="pr-24">
+            <div class="pr-10">
                 <img src="skins/logo_1.png" id="logo_1" />
             </div>
 
             <!-- 3 box -->
-            <div class="flex space-x-4 pt-5 pr-5 font-sans">
+            <div class="flex space-x-4 pt-5 pr-5">
                 <!-- <a href="{{ url('/login') }}">
                     <h1 class="text-xl font-bold font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Login</h1>
                 </a>
@@ -46,7 +47,7 @@
                     <h1 class="text-xl font-bold font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Sign-up</h1>
                 </a> -->
                 <a href="{{ url('/home') }}">
-                    <h1 class="text-xl font-bold font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">logout</h1>
+                    <h1 class="btn_a">logout</h1>
                 </a>
             </div>
         </div>
@@ -62,55 +63,22 @@
             <!-- contents -->
             <div class="">
 
-                <!-- box 1 -->
+                <!-- box 1
                 <div class="bg-slate-200 flex justify-center mx-56 mt-10">
                     <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
-                </div>
+                </div> -->
 
-                <!-- box 2 -->
-                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
-                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
-                </div>
+                @foreach( $cartdetails as $cart )
+                <tr>
+                    @php $total += $cart->price*$cart->quantity @endphp
+                    <td>{{ $cart->name }}</td>
+                    <td>{{ $cart->price }}</td>
+                    <td>{{ $cart->quantity }}
+                    <td data-th="Subtotal" class="">{{$cart->price*$cart->quantity}}</td>
+                </tr>
+                @endforeach
 
-                <!-- box 3 -->
-                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
-                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
-                </div>
-                
-                <!-- box 4 -->
-                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
-                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
-                </div>
 
-                <!-- box 5 -->
-                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
-                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
-                </div>
-
-                <!-- box 6 -->
-                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
-                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
-                </div>
-
-                <!-- box 7 -->
-                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
-                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
-                </div>
-
-                <!-- box 8 -->
-                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
-                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
-                </div>
-
-                <!-- box 9 -->
-                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
-                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
-                </div>
-
-                <!-- box 10 -->
-                <div class="bg-slate-200 flex justify-center mx-56 mt-10">
-                    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere corrupti praesentium adipisci, est eveniet rem accusantium assumenda sed. Ad eveniet numquam, hic et possimus ea nobis neque saepe consequatur praesentium!</p>
-                </div>
 
             </div>
 
