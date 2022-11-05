@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/slick.css">
     <link rel="stylesheet" href="/css/slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="StyleSheet" href="{{ asset('css/commission.css') }}" />
     <script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
     @vite('resources/css/app.css')
 </head>
@@ -63,10 +64,10 @@
         </form>
 
         <div class="m-5 py-2 grid-flow-row auto-rows-max">
-            <h1 class="text-xl">Product in Catalog</h1>
+            <h1 class="new_customer">Product in Catalog</h1>
         </div>
 
-        <div class="mt-8 rounded-lg bg-gray-100 mx-80">
+        <div class="comm_div">
             <div class="m-5 py-2">
                 <row>
                     <col>
