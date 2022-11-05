@@ -119,7 +119,7 @@ class CartController extends Controller
     public function showCartOfSaleRep($salerepID){
         $cartNoRep = $this->getCartOfSaleRep(null);
         $cartWithRep = $this->getCartOfSaleRep($salerepID);
-        return view('adminHome',compact($cartNoRep),compact($cartWithRep));
+        return view('Adminhome',compact($cartNoRep),compact($cartWithRep));
     }
 
     
