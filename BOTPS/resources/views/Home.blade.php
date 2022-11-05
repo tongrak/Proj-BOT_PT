@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>home_page</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8"/>
+    <title>home</title>
+    <link rel="icon" href="/skins/logo_3.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/slick.css">
     <link rel="stylesheet" href="/css/slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
     @vite('resources/css/app.css')
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
 </head>
 
 <body class="fontA">
@@ -75,7 +76,7 @@
 
             <!-- search box -->
             <form action="{{ route('catalog.show.search', ['term' => 'term' ])}}" method="get">
-                <div class="flex justify-center pt-24">
+                <div class="flex justify-center pt-16">
                     <input type="search" name="term" placeholder="Search Products..." class="search">
                     <button type="submit" class="bg-sky-500 hover:bg-sky-700 border border-slate-300 rounded-md w-16"><i class="fa fa-search"></i></button>
                 </div>
@@ -89,7 +90,7 @@
 
 
             <!-- Products -->
-            <div class="carousel flex pt-10">
+            <div class="carousel flex pt-5 bg-fuchsia-200 mt-5 pb-10 drop-shadow-2xl">
 
                 @for($i = 0;$i < 10; $i++) <div class="mx-10 container" width="300" height="400">
                     <form action="{{ route('catalog.show.search', ['term' => 'term' ])}}" method="get">
@@ -109,7 +110,7 @@
     </div>
 
     <!-- Line -->
-    <div class="ring-1 ring-gray-800 mx-20 mb-5 mt-20">
+    <div class="ring-1 ring-gray-800 mx-20 mb-5 mt-16">
     </div>
 
     <div class="flex justify-center mb-5 pt-5">
