@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     extend: {
       'sans': ['Arial', 'sans-serif','Helvetica'],
+      'dosis' : 'Dosis' ,
     },
   },
   plugins: [],

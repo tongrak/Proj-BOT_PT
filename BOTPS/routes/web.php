@@ -28,6 +28,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     //this route is for 'guest' only
     Route::middleware('isGuest')->group(function() {
         
+
         Route::get('/test', function () {return view('Adminhome');});
         Route::get('/test/home', 'TestController@show')->name('test.home');
 
@@ -80,8 +81,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     // Route::get('/test', 'TestController@show')->name('test.show');
     // Route::get('/test/create', 'TestController@showCreate')->name('test.show.create');
     // Route::post('/test/create', 'TestController@create')->name('test.create');
-
-    // Route::get('/cart', function () {return view('cart');});
 
 
 });

@@ -13,18 +13,18 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body class="fontA">
 
 
     <div class="justify-between w-full h-fit">
 
 
         <!-- navBar -->
-        <div class="flex bg-fuchsia-600 h-23 pl-16 shadow-2xl justify-between">
+        <div class="nav">
 
             <!-- 2 box -->
             <div class="flex space-x-16 ">
-                <div class="text-fuchsia-600 bg-white px-5 pt-3 mb-1 font-sans">
+                <div class="text-fuchsia-600 bg-white px-5 pt-3 mb-1">
                     <h1 class="">PS BOT</h1>
                     <h1 class="pl-2">SHOP</h1>
                 </div>
@@ -36,17 +36,17 @@
             </div>
 
             <!-- logo -->
-            <div class="pl-20">
+            <div class="logo">
                 <img src="skins/logo_1.png" id="logo_1" />
             </div>
 
             <!-- 3 box -->
-            <div class="flex space-x-4 pt-5 pr-5 font-sans">
+            <div class="flex space-x-4 pt-5 pr-5">
                 <a href="{{ url('/login') }}">
-                    <h1 class="text-xl font-bold font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Login</h1>
+                    <h1 class="btn_a">Login</h1>
                 </a>
                 <a href="{{ url('/register') }}">
-                    <h1 class="text-xl font-bold font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Sign-up</h1>
+                    <h1 class="btn_a">Sign-up</h1>
                 </a>
                 <!-- <a href="{{ url('/cart') }}">
                     <h1 class="text-xl font-bold font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Cart</h1>
@@ -60,14 +60,14 @@
             <!-- search box -->
             <form action="{{ route('catalog.show.search', ['term' => 'term' ])}}" method="get" >
                 <div class="flex justify-center pt-24">
-                    <input type="search" name="term" placeholder="Search Products..." class="h-12 w-96 placeholder:italic placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm">
+                    <input type="search" name="term" placeholder="Search Products..." class="search">
                     <button type="submit" class="bg-sky-500 hover:bg-sky-700 border border-slate-300 rounded-md w-16"><i class="fa fa-search"></i></button>
                 </div>
             </form>
 
             <!-- Top Hits -->
             <div class="flex pl-64 pt-16 space-x-2">
-                <h1 class="text-5xl underline underline-offset-1">Top Hits</h1>
+                <h1 class="tophit">Top Hits</h1>
                 <img src="/Models/fire.jpg" alt="" width="30px" height="20px" background-position="1500px">
             </div>
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Nunito:ital,wght@1,200&family=Prompt&display=swap');
+
 .overlay {
     position: absolute;
     bottom: 0;
@@ -32,7 +34,7 @@
 }
 
 .fontA {
-    font-family: "Arial";
+    font-family: "dosis";
 }
 
 .slick-prev {
