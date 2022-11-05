@@ -97,7 +97,7 @@
                             <input type="search" name="term" value="{{$products[$i]->productName}}" class="invisible">
                             <img src="{{$imageAddresses[$i]}}" alt="" class="border-2 " onmouseover="show(this)">
                             <div class="overlay">
-                                <div class="textA">Name: {{$products[$i]->productName}} <br> Code: {{$products[$i] -> productDescription}} </div>
+                                <div class="textA">Name: {{$products[$i]->productName}} <br> Description: {{$products[$i] -> productDescription}} </div>
                             </div>
                         </button>
 
