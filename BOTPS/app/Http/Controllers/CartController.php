@@ -99,13 +99,16 @@ class CartController extends Controller
 
     private function getCartOfSaleRep($salerepID = null){
         $val = $salerepID;
-        if(isNull($salerepID)) $val = 'NULL';
+        if($salerepID == null) $val = 'NULL';
 
-        $carts = DB::table('carts')->select()->where('salerepNumber','=',$val)->first();
+        $carts = DB::table('carts')->select()->where('salerepNumber','=',$salerepID)->get();
         $toRe = array();
-        foreach ($carts as $cart) {
-            $res = DB::table('cartdetailsD')->select()->where('cartNumber', '=', $cart->cartNumber)->get();
-            array_push($toRe,array($cart->cartNumber=>compact($res)));
+        if($carts != null){
+            foreach ($carts as $cart) {
+                $res = DB::table('cartdetails')->select()->where('cartNumber', '=', $cart->cartNumber)->get();
+                echo($cart->cartNumber);
+                array_push($toRe,array($cart->cartNumber=>compact($res)));
+            }
         }
         return $toRe;
     }
