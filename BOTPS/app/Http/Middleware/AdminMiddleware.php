@@ -23,7 +23,7 @@ class AdminMiddleware
         } 
         //if you are not admin
         else{
-            return redirect('/test/login')->with('fail', 'You are not admin.');
+            return redirect()->back();
         }
     }
 }
