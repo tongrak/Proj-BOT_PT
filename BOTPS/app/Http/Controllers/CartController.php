@@ -120,7 +120,7 @@ class CartController extends Controller
         $saleId = Session::get('login-id');
         $cartNoRep = $this->getCartOfSaleRep(null);
         $cartWithRep = $this->getCartOfSaleRep($saleId);
-        return view('Adminhome',compact($cartNoRep),compact($cartWithRep));
+        return view('Adminhome',compact($cartNoRep, $cartWithRep));
     }
 
     
