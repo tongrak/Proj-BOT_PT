@@ -41,7 +41,7 @@
             </div>
 
             <!-- check role -->
-            @if(Session::has('login-id')){
+            @if(Session::has('login-id'))
             <div class="flex space-x-4 pt-5 pr-5">
                 <a href="{{ url('/cart') }}">
                     <h1 class="btn_a">Cart</h1>
@@ -51,7 +51,7 @@
                 </a>
             </div>
 
-            }
+            
             @else
             <div class="flex space-x-4 pt-5 pr-5">
                 <a href="{{ url('/login') }}">

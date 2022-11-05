@@ -29,7 +29,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::middleware('isGuest')->group(function() {
         
 
-        Route::get('/test', function () {return view('Adminhome');});
+        Route::get('/test', function () {return view('login2');});
         Route::get('/test/home', 'TestController@show')->name('test.home');
 
 

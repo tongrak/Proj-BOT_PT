@@ -100,18 +100,14 @@ class CartController extends Controller
             FROM carts
             WHERE salerepNumber = '.$val
         );
-        $toRe = array("Temp");
+        $toRe = array();
         foreach ($customers as $customer => $cartNumber) {
             $res = DB::select('
                 SELECT productCode, quantity
                 FROM cartdetails
                 WHERE cartNumber = '.$cartNumber
             );
-            if ($toRe[0] == "Temp") {
-                $toRe = array($cartNumber=>$res);
-            }else{
                 array_push($toRe,array($cartNumber=>$res));
-            }
         }
         return $toRe;
     }

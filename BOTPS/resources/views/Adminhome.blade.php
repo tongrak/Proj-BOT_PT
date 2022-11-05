@@ -29,8 +29,12 @@
     <div class="new_customer">New Customer</div>
 
     <!-- component -->
+
     <x-order/>
-    <x-order/>
+
+    @foreach($cartWithRep as $cwr)
+        <h1> {{ $cwr }} </h1>
+    @endforeach
 
     <div class="old_customer">Customer in Commissioned</div>
 
@@ -45,7 +49,6 @@
                 <div class="quantity">Quantity:</div>
                 <div class="price">Price:</div>
             </div>
-
         </div>
 
         <!-- btn -->

@@ -6,6 +6,7 @@
     <title>register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="StyleSheet" href="{{ asset('css/styles.css') }}" />
+    <link rel="StyleSheet" href="{{ asset('css/auth.css') }}" />
     <script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
     <!-- Add your custom HEAD content here -->
 
@@ -16,23 +17,16 @@
         <div id="_bg__register_page"></div>
 
         <div id="master_of_all_page">
+            <x-navbar />
             <div id="foot_bg"></div>
-            <div id="nav_bg"></div>
             <div id="team_ps_bot">
                 Team PS-BOT
             </div>
-            <div id="shop_name_bg"></div>
-            <div id="ps_bot_shop">
-                PS BOT<br />SHOP
-            </div>
-
-            <a id="home_btn_frame" _par="" href="home">
-                Home
-            </a>
             <img src="skins/logo_1.png" id="logo_header" />
             <img src="skins/logo_2.png" id="logo_foot" />
 
         </div>
+        <x-notificationBox />
         <img src="skins/line_2.png" id="line_short" />
         <div id="already_have_an_account_">
             Already have an account?

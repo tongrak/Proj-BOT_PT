@@ -6,6 +6,7 @@
     <title>login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="StyleSheet" href="{{ asset('css/styles.css') }}" />
+    <link rel="StyleSheet" href="{{ asset('css/auth.css') }}" />
     <script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
     <!-- Add your custom HEAD content here -->
 
@@ -16,22 +17,14 @@
         <div id="_bg__register_page"></div>
 
         <div id="master_of_all_page">
+            <x-navbar />
             <div id="foot_bg"></div>
-            <div id="nav_bg"></div>
             <div id="team_ps_bot">
                 Team PS-BOT
             </div>
-            <div id="shop_name_bg"></div>
-            <div id="ps_bot_shop">
-                PS BOT<br />SHOP
-            </div>
-
-            <a id="home_btn_frame" _par="" href="home">
-                Home
-            </a>
             <img src="skins/logo_1.png" id="logo_header" />
             <img src="skins/logo_2.png" id="logo_foot" />
-
+            <x-notificationBox />
             <div id="line_long"></div>
 
             <div id="don_t_have_an_account_">
@@ -63,7 +56,7 @@
                 </div>
 
                 <button id="login_log_border" type="submit">
-                        Login
+                    Login
                 </button>
 
             </form>
