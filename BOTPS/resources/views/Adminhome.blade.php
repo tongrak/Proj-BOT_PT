@@ -29,8 +29,18 @@
     <div class="new_customer">New Customer</div>
 
     <!-- component -->
-    <x-order/>
-    <x-order/>
+    @foreach(array_keys($cartWithRep) as $key )
+    <div>
+        <div>
+            <p>{{$key}}</p>
+        </div>
+        @foreach($cartWithRep[$key] as $cd)
+        <div>
+            <p>{{$cd}}</p>
+        </div>
+        @endforeach
+    </div>
+    @endforeach
 
     <div class="old_customer">Customer in Commissioned</div>
 

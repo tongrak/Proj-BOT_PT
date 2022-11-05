@@ -109,7 +109,7 @@ class CartController extends Controller
                 FROM cartdetails
                 WHERE cartNumber = '.$cartNumber
             );
-                array_push($toRe,array($cartNumber=>$res));
+            array_push($toRe,array($cartNumber=>compact($res)));
         }
         return $toRe;
     }
