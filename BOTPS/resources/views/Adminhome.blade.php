@@ -21,9 +21,9 @@
         </div>
         <img src="skins/logo_1.png" class="logo_header" />
         <div class="for_admin">For Admin</div>
-        <a class="logout_btn_border" _par="" href="home">
-            <div class="logout_btn">Logout</div>
-        </a>
+        <button class = "logout_btn">
+            Logout
+        </button>
     </div>
 
     <div class="new_customer">New Customer</div>

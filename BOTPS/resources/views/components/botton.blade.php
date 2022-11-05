@@ -1,12 +1,8 @@
 <div class="btn_frame">
     <div class="cancel_btn">
-        <div class="cancel_text">
-            Cancel Order
-        </div>
+        Cancel Order
     </div>
     <div class="confirm_btn">
-        <div class="confirm_text">
-            Confirm Order
-        </div>
+        Confirm Order
     </div>
 </div>
