@@ -105,9 +105,8 @@
                 <h4>Name: {{$product->productName}}</h4>
                 <p>Code: {{$product -> productCode}}</p>
                 <div class="confirm_btn">
-                    <div class="confirm_text">
-                        Add to cart
-                    </div>
+                    <p><a href="{{route('add.to.cart', $product->productCode)}}">Add to cart</a></p>
+                    
                 </div>
             </div>
 
