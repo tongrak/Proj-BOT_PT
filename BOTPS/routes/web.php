@@ -66,7 +66,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
         // commsion action route:
         // Route::post('/confirm-commis/{id}', 'CommissionController@confirm')->name('commission.confirm');
-        Route::get('/commissions', 'CommissionController@show')->name('commission.show');
+        Route::get('/commissions', 'CartController@showCartOfSaleRep')->name('commission.show');
     });
 
     //this route is for 'user or admin' only
