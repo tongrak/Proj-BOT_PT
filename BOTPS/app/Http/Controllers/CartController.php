@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use App\Models\Cart;
@@ -34,7 +34,7 @@ class CartController extends Controller
         $cart = DB::table('carts')->where('customerNumber','Like',$cusId)->first();
         DB::transaction(function()use($pId, $product, $cart , $cusId, $salerep){
             if($cart != null){
-                $cartDe = DB::table("cartdetails")->where('cartNumber','=',$cart->cartNumber)->where('productCode','like',"\"".$pId."\"")->first();
+                $cartDe = DB::table("cartdetails")->where('cartNumber','=',$cart->cartNumber)->where('productCode','like',"\"" . $pId."\"")->first();
                 if($cartDe == null){
                     $cartDe = new CartDetail();
                     $cartDe->cartNumber = $cart->cartNumber;
@@ -97,21 +97,11 @@ class CartController extends Controller
         $val = $salerepID;
         if(isNull($salerepID)) $val = 'NULL';
 
-        $customers = DB::select('
-            SELECT cartNumber, customerNumber
-            FROM carts
-            WHERE salerepNumber = '.$val
-        );
+        $carts = DB::table('carts')->select()->where('salerepNumber','=',$val)->first();
         $toRe = array();
-        foreach (compact($customers) as $customer) {
-            echo($customer->cartNumber);
-            $cartNumber = $customer->cartNumber;
-            $res = DB::select('
-                SELECT productCode, quantity
-                FROM cartdetailsD
-                WHERE cartNumber = '.$cartNumber
-            );
-            array_push($toRe,array($cartNumber=>compact($res)));
+        foreach ($carts as $cart ) {
+            $res = DB::table('cartdetailsD')->select()->where('cartNumber', '=', $cart->cartNumber)->get();
+            array_push($toRe,array($cart->cartNumber=>compact($res)));
         }
         return $toRe;
     }
