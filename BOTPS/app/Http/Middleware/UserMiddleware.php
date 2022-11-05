@@ -25,7 +25,7 @@ class UserMiddleware
         }
         // if you are not user
         else{
-            return redirect('test/home')->with('fail', 'You are not user.');
+            return redirect()->back();
         }
             
     }

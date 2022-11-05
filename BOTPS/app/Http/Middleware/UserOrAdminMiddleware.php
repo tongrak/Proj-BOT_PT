@@ -21,7 +21,7 @@ class UserOrAdminMiddleware
             return $next($request);
         }
         else{
-            return redirect('/test/home')->with('fail', 'You are not user or admin.');
+            return redirect()->back();
         }
     }
 }
