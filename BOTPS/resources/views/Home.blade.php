@@ -24,14 +24,17 @@
 
             <!-- 2 box -->
             <div class="flex space-x-16 ">
-                <div class="text-fuchsia-600 bg-white px-5 pt-3 mb-1">
-                    <h1 class="">PS BOT</h1>
-                    <h1 class="pl-2">SHOP</h1>
-                </div>
+                <a href="{{ url('/') }}" class="px-5">
+                    <div class="text-fuchsia-600 bg-white px-9 py-6">
+                        <h1 class="text-lg font-medium">PS BOT</h1>
+                        <h1 class="pl-2 text-lg font-medium">SHOP</h1>
+                    </div>
+                </a>
+
                 <div class="pt-5">
-                    <!-- <a href="{{ url('/') }}">
-                        <h1 class="text-xl font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Home</h1>
-                    </a> -->
+                    @if(Session::has('login-id'))
+                    <p class="text-white text-2xl ring-1 rounded-2xl px-5 ring-white mt-2"> ID : {{Session::get("login-id")}}</p>
+                    @endif
                 </div>
             </div>
 
@@ -41,7 +44,7 @@
             </div>
 
             <!-- check role -->
-            @if(Session::has('login-id')){
+            @if(Session::has('login-id'))
             <div class="flex space-x-4 pt-5 pr-5">
                 <a href="{{ url('/cart') }}">
                     <h1 class="btn_a">Cart</h1>
@@ -64,18 +67,7 @@
 
 
             @endif
-            <!-- 3 box -->
-            <!-- <div class="flex space-x-4 pt-5 pr-5">
-                <a href="{{ url('/login') }}">
-                    <h1 class="btn_a">Login</h1>
-                </a>
-                <a href="{{ url('/register') }}">
-                    <h1 class="btn_a">Sign-up</h1>
-                </a> -->
-            <!-- <a href="{{ url('/cart') }}">
-                    <h1 class="text-xl font-bold font-sans text-white rounded-2xl px-6 py-2.5 ring-1 ring-white transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-100">Cart</h1>
-                </a> -->
-            <!-- </div> -->
+            
         </div>
 
         <!-- contents -->

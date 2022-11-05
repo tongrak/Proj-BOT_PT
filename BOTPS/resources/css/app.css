@@ -8,7 +8,7 @@
 @layer components {
 
     .logo {
-        @apply pl-20;
+        @apply pl-1;
     }
 
     .btn_a {
