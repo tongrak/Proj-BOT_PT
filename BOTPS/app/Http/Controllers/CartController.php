@@ -13,8 +13,10 @@ use function PHPUnit\Framework\isNull;
 
 class CartController extends Controller
 {
-    public function showCartDetail($cusNum){
-        $cartNum = DB::table('carts')->where('customerNumber', 'like', $cusNum)->first('cartNumber');
+    public function showCartDetail(){
+        if (!Session::has('login-id')) return view('login');
+        $cusId = Session::get('login-id');
+        $cartNum = DB::table('carts')->where('customerNumber', 'like', $cusId)->first('cartNumber');
         $cartDetails = DB::table('cartdetails')->where('cartNumber','like',$cartNum->cartNumber)->get();
         return view('Cart', compact('cartdetails'));
     }
@@ -107,7 +109,7 @@ class CartController extends Controller
                 FROM cartdetails
                 WHERE cartNumber = '.$cartNumber
             );
-                array_push($toRe,array($cartNumber=>$res));
+            array_push($toRe,array($cartNumber=>compact($res)));
         }
         return $toRe;
     }
@@ -118,6 +120,4 @@ class CartController extends Controller
         $cartWithRep = $this->getCartOfSaleRep($saleId);
         return view('Adminhome',compact('cartNoRep', 'cartWithRep'));
     }
-
-    
 }

@@ -29,8 +29,22 @@
     <div class="new_customer">New Customer</div>
 
     <!-- component -->
+    @foreach(array_keys($cartWithRep) as $key )
+    <div>
+        <div>
+            <p>{{$key}}</p>
+        </div>
+        @foreach($cartWithRep[$key] as $cd)
+        <div>
+            <p>{{$cd}}</p>
+        </div>
+        @endforeach
+    </div>
+    @endforeach
+=======
 
     <x-order/>
+>>>>>>> 050908ec5162150390e33584e352ed7a7af6e56d
 
     @foreach($cartWithRep as $cwr)
         <h1> {{ $cwr }} </h1>
@@ -49,6 +63,7 @@
                 <div class="quantity">Quantity:</div>
                 <div class="price">Price:</div>
             </div>
+
         </div>
 
         <!-- btn -->
