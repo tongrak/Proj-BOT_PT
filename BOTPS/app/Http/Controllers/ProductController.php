@@ -25,12 +25,9 @@ class ProductController extends Controller
             ORDER BY proSum DESC;');
         $productsArr = $allProducts;
         $products = array($productsArr[0],$productsArr[1],$productsArr[2],$productsArr[3],$productsArr[4],$productsArr[5],$productsArr[6],$productsArr[7],$productsArr[8],$productsArr[9]);
-        $imageAddresses = array("/Models/1.jpeg");
-        for ($i=2; $i < 11; $i++) {
-            array_push($imageAddresses, "/Models/" . $i . ".jpeg");
-        }
-        return view('Home', compact($products)) ->with("ImageAddresses", $imageAddresses);
-    }
+        $imageAddresses = array();
+        for ($i=1; $i < 11; $i++) array_push($imageAddresses, "/Models/" . $i . ".jpeg");
+        return view('Home', compact('products', 'imageAddresses'));}
 
     public function showSearch(Request $req, $term){
         // $term = $req->input('term');

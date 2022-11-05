@@ -84,12 +84,12 @@
                 </div>
                 @endforeach -->
 
-                @for($i = 1;$i <= 10; $i++)
+                @for($i = 0;$i < 9; $i++)
                 
                 <div class="mx-10 container" width="300" height="400">
-                    <img src="/Models/1.jpeg" alt="" class="border-2 " onmouseover="show(this)">
+                    <img src="{{$imageAddresses[$i]}}" alt="" class="border-2 " onmouseover="show(this)">
                     <div class="overlay">
-                        <div class="textA">Name: {{$product->productName}} <br> Code: {{$product -> productDescription}} </div>
+                        <div class="textA">Name: {{$products[$i]->productName}} <br> Code: {{$products[$i] -> productDescription}} </div>
                     </div>
                 </div>
                 @endfor
