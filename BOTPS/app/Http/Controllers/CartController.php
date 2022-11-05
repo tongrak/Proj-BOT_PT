@@ -17,6 +17,10 @@ class CartController extends Controller
         if (!Session::has('login-id')) return view('login');
         $cusId = Session::get('login-id');
         $cartNum = DB::table('carts')->where('customerNumber', 'like', $cusId)->first('cartNumber');
+        if(isNull($cartNum)){
+            $cartDetails = array();
+            return view('Cart', compact($cartDetails));
+        } 
         $cartDetails = DB::table('cartdetails')->where('cartNumber','like',$cartNum->cartNumber)->get();
         return view('Cart', compact('cartdetails'));
     }
@@ -99,7 +103,7 @@ class CartController extends Controller
 
         $carts = DB::table('carts')->select()->where('salerepNumber','=',$val)->first();
         $toRe = array();
-        foreach ($carts as $cart ) {
+        foreach ($carts as $cart) {
             $res = DB::table('cartdetailsD')->select()->where('cartNumber', '=', $cart->cartNumber)->get();
             array_push($toRe,array($cart->cartNumber=>compact($res)));
         }
