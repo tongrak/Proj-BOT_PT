@@ -314,10 +314,10 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Admins (
-    EmployeesID int(11) NOT NULL,
+    EmployeeID int(11) NOT NULL,
     Username varchar(255) NOT NULL,
     Password varchar(255) NOT NULL,
-		Foreign key (EmployeesID) 
+		Foreign key (EmployeeID) 
 			references employees(employeeNumber)
 			on update CASCADE 
 			on delete cascade
