@@ -104,7 +104,13 @@
             <div class="bg-gray-700">
                 <h4>Name: {{$product->productName}}</h4>
                 <p>Code: {{$product -> productCode}}</p>
+                <div class="confirm_btn">
+                    <div class="confirm_text">
+                        Add to cart
+                    </div>
+                </div>
             </div>
+
             @endforeach
         </div>
         <!-- copyrigth -->
