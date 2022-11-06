@@ -35,7 +35,7 @@ class CartController extends Controller
                     $cartDe->productCode= $pId;
                     $cartDe->quantity   = 1;
                 }else{
-                    $cartDe = CartDetail::find($cusId)->where('customerNumberD','=',$cusId)->where('productCode','=', $pId)->first();
+                    $cartDe = CartDetail::find($cusId)->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
                     $cartDe->quantity   = $cartDe->quantity+1;
                 }
                 $cartDe->save();
