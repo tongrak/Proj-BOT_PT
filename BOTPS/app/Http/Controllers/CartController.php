@@ -35,18 +35,17 @@ class CartController extends Controller
         if(!$cart->custoConfirm){
             DB::transaction(function()use($pId, $product, $cart , $cusId, $salerep){
                 if($cart != null){
-                    $dummy = DB::table('cartdetails')->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
-                    if($dummy == null){
+                    $cartDe = DB::table('cartdetails')->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
+                    if($cartDe == null){
                         $cartDe = new CartDetail();
                         $cartDe->customerNumber = $cart->customerNumber;
                         $cartDe->productCode= $pId;
                         $cartDe->quantity   = 1;
+                        $cartDe->save();
                     }else{
-                        $cartDe = CartDetail::find($cusId)->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
-                        $cartDe->quantity   = $cartDe->quantity+1;
+                        $newQuanity = $cartDe->quantity +1;
+                        DB::table('cartdetails')->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->update(['quantity'=>$newQuanity]);
                     }
-                    $cartDe->save();
-    
                 }else{
                     $cart = new Cart();
                     $cart->customerNumber   = $cusId;
@@ -75,14 +74,15 @@ class CartController extends Controller
         $cusId = Session::get('login-id');
         echo($cusId);
         DB::transaction(function()use($product, $cusId){
-                $cartDe = CartDetail::where('productCode','=',$product->productCode)->where('customerNumber', '=', $cusId)->first();
+                $cartDe = DB::table('cartdetails')->where('customerNumber','=',$cusId)->where('productCode','=', $product->productCode)->first();
                 if($cartDe == null){
                     return redirect()->back()->with('removeFail','no such product in cart');
                 }else if($cartDe->quantity > 1){
-                    $cartDe->quantity = $cartDe->quantity-1;
-                    $cartDe->save();
+                    $newQuanity = $cartDe->quantity-1;
+                    DB::table('cartdetails')->where('customerNumber','=',$cusId)->where('productCode','=', $product->productCode)
+                    ->update(['quantity'=>$newQuanity]);
                 }else{
-                    $cartDe->delete();
+                    DB::table('cartdetails')->where('customerNumber','=',$cusId)->where('productCode','=', $product->productCode)->delete();
                 }
                 $product->quantityInStock = $product->quantityInStock+1;
             $product->save();
