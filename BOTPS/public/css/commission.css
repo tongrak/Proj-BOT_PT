@@ -125,7 +125,7 @@ body {
     padding: 25px;
 }
 
-.totalPrice{
+.totalPrice {
     text-align: left;
     overflow: hidden;
     font-family: Dosis;
@@ -205,6 +205,7 @@ body {
     margin-left: 50px;
     margin-right: 5px;
     color: #000000;
+    text-shadow: 2px 2px 10px lightblue;
 }
 
 .product_name {
