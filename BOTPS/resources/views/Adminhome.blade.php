@@ -30,6 +30,10 @@
             {{session('success')}}
         </div>
     @endif
+
+    <script>
+        
+    </script>
     <div class="new_customer">New Customer</div>
 
     <!-- component -->
