@@ -76,7 +76,7 @@ class CommissionController extends Controller
                     'shippedDate'=> $orderShip,
                     'status'=> "In Process",
                     'comments'=> "added by function",
-                    'customer'=> $cart->customerNumber
+                    'customerNumber'=> $cart->customerNumber
                 ]);
             foreach($cartDetails as $cd){
                 $currPrice = $this->getPriceOfProduct($cd->productCode);
