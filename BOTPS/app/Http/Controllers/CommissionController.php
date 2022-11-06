@@ -16,8 +16,23 @@ class CommissionController extends Controller
         $cusId = Session::get('login-id');
         $cart = Cart::table('carts')->where('customerNumber','=',$cusId)->first();
         DB::transaction(function () use($cusId, $cart) {
-            $cart->custoConfirm = true;
-            $cart->save();
+            if(!$cart->custoConfirm){
+                $cart->custoConfirm = true;
+                $cart->save();
+            }
+        });
+        return redirect()->back()->with('success', 'cart have been confirm');
+    }
+
+    public function customerCancel(){
+        // if (!Session::has('login-id')) return view('login');
+        $cusId = Session::get('login-id');
+        $cart = Cart::table('carts')->where('customerNumber','=',$cusId)->first();
+        DB::transaction(function () use($cusId, $cart) {
+            if($cart->custoConfirm){
+                $cart->custoConfirm = false;
+                $cart->save();
+            }
         });
         return redirect()->back()->with('success', 'cart have been confirm');
     }

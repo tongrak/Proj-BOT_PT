@@ -54,6 +54,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         Route::delete('/remove-from-cart/{pId}', 'ProductController@removeInCart')->name('remove.from.cart');
         
         Route::get('/confirm-order', 'CommissionController@customerConfirm')->name('confirm.order');
+        Route::get('/cancel-order', 'CommissionContreller@customerCancel')->name('cancel.order');
     });
     
     // this route is for 'admin' only
