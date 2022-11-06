@@ -93,10 +93,10 @@ class CommissionController extends Controller
             }
             DB::table('carts')->
                 where('customerNumber','=',$cart->customerNumber)->
-                update(['custoConfirm'=>false,'salerepNumber'=>false]);
+                update(['custoConfirm'=>false,'saleConfirm'=>false]);
         });
         
-        return redirect()->back('/home')->with('success', 'cart have been confirm');
+        return redirect('/home')->with('success', 'cart have been confirm');
     }
 
     public function insertSaleRep($customerID){
