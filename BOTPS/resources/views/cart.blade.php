@@ -87,7 +87,7 @@
                 <div class="cart">
 
                     <!-- text -->
-                    <div class="space-y-2 py-3 pt-8 text-lg ml-16 my-8">
+                    <div class="space-y-2 py-3 pt-8 text-lg ml-16 my-8 pr-16">
                         <div class="flex space-x-2">
                             <p class="font-bold">Name:</p>
                             <p>{{$cart->productName}}</p>

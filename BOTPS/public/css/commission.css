@@ -426,7 +426,3 @@ body {
     color: brown;
     box-shadow: 10px 10px 2px #997950;
 }
-.icon {
-    display: flex;
-    justify-content: center;
-}

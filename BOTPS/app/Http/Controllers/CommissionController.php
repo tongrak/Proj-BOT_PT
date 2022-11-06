@@ -63,17 +63,37 @@ class CommissionController extends Controller
         $cart = DB::table('carts')->where('customerNumber','=',$customerNum)->first();
         $cartDetails = CartDetail::where('customerNumber','=',$customerNum)->get();
         DB::transaction(function()use($cart,$cartDetails){
+            $dateArr = $this->getDatesForOrder();
+            $currOrderNum = $this->getLastestOrderNumber();
+            DB::table('order')->
+                insert([
+                    'orderNumber'=>$currOrderNum,
+                    'orderDate'=> $this->$dateArr[0],
+                    'requiredDate'=> $this->$dateArr[1],
+                    'shippedDate'=> $this->$dateArr[2],
+                    'status'=> "In Process",
+                    'comments'=> "added by function",
+                    'customer'=> $cart->customerNumber
+                ]);
             foreach($cartDetails as $cd){
-                // TODO: add to orderdetail
-
-                $cd->delete();
+                $currPrice = $this->getPriceOfProduct($cd->productCode);
+                DB::table('orderdetails')->insert([
+                    'orderNumber'=>$currOrderNum,
+                    'productCode'=>$cd->productCode,
+                    'quantityOrdered'=>$cd->quantity,
+                    'priceEach'=> $currPrice,
+                    'orderLineNumber'=> 19
+                ]);
+                DB::table('cartdetails')->
+                    where('customerNumber','=',$cart->customerNumber)->
+                    where('productCode','=',$cd->productCode)->delete();
             }
             $cart->custoConfirm = false; 
             $cart->salerepNumber = false; 
             $cart->save();
         });
         
-        return view('Home')->with('success', 'cart have been confirm');
+        return redirect()->back('/home')->with('success', 'cart have been confirm');
     }
 
     public function insertSaleRep($customerID){
@@ -95,5 +115,10 @@ class CommissionController extends Controller
         $strReqOr = strtotime("+7 Days");
         $strShipOr = strtotime("+10 Days");
         return array(date("y-m-d"), date("y-m-d", $strReqOr), date("y-m-d",$strShipOr));
+    }
+
+    private function getPriceOfProduct($productCode){
+        $productData = DB::table('products')->where('productCode','=',$productCode)->first('buyPrice');
+        return $productData->buyPrice;
     }
 }
