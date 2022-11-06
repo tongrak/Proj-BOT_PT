@@ -40,7 +40,7 @@
     }
 
     .del{
-        @apply text-xl text-white p-5 border-2 hover:bg-red-700 bg-red-500 rounded-lg mt-40 mr-10 ;
+        @apply text-xl text-white p-5 border-2 hover:bg-red-700 bg-red-500 rounded-lg mt-72 mr-10 ;
     }
 }
 

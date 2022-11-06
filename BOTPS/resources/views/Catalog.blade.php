@@ -92,29 +92,31 @@
                     <col>
                     <button class="product_btn">
                         <div class="flex justify-center">
-                            <img src="/Models/car.png" width="80px" height="60px" background-position="15px">
+                            <img class="move" src="/Models/car.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Classic cars</p>
                         </div>
                     </button>
-
                     </col>
+
                     <col>
                     <button class="product_btn">
-                        <div class="flex justify-center"> <img src="/Models/scooter.png" width="80px" height="60px" background-position="15px">
+                        <div class="flex justify-center"> <img class="move" src="/Models/scooter.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Motorcycles </p>
                         </div>
                     </button>
                     </col>
+
                     <col>
                     <button class="product_btn">
-                        <div class="flex justify-center"> <img src="/Models/airplane.png" width="80px" height="60px" background-position="15px">
+                        <div class="flex justify-center"> <img class="move" src="/Models/airplane.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Planes</p>
                         </div>
                     </button>
                     </col>
+
                     <col>
                     <button class="product_btn">
-                        <div class="flex justify-center"> <img src="/Models/cruise-ship.png" width="80px" height="60px" background-position="15px">
+                        <div class="flex justify-center"> <img class="move" src="/Models/cruise-ship.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Ships </p>
                         </div>
                     </button>
@@ -125,28 +127,29 @@
                 <row>
                     <col>
                     <button class="product_btn">
-                        <div class="flex justify-center"> <img src="/Models/train.png" width="80px" height="60px" background-position="15px">
-                            <p class="pt-5 pl-2">Trains</p>
+                        <div class="flex justify-center">
+                            <img class="move" src="/Models/train.png" width="80px" height="60px" background-position="15px">
+                            <p class="pt-5 pl-2 ">Trains</p>
                         </div>
                     </button>
                     </col>
                     <col>
                     <button class="product_btn">
-                        <div class="flex justify-center"> <img src="/Models/double-decker-bus.png" width="80px" height="60px" background-position="15px">
+                        <div class="flex justify-center"> <img class="move" src="/Models/double-decker-bus.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Trucks & Buses</p>
                         </div>
                     </button>
                     </col>
                     <col>
                     <button class="product_btn">
-                        <div class="flex justify-center"> <img src="/Models/van.png" width="80px" height="60px" background-position="15px">
+                        <div class="flex justify-center"> <img class="move" src="/Models/van.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Vintage cars</p>
                         </div>
                     </button>
                     </col>
                     <col>
                     <button class="product_btn">
-                        <div class="flex justify-center"> <img src="/Models/online-shopping.png" width="80px" height="60px" background-position="15px">
+                        <div class="flex justify-center"> <img class="move" src="/Models/online-shopping.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">All products </p>
                         </div>
                     </button>
@@ -154,6 +157,7 @@
 
                 </row>
             </div>
+
         </div>
 
 
