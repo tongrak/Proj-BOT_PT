@@ -38,7 +38,7 @@
 
         <!-- logo -->
         <div class="logo">
-            <img src="{{asset('skins/logo_1.png')}}"  id="logo_1" />
+            <img src="{{asset('skins/logo_1.png')}}" id="logo_1" />
         </div>
 
         <!-- check role -->
@@ -100,18 +100,6 @@
                     </button>
                 </form>
 
-
-
-
-                <!-- <button class="product_btn">
-                        <div class="justify-center">
-                            <img class="move" src="/Models/car.png" width="80px" height="60px" background-position="15px">
-                            <p class="pt-5 pl-2">Classic cars</p>
-                        </div>
-                    </button> -->
-
-
-
                 <form action="{{ route('catelog.show.category', "Motorcycles") }} " method="get">
                     <button type="submit">
                         <button class="product_btn">
@@ -124,13 +112,7 @@
                         </button>
                     </button>
                 </form>
-                <!-- <button class="product_btn">
-                        <div class="justify-center"> <img class="move" src="/Models/scooter.png" width="80px" height="60px" background-position="15px">
-                            <p class="pt-5 pl-2">Motorcycles </p>
-                        </div>
-                    </button> -->
-
-
+               
 
                 <form action="{{ route('catelog.show.category', "Planes")}}" method="get">
                     <button type="submit">
@@ -144,7 +126,7 @@
                         </button>
                     </button>
                 </form>
-                
+
 
 
 
@@ -177,13 +159,7 @@
                         </button>
                     </button>
                 </form>
-                <!-- <button class="product_btn">
-                        <div class="justify-center">
-                            <img class="move" src="/Models/train.png" width="80px" height="60px" background-position="15px">
-                            <p class="pt-5 pl-2 ">Trains</p>
-                        </div>
-                    </button> -->
-
+               
 
                 <form action="{{ route('catelog.show.category', "Trucks and Buses")}}" method="get">
                     <button type="submit">
@@ -197,13 +173,7 @@
                         </button>
                     </button>
                 </form>
-                <!-- <button class="product_btn">
-                        <div class="justify-center"> <img class="move" src="/Models/double-decker-bus.png" width="80px" height="60px" background-position="15px">
-                            <p class="pt-5 pl-2">Trucks & Buses</p>
-                        </div>
-                    </button> -->
-
-
+                
                 <form action="{{ route('catelog.show.category', "Vintage cars")}}" method="get">
                     <button type="submit">
                         <button class="product_btn">
@@ -216,13 +186,7 @@
                         </button>
                     </button>
                 </form>
-                <!-- <button class="product_btn">
-                        <div class=" justify-center"> <img class="move" src="/Models/van.png" width="80px" height="60px" background-position="15px">
-                            <p class="pt-5 pl-2">Vintage cars</p>
-                        </div>
-                    </button> -->
-
-
+                
                 <form action="{{ route('catalog.show.search', ['term' => 'term' ])}}" method="get">
                     <button type="submit">
                         <button class="product_btn">
@@ -286,27 +250,11 @@
                     </div>
                     @endif
 
-
                 </div>
             </div>
         </div>
 
         @endforeach
-
-        <!-- @foreach($products as $product)
-        <div class="mx-5 py-2 grid-flow-row auto-rows-max ">
-           
-            <div class="bg-gray-700">
-                <h4>Name: {{$product->productName}}</h4>
-                <p>Code: {{$product -> productCode}}</p>
-                <div class="confirm_btn">
-                    <p><a href="{{route('add.to.cart', $product->productCode)}}">Add to cart</a></p>
-
-                </div>
-            </div>
-        </div>
-        @endforeach -->
-
 
         <!-- copyrigth -->
         <div class="bg-slate-500 flex justify-center place-self-end h-10">
