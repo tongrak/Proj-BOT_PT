@@ -25,7 +25,11 @@
             Logout
         </a>
     </div>
-
+    @if(session('success'))
+        <div>
+            {{session('success')}}
+        </div>
+    @endif
     <div class="new_customer">New Customer</div>
 
     <!-- component -->
