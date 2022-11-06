@@ -274,35 +274,35 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2019-10-14 16:31:16
-
+DROP TABLE IF EXISTS carts;
 CREATE TABLE carts(
-    `cartNumber` int(11) NOT NULL,
     `customerNumber` int(11) NOT NULL,
     `custoConfirm` boolean NOT NULL,
     `salerepNumber` int(11),
     `saleConfirm` boolean NOT NULL,
-    UNIQUE KEY `cartNumber` (`cartNumber`),
-    CONSTRAINT pk_custocart PRIMARY KEY (`customerNumber`, `cartNumber`),
+    CONSTRAINT pk_custocart PRIMARY KEY (`customerNumber`),
     CONSTRAINT fk_custoref FOREIGN KEY (`customerNumber`) REFERENCES `customers`(`customerNumber`),
     CONSTRAINT fk_saleref FOREIGN KEY (`salerepNumber`) REFERENCES `employees`(`employeeNumber`)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `carts` (`cartNumber`, `customerNumber`, `custoConfirm`, `salerepNumber`, `saleConfirm`) VALUES ('10421', '124', '0', '1165', '0');
+INSERT INTO carts SELECT customerNumber, 0,salesRepEmployeeNumber, 0 FROM customers
 
+DROP TABLE IF EXISTS cartdetails;
 CREATE TABLE cartdetails(
-	`cartNumber` int(11) NOT NULL,
+	 `customerNumber` int(11) NOT NULL,
   	`productCode` varchar(15) NOT NULL,
   	`quantity` int CHECK (`quantity`>0),
-  	PRIMARY KEY (`cartNumber`, `productCode`),
-    KEY `cartNumber` (`cartNumber`),
-    KEY `productCode` (`productCode`),
-  	CONSTRAINT `fk_cartNumRef` FOREIGN KEY (`cartNumber`) REFERENCES `carts`(`cartNumber`),
+  	PRIMARY KEY (`customerNumber`, `productCode`),
+    CONSTRAINT fk_custorefcd FOREIGN KEY (`customerNumber`) REFERENCES `customers`(`customerNumber`),
   	CONSTRAINT `fk_productCoderef` FOREIGN KEY (`productCode`) REFERENCES `products`(`productCode`)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO cartdetails
-VALUES (10421, 'S18_2795', 35),(10421, 'S24_2022', 40);
+SELECT 	customerNumber, productCode, quantityOrdered
+FROM orders as o, orderdetails as od
+WHERE o.orderNumber = od.orderNumber AND o.status LIKE "In Process"
 
+DROP TABLE IF EXISTS Users;
 CREATE TABLE Users (
     CustomerID int(11) NOT NULL,
     Username varchar(255) NOT NULL,
@@ -313,6 +313,7 @@ CREATE TABLE Users (
 			on delete CASCADE
 );
 
+DROP TABLE IF EXISTS Admins;
 CREATE TABLE Admins (
     EmployeeID int(11) NOT NULL,
     Username varchar(255) NOT NULL,
