@@ -440,5 +440,22 @@ body {
     font-family: Dosis;
     font-size: 20px;
     margin-top: 5px;
-    background: rgb(55, 237, 70);
+    background: rgb(255, 255, 255);
+    animation: time_pop  5s;
+    opacity: 0;
+}
+
+@keyframes time_pop{
+    0%{
+        opacity: 1;
+        background: rgb(55, 237, 70);
+    }
+    50%{
+        opacity: 1;
+        background: rgb(55, 237, 70);
+    }
+    100%{
+        opacity: 0.5;
+        background: rgb(55, 237, 70);
+    }
 }
