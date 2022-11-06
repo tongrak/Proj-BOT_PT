@@ -221,11 +221,8 @@
     to {left: 50px;}
   }
   
-  
-
-
 @media only screen and (max-width: 1180px) {
     .carousel {
-        width: 90%;
+        width: 100%;
     }
 }
