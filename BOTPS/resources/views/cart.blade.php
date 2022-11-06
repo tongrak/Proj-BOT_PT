@@ -42,9 +42,13 @@
                 <img src="/skins/logo_1.png" id="logo_1" />
             </div>
 
+
             <!-- check role -->
             @if(Session::has('login-id'))
             <div class="flex space-x-4 pt-5 pr-5">
+                <a href="{{ url('/catalog') }}">
+                    <h1 class="btn_a">Catalog</h1>
+                </a>
                 <a href="{{ url('/cart') }}">
                     <h1 class="btn_a">Cart</h1>
                 </a>
@@ -74,55 +78,80 @@
                 <h1 class="text-5xl">Cart</h1>
             </div>
 
-            <!-- contents -->
-            <div class="">
-
-                <!-- @for($i = 0;$i < 10;$i++)
-                <div class="cart">
-                    <div class="space-y-1 py-3">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, sed?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, sed?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, sed?</p>
-                    </div>
-                    <button class="del">Delete</button>
-                </div>
-                @endfor -->
+            <!-- products -->
+            <div class="h-auto">
 
                 @if($cartDetails != null)
                 @foreach($cartDetails as $cart)
                 <div class="cart">
 
                     <!-- text -->
-                    <div class="space-y-1 py-3 pt-8 text-xl">
-                        <!-- <p>customerNumber: {{$cart->customerNumber}}</p> -->
+                    <div class="space-y-1 py-3 pt-8 text-lg mx-16 my-8">
+                        <p>Name : {{$cart->productName}}</p>
+                        <p>Description : {{$cart->productDescription}}</p>
                         <p>productCode: {{$cart->productCode}}</p>
                         <p>quantity: {{$cart->quantity}}</p>
+                        <p></p>
                     </div>
-                    <form method="POST" action="{{route('remove.from.cart', $cart->productCode)}}">
-                        @csrf
-                        @method('DELETE')
-                        <button class="del">Delete</button>
-                    </form>
+                    <div>
+                        <form method="POST" action="{{route('remove.from.cart', $cart->productCode)}}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="del">Delete</button>
+                        </form>
+                    </div>
+
+
 
                 </div>
                 @endforeach
+                @else
+                <div class="flex justify-center pt-48 text-8xl">
+                    <p class="ring-1 p-8 rounded-2xl ring-pink-200 bg-pink-200 text-white">Cart is Emtry</p>
+                </div>
                 @endif
 
 
             </div>
 
             <!-- order button -->
-            <form method="post" action="{{route('confirm.order')}}">
-            @csrf
+            @if($cartDetails != null)
+            @if(($cartStatus->custoConfirm) == 0)
+            <form method="POST" action="{{route('confirm.order')}}">
+                @csrf
                 <div class="flex">
                     <div class="bottom-0 right-10 absolute">
-                        <button class="text-white rounded-md py-2 px-5 bg-green-400 hover:bg-green-600 active:bg-green-500 text-2xl">Order</button>
+                        <button type="submit" class="text-white rounded-md py-2 px-5 bg-green-400 hover:bg-green-600 active:bg-green-500 text-2xl">Order</button>
                     </div>
                 </div>
             </form>
 
+            @else
+            <!-- order button -->
 
+            <form method="POST" action="{{route('cancel.order')}}">
+                @csrf
+                <div class="">
+                    <!-- button -->
+                    <div class="bottom-0 right-10 absolute space-y-5">
+                        <div class="flex space-x-5">
+                            <img class="animate-spin" src="/Models/loading.png" alt="" width="30px" height="30px" background-position="1500px">
+                            <p class="text-2xl">Waiting for confirmation</p>
+
+
+                        </div>
+                        <button type="submit" class="flex text-white rounded-md ml-10 py-2 px-5 bg-red-500 hover:bg-red-700 active:bg-green-500 text-2xl">
+                            <p class="">Cancel Orders</p>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            @endif
+            @endif
         </div>
+        
+
+
         <!-- copyrigth -->
         <div class="bg-slate-500 flex justify-center place-self-end h-10 mt-5">
             <img src="skins/logo_2.png" id="logo_2" />

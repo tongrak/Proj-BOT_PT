@@ -285,7 +285,7 @@ CREATE TABLE carts(
     CONSTRAINT fk_saleref FOREIGN KEY (`salerepNumber`) REFERENCES `employees`(`employeeNumber`)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO carts SELECT customerNumber, 0,salesRepEmployeeNumber, 0 FROM customers
+INSERT INTO carts SELECT customerNumber, 0,salesRepEmployeeNumber, 0 FROM customers;
 
 CREATE TABLE cartdetails(
 	 `customerNumber` int(11) NOT NULL,
