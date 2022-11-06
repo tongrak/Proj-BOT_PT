@@ -17,7 +17,11 @@ class CartController extends Controller
         if (!Session::has('login-id')) return view('login');
         $cusId = Session::get('login-id');
         $cartStatus = DB::table('carts')->where('customerNumber','=',$cusId)->select('custoConfirm')->first();
-        $cartDetails = DB::table('cartdetails')->where('customerNumber', '=', $cusId)->get();
+        $cartDetails = DB::select('
+            SELECT p.productCode, p.productVendor, p.productName, p.productDescription, p.buyPrice, cd.quantity
+            FROM products as p, cartdetails as cd
+            WHERE cd.productCode = p.productCode AND cd.customerNumber =
+        ' . $cusId);
 
         return view('cart', compact('cartDetails', 'cartStatus'));
     }
