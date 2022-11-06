@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\CartDetail;
 use App\Models\Customer;
 // use App\Models\User;
 use Illuminate\Http\Request;
@@ -37,11 +38,13 @@ class CommissionController extends Controller
         return redirect()->back()->with('success', 'cart have been confirm');
     }
 
-    public function salerepConfirm($cartID){
-        $cart = Cart::find($cartID)->first();
-        $cart->custoConfirm = true;
-        $cart->save();
-        return view('Home')->with('success', 'cart have been confirm');
+    public function salerepConfirm($customerNum){
+        // $cart = Cart::find($customerNum)->first();
+        // $cartDetail = CartDetail::find($customerNum)->get();
+        // DB::transaction()
+        // $cart->custoConfirm = true;
+        // $cart->save();
+        // return view('Home')->with('success', 'cart have been confirm');
     }
 
     public function insertSaleRep($customerID){

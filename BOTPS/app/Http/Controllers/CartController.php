@@ -16,8 +16,10 @@ class CartController extends Controller
     public function showCartDetail(){
         if (!Session::has('login-id')) return view('login');
         $cusId = Session::get('login-id');
-        $cartDetails = DB::table('cartdetails')->where('customerNumber', 'like', $cusId)->get();
-        return view('Cart', compact('cartDetails'));
+        $cartStatus = DB::table('carts')->where('customerNumber','=',$cusId)->select('custoConfirm')->first();
+        $cartDetails = DB::table('cartdetails')->where('customerNumber', '=', $cusId)->get();
+
+        return view('cart', compact('cartDetails', 'cartStatus'));
     }
 
     public function addToCart($pId){
@@ -26,37 +28,40 @@ class CartController extends Controller
         $cusId = session()->get('login-id');
         $salerep = DB::table('customers')->where('customerNumber','=',$cusId)->first('salesRepEmployeeNumber');
         $cart = DB::table('carts')->where('customerNumber','=',$cusId)->first();
-        DB::transaction(function()use($pId, $product, $cart , $cusId, $salerep){
-            if($cart != null){
-                $dummy = DB::table('cartdetails')->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
-                if($dummy == null){
-                    $cartDe = new CartDetail();
-                    $cartDe->customerNumber = $cart->customerNumber;
-                    $cartDe->productCode= $pId;
-                    $cartDe->quantity   = 1;
+        if(!$cart->custoConfirm){
+            DB::transaction(function()use($pId, $product, $cart , $cusId, $salerep){
+                if($cart != null){
+                    $dummy = DB::table('cartdetails')->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
+                    if($dummy == null){
+                        $cartDe = new CartDetail();
+                        $cartDe->customerNumber = $cart->customerNumber;
+                        $cartDe->productCode= $pId;
+                        $cartDe->quantity   = 1;
+                    }else{
+                        $cartDe = CartDetail::find($cusId)->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
+                        $cartDe->quantity   = $cartDe->quantity+1;
+                    }
+                    $cartDe->save();
+    
                 }else{
-                    $cartDe = CartDetail::find($cusId)->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
-                    $cartDe->quantity   = $cartDe->quantity+1;
+                    $cart = new Cart();
+                    $cart->customerNumber   = $cusId;
+                    $cart->custoConfirm     = False;
+                    $cart->saleConfirm      = False;
+                    $cart->salerepNumber    = $salerep->salesRepEmployeeNumber;
+                    $cart->save();
+    
+                    $cartDetail = new CartDetail();
+                    $cartDetail->customerNumber     = $cusId;
+                    $cartDetail->productCode        = $pId;
+                    $cartDetail->quantity           = 1;
+                    $cartDetail->save();
                 }
-                $cartDe->save();
-
-            }else{
-                $cart = new Cart();
-                $cart->customerNumber   = $cusId;
-                $cart->custoConfirm     = False;
-                $cart->saleConfirm      = False;
-                $cart->salerepNumber    = $salerep->salesRepEmployeeNumber;
-                $cart->save();
-
-                $cartDetail = new CartDetail();
-                $cartDetail->customerNumber     = $cusId;
-                $cartDetail->productCode        = $pId;
-                $cartDetail->quantity           = 1;
-                $cartDetail->save();
-            }
-                $product->quantityInStock = $product->quantityInStock-1;
-                $product->save();
-        });
+                    $product->quantityInStock = $product->quantityInStock-1;
+                    $product->save();
+            });
+        }else redirect('Home')->with('Cart Comfirmation Constraints', 'Your cart had been already comfirm. Please wait for sale representation or cancel your cart');
+        
         
         $this->showCartDetail($cusId)->with('Success','an item have been added');
     }
