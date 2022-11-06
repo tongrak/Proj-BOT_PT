@@ -51,7 +51,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         // cart routing:
         Route::get('/cart', 'CartController@showCartDetail')->name('cart');
         Route::get('/add-to-cart/{pId}', 'CartController@addToCart')->name('add.to.cart');
-        Route::delete('/remove-from-cart/{pId}', 'ProductController@removeInCart')->name('remove.from.cart');
+        Route::delete('/remove-from-cart/{pId}', 'CartController@removeInCart')->name('remove.from.cart');
         
         Route::get('/confirm-order', 'CommissionController@customerConfirm')->name('confirm.order');
     });
