@@ -13,7 +13,7 @@
         </button>
     </form>
 
-    <form action="">
+    <form method="post" action="{{ route('commission.confirm', key($cusID)) }}">
         @csrf
         <button class="confirm_btn">
             Confirm Order
