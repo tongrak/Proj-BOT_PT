@@ -49,7 +49,10 @@ class CommissionController extends Controller
 
     public function adminDenied($customerID){
         $cart = DB::table('carts')->where('customerNumber','=',$customerID)->first();
-        
+        $cartDetails = DB::table('cartdetails')->where('customerNumber', '=', $customerID)->get();
+        DB::transaction(function () use($cart, $cartDetails, $customerID) {
+            
+        });
     }
 
     public function salerepConfirm($customerNum){
