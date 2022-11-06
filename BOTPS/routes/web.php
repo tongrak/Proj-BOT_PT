@@ -64,8 +64,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         // TODO: Yet to implement
         // Route::post('/confirm-cart/{id}', 'CartController@confirm')->name('confirm.cart');
         
-        // commsion action route:
-        Route::post('/confirm-commit/{id}', 'CommissionController@confirm')->name('commission.confirm');
+        // commission action route:
+        Route::post('/confirm-commit/{customerNum}', 'CommissionController@salerepConfirm')->name('commission.confirm');
         Route::get('/commissions', 'CartController@showCartOfSaleRep')->name('commission.show');
         
         // use for canceling order
