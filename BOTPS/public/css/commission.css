@@ -116,13 +116,22 @@ body {
 }
 
 .comm_div {
-    width: 1330px;
+    width: 1400px;
     min-height: 175px;
     background: #eaeaea;
     margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 25px;
+}
+
+.totalPrice{
+    text-align: left;
+    overflow: hidden;
+    font-family: Dosis;
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-left: 1200px;
 }
 
 .tableBG_div {
@@ -173,24 +182,34 @@ body {
     color: #000000;
 }
 
-.product_description {
-    width: 587px;
+.product_code {
+    width: 400px;
     height: 40.71px;
     overflow: hidden;
     font-family: Dosis;
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
     color: #000000;
     margin-left: 20px;
 }
 
+.product_name {
+    width: 587px;
+    height: 40.71px;
+    overflow: hidden;
+    font-family: Dosis;
+    font-size: 18px;
+    text-align: left;
+    color: #000000;
+}
+
 .quantity {
-    width: 519px;
+    width: 400px;
     height: 40.75px;
     overflow: hidden;
     font-family: Dosis;
-    font-size: 20px;
-    text-align: left;
+    font-size: 18px;
+    text-align: center;
     color: #000000;
 }
 
@@ -201,7 +220,7 @@ body {
     height: 40.75px;
     overflow: hidden;
     font-family: Dosis;
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
     color: #000000;
 }
