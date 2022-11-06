@@ -397,6 +397,8 @@ body {
     margin: 8px;
     padding: 36px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .product_btn {

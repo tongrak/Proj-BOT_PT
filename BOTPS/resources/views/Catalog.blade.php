@@ -88,74 +88,172 @@
             <div class="table">
 
 
-                <row>
-                    <col>
-                    <button class="product_btn">
+                <form action="{{ route('catelog.show.category', "Classic cars")}}" method="get">
+                    <button type="submit">
+                        <button class="product_btn">
+
+                            <div class="justify-center">
+                                <img class="move" src="/Models/car.png" width="80px" height="60px" background-position="15px">
+                                <p class="pt-5 pl-2">Classic cars</p>
+                            </div>
+                        </button>
+                    </button>
+                </form>
+
+
+
+
+                <!-- <button class="product_btn">
                         <div class="justify-center">
                             <img class="move" src="/Models/car.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Classic cars</p>
                         </div>
-                    </button>
-                    </col>
+                    </button> -->
 
-                    <col>
-                    <button class="product_btn">
+
+
+                <form action="{{ route('catelog.show.category', "Motorcycles")}}" method="get">
+                    <button type="submit">
+                        <button class="product_btn">
+
+
+                            <div class="justify-center">
+                                <img class="move" src="/Models/scooter.png" width="80px" height="60px" background-position="15px">
+                                <p class="pt-5 pl-2">Motorcycles</p>
+                            </div>
+                        </button>
+                    </button>
+                </form>
+                <!-- <button class="product_btn">
                         <div class="justify-center"> <img class="move" src="/Models/scooter.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Motorcycles </p>
                         </div>
-                    </button>
-                    </col>
+                    </button> -->
 
-                    <col>
-                    <button class="product_btn">
+
+
+                <form action="{{ route('catelog.show.category', "Planes")}}" method="get">
+                    <button type="submit">
+                        <button class="product_btn">
+
+
+                            <div class="justify-center">
+                                <img class="move" src="/Models/airplane.png" width="80px" height="60px" background-position="15px">
+                                <p class="pt-5 pl-2">Planes</p>
+                            </div>
+                        </button>
+                    </button>
+                </form>
+                <!-- <button class="product_btn">
                         <div class="justify-center"> <img class="move" src="/Models/airplane.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Planes</p>
                         </div>
-                    </button>
-                    </col>
+                    </button> -->
 
-                    <col>
-                    <button class="product_btn">
+
+
+                <form action="{{ route('catelog.show.category', "Ships")}}" method="get">
+                    <button type="submit">
+                        <button class="product_btn">
+
+
+                            <div class="justify-center">
+                                <img class="move" src="/Models/cruise-ship.png" width="80px" height="60px" background-position="15px">
+                                <p class="pt-5 pl-2">Ships</p>
+                            </div>
+                        </button>
+                    </button>
+                </form>
+                <!-- <button class="product_btn">
                         <div class="justify-center"> <img class="move" src="/Models/cruise-ship.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Ships </p>
                         </div>
-                    </button>
-                    </col>
-                </row>
+                    </button> -->
+
+
+
             </div>
             <div class="table">
-                <row>
-                    <col>
-                    <button class="product_btn">
+
+
+                <form action="{{ route('catelog.show.category', "Trains")}}" method="get">
+                    <button type="submit">
+                        <button class="product_btn">
+
+
+                            <div class="justify-center">
+                                <img class="move" src="/Models/train.png" width="80px" height="60px" background-position="15px">
+                                <p class="pt-5 pl-2">Trains</p>
+                            </div>
+                        </button>
+                    </button>
+                </form>
+                <!-- <button class="product_btn">
                         <div class="justify-center">
                             <img class="move" src="/Models/train.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2 ">Trains</p>
                         </div>
+                    </button> -->
+
+
+                <form action="{{ route('catelog.show.category', "Trucks and Buses")}}" method="get">
+                    <button type="submit">
+                        <button class="product_btn">
+
+
+                            <div class="justify-center">
+                                <img class="move" src="/Models/double-decker-bus.png" width="80px" height="60px" background-position="15px">
+                                <p class="pt-5 pl-2">Trucks & Buses</p>
+                            </div>
+                        </button>
                     </button>
-                    </col>
-                    <col>
-                    <button class="product_btn">
+                </form>
+                <!-- <button class="product_btn">
                         <div class="justify-center"> <img class="move" src="/Models/double-decker-bus.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Trucks & Buses</p>
                         </div>
+                    </button> -->
+
+
+                <form action="{{ route('catelog.show.category', "Vintage cars")}}" method="get">
+                    <button type="submit">
+                        <button class="product_btn">
+
+
+                            <div class="justify-center">
+                                <img class="move" src="/Models/van.png" width="80px" height="60px" background-position="15px">
+                                <p class="pt-5 pl-2">Vintage cars</p>
+                            </div>
+                        </button>
                     </button>
-                    </col>
-                    <col>
-                    <button class="product_btn">
+                </form>
+                <!-- <button class="product_btn">
                         <div class=" justify-center"> <img class="move" src="/Models/van.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">Vintage cars</p>
                         </div>
+                    </button> -->
+
+
+                <form action="{{ route('catalog.show.search', ['term' => 'term' ])}}" method="get">
+                    <button type="submit">
+                        <button class="product_btn">
+                            <input type="search" name="term" value="" class="invisible">
+
+                            <div class="justify-center">
+                                <img class="move" src="/Models/online-shopping.png" width="80px" height="60px" background-position="15px">
+                                <p class="pt-5 pl-2">All products</p>
+                            </div>
+                        </button>
                     </button>
-                    </col>
-                    <col>
-                    <button class="product_btn">
+                </form>
+                <!-- <button class="product_btn">
                         <div class=" justify-center"> <img class="move" src="/Models/online-shopping.png" width="80px" height="60px" background-position="15px">
                             <p class="pt-5 pl-2">All products </p>
                         </div>
                     </button>
-                    </col>
+                    </col> -->
 
-                </row>
+
             </div>
 
         </div>
