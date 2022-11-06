@@ -10,7 +10,6 @@ class Cart extends Model
     // use HasFactory;
     protected $fillable = [
         'customerNumber',
-        'cartNumber',
         'custoConfirm',
         'saleConfirm',
         'salerepNumber'
