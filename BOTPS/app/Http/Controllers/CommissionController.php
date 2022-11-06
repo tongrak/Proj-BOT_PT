@@ -52,7 +52,10 @@ class CommissionController extends Controller
             DB::table('carts')->where('customerNumber','=',$customerID)->update(['custoConfirm'=>false],['saleConfirm'=>false]);
             DB::table('cartdetails')->where('customerNumber', '=', $customerID)->orderBy('customerNumber')->lazy()->each(function ($cartDetail) {
                 // DB::table('products')->where('productCode', '=', $cartDetail->productCode)->update(['quantityInStock', '=', $cartDetail->quantity]);
-                DB::table('products')->increment('quantityInStock', $cartDetail->quantity, ['productCode'=>$cartDetail->productCode]);
+                $proQuan = DB::table('products')->select('quantityInStock')->where('productCode', '=', $cartDetail->productCode)->first();
+                $proQuan = $proQuan->quantityInStock+$cartDetail->quantity;
+                $proCode = $cartDetail->productCode;
+                DB::table('products')->where('productCode', '=', $proCode)->update(['quantityInStock'=>$proQuan]);
             });
             DB::table('cartdetails')->where('customerNumber', '=', $customerID)->delete();
         });
@@ -91,9 +94,9 @@ class CommissionController extends Controller
                     where('customerNumber','=',$cart->customerNumber)->
                     where('productCode','=',$cd->productCode)->delete();
             }
-            $cart->custoConfirm = false; 
-            $cart->salerepNumber = false; 
-            $cart->save();
+            DB::table('carts')->
+                where('customerNumber','=',$cart->customerNumber)->
+                update(['custoConfirm'=>false,'salerepNumber'=>false]);
         });
         
         return redirect()->back('/home')->with('success', 'cart have been confirm');
@@ -106,7 +109,7 @@ class CommissionController extends Controller
             $customer->salesRepEmployeeNumber = $adminID;
             $customer->save();
         });
-        return view('Adminhome')->with('success', 'SaleRep has been add to customer.');
+        return redirect()->back()->with('success', 'SaleRep has been add to customer.');
     }
 
     private function getLastestOrderNumber():int{
