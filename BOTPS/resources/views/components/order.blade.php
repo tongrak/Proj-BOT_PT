@@ -7,13 +7,12 @@
             @foreach($cds as $cd)
                 @foreach($cd as $c)
                     @php $total += $c->totalPrice @endphp
-                    @component('components.product_des',['c' => $c])
-                    @endcomponent    
+                    @component('components.product_des',['c' => $c])@endcomponent    
                 @endforeach
             @endforeach
         @endforeach
     </div>
     <div class="totalPrice"><b>Total {{$total}} $</b> </div>
     <!-- btn -->
-    <x-botton />
+    @component('components.botton',['cusID' => $cWr])@endcomponent
 </div>

@@ -44,9 +44,11 @@ class CommissionController extends Controller
             $cart->custoConfirm = false;
             $cart->save();
         });
+        return redirect()->back()->with('success', 'cart has been cancle.');
     }
 
-    public function adminAccept($customerID){
+    public function adminDenied($customerID){
+        $cart = DB::table('carts')->where('customerNumber','=',$customerID)->first();
         
     }
 

@@ -69,7 +69,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         Route::get('/commissions', 'CartController@showCartOfSaleRep')->name('commission.show');
         
         // use for canceling order
-        Route::get('/admin-cancel-order/{cID}', 'CommissionController@adminCancel')->name('admin.cancel.order');
+        Route::post('/admin-cancel-order/{cID}', 'CommissionController@adminCancel')->name('admin.cancel.order');
     });
     
     //this route is for 'user or admin' only
