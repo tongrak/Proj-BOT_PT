@@ -92,8 +92,12 @@
 
             <!-- Top Hits -->
             <div class="flex pl-64 pt-16">
-                <h1 class="tophit">Top Hits</h1>
-                <img src="/Models/fire.png" alt="" width="60px" height="60px" background-position="1500px">
+                <div class="toBig flex">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                        <h1 class="tophit">Top Hits</h1>
+                    </a>
+                    <img class="" src="/Models/fire.png" alt="" width="60px" height="60px" background-position="1500px">
+                </div>
             </div>
 
 
