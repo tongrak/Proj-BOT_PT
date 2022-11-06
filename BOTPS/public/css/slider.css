@@ -227,16 +227,6 @@ span:before {
     background: red; */
     position: relative;
     animation: mymove 3s;
-<<<<<<< HEAD
-    animation-iteration-count: infinite;
-  }
-  
-  @keyframes mymove {
-    from {left: 0px;}
-    to {left: 50px;}
-  }
-  
-=======
     animation-iteration-count: 200;
 }
 
@@ -249,7 +239,6 @@ span:before {
     }
 }
 
->>>>>>> 6350bd336fc5aa241d3fc7283db9a7a128daba45
 @media only screen and (max-width: 1180px) {
     .carousel {
         width: 100%;
