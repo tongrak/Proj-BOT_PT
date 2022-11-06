@@ -69,8 +69,18 @@
 
         </div>
 
+        <!-- Text slider -->
+        <div class="">
+            <div id='rssBlock' class="flex justify-center">
+                <p class="cnnContents">
+                    <span class="marqueeStyle">&nbsp;welcome to Web Shop by PS BOT Shop&nbsp;</span>
+                </p>
+            </div>
+        </div>
+
         <!-- contents -->
-        <div class="h-auto">
+        <div class="h-full space-y-5 pt-5">
+
 
             <!-- search box -->
             <form action="{{ route('catalog.show.search', ['term' => 'term' ])}}" method="get">
@@ -90,8 +100,7 @@
             <!-- Products -->
             <div class="carousel flex pt-5 bg-fuchsia-200 mt-5 pb-10 drop-shadow-2xl">
 
-                @for($i = 0;$i < 10; $i++) 
-                <div class="mx-10 container" width="300" height="400">
+                @for($i = 0;$i < 10; $i++) <div class="mx-10 container" width="300" height="400">
                     <form action="{{ route('catalog.show.search', ['term' => 'term' ])}}" method="get">
                         <button type="submit">
                             <input type="search" name="term" value="{{$products[$i]->productName}}" class="invisible">
@@ -101,8 +110,8 @@
                             </div>
                         </button>
                     </form>
-                </div>
-                @endfor
+            </div>
+            @endfor
         </div>
 
     </div>
