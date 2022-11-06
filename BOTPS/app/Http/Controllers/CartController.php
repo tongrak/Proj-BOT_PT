@@ -17,9 +17,8 @@ class CartController extends Controller
         if (!Session::has('login-id')) return view('login');
         $cusId = Session::get('login-id');
         $cartDetails = DB::table('cartdetails')->where('customerNumber', 'like', $cusId)->get();
-        return view('Cart', compact('cartdetails'));
+        return view('Cart', compact('cartDetails'));
     }
-
 
     public function addToCart($pId){
         $product =  Product::findOrFail($pId);
@@ -93,10 +92,8 @@ class CartController extends Controller
         $toRe = array();
         if($carts != null){
             foreach ($carts as $cart) {
-                $res = DB::table('cartdetails')->select()->where('customerNumber','Like',$carts->customerNumber)->get();
-                echo($cart->cartNumber);
-                $cn = $cart->cartNumber;
-                array_push($toRe,array($cn=>compact('res')));
+                $res = DB::table('cartdetails')->select()->where('customerNumber','Like',$cart->customerNumber)->get();
+                array_push($toRe,array($cart->customerNumber=>compact('res')));
             }
         }
         return $toRe;

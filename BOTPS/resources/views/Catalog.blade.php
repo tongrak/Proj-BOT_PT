@@ -83,38 +83,41 @@
             <h1 class="new_customer">Products in Catalog</h1>
         </div>
 
-        <!-- <div class="comm_div">
-            <div class="m-5 py-2">
+        <div class="comm_div">
+            <div class="table">
                 <row>
                     <col>
-                    <button>Classic cars</button> |
+                    <button class="product_btn">Classic cars</button>
                     </col>
                     <col>
-                    <button>Motorcycles</button> |
+                    <button class="product_btn">Motorcycles</button>
                     </col>
                     <col>
-                    <button>Plains</button> |
+                    <button class="product_btn">Plains</button>
                     </col>
                     <col>
-                    <button>Ships</button>
+                    <button class="product_btn">Ships</button>
                     </col>
                 </row>
             </div>
-            <div class="m-5 py-2 grid-flow-row auto-rows-max">
+            <div class="table">
                 <row>
                     <col>
-                    <button>Trains</button> |
+                    <button class="product_btn">Trains</button>
                     </col>
                     <col>
-                    <button>Trucks & Buses</button> |
+                    <button class="product_btn">Trucks & Buses</button>
                     </col>
                     <col>
-                    <button>Vintage cars</button>
+                    <button class="product_btn">Vintage cars</button>
+                    </col>
+                    <col>
+                    <button class="product_btn">All products</button>
                     </col>
 
                 </row>
             </div>
-        </div> -->
+        </div>
 
 
         @foreach($products as $product)
