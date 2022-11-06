@@ -44,14 +44,16 @@ class CommissionController extends Controller
             $cart->custoConfirm = false;
             $cart->save();
         });
+        return redirect()->back()->with('success', 'cart has been cancle.');
     }
 
-    public function adminAccept($customerID){
+    public function adminDenied($customerID){
+        $cart = DB::table('carts')->where('customerNumber','=',$customerID)->first();
         
     }
 
     public function salerepConfirm($customerNum){
-        $cart = Cart::where('customerNumber','=',$customerNum)->first();
+        $cart = DB::table('carts')->where('customerNumber','=',$customerNum)->first();
         $cartDetails = CartDetail::where('customerNumber','=',$customerNum)->get();
         DB::transaction(function()use($cart,$cartDetails){
             foreach($cartDetails as $cd){
@@ -75,5 +77,16 @@ class CommissionController extends Controller
             $customer->save();
         });
         return view('Adminhome')->with('success', 'SaleRep has been add to customer.');
+    }
+
+    private function getLastestOrderNumber():int{
+        $lastestOrder = DB::table('orders')->orderByDesc('orderNumber')->select('orderNumber')->first();
+        return $lastestOrder->orderNumber+1;
+    }
+
+    private function getDatesForOrder():array{
+        $strReqOr = strtotime("+7 Days");
+        $strShipOr = strtotime("+10 Days");
+        return array(date("y-m-d"), date("y-m-d", $strReqOr), date("y-m-d",$strShipOr));
     }
 }

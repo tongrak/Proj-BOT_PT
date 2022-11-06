@@ -84,6 +84,7 @@ class CartController extends Controller
                 }else{
                     DB::table('cartdetails')->where('customerNumber','=',$cusId)->where('productCode','=', $product->productCode)->delete();
                 }
+                
                 $product->quantityInStock = $product->quantityInStock+1;
             $product->save();
         });

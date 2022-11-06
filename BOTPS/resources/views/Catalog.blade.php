@@ -69,7 +69,7 @@
     </div>
 
     <!-- contents -->
-    <div class="h-screen">
+    <div class="h-screen pt-16">
 
         <!-- search box -->
         <form action="{{ route('catalog.show.search', ['term' => 'term' ])}}" method="get">
@@ -86,34 +86,70 @@
 
         <div>
             <div class="table">
+
+
                 <row>
                     <col>
-                    <button class="product_btn">Classic cars</button>
+                    <button class="product_btn">
+                        <div class="flex justify-center">
+                            <img src="/Models/car.png" width="80px" height="60px" background-position="15px">
+                            <p class="pt-5 pl-2">Classic cars</p>
+                        </div>
+                    </button>
+
                     </col>
                     <col>
-                    <button class="product_btn">Motorcycles</button>
+                    <button class="product_btn">
+                        <div class="flex justify-center"> <img src="/Models/scooter.png" width="80px" height="60px" background-position="15px">
+                            <p class="pt-5 pl-2">Motorcycles </p>
+                        </div>
+                    </button>
                     </col>
                     <col>
-                    <button class="product_btn">Planes</button>
+                    <button class="product_btn">
+                        <div class="flex justify-center"> <img src="/Models/airplane.png" width="80px" height="60px" background-position="15px">
+                            <p class="pt-5 pl-2">Planes</p>
+                        </div>
+                    </button>
                     </col>
                     <col>
-                    <button class="product_btn">Ships</button>
+                    <button class="product_btn">
+                        <div class="flex justify-center"> <img src="/Models/cruise-ship.png" width="80px" height="60px" background-position="15px">
+                            <p class="pt-5 pl-2">Ships </p>
+                        </div>
+                    </button>
                     </col>
                 </row>
             </div>
             <div class="table">
                 <row>
                     <col>
-                    <button class="product_btn">Trains</button>
+                    <button class="product_btn">
+                        <div class="flex justify-center"> <img src="/Models/train.png" width="80px" height="60px" background-position="15px">
+                            <p class="pt-5 pl-2">Trains</p>
+                        </div>
+                    </button>
                     </col>
                     <col>
-                    <button class="product_btn">Trucks & Buses</button>
+                    <button class="product_btn">
+                        <div class="flex justify-center"> <img src="/Models/double-decker-bus.png" width="80px" height="60px" background-position="15px">
+                            <p class="pt-5 pl-2">Trucks & Buses</p>
+                        </div>
+                    </button>
                     </col>
                     <col>
-                    <button class="product_btn">Vintage cars</button>
+                    <button class="product_btn">
+                        <div class="flex justify-center"> <img src="/Models/van.png" width="80px" height="60px" background-position="15px">
+                            <p class="pt-5 pl-2">Vintage cars</p>
+                        </div>
+                    </button>
                     </col>
                     <col>
-                    <button class="product_btn">All products</button>
+                    <button class="product_btn">
+                        <div class="flex justify-center"> <img src="/Models/online-shopping.png" width="80px" height="60px" background-position="15px">
+                            <p class="pt-5 pl-2">All products </p>
+                        </div>
+                    </button>
                     </col>
 
                 </row>
@@ -159,7 +195,9 @@
                     @if(Session::has('login-id'))
 
                     <div class="addToCart_btn">
-                        <p><a href="{{route('add.to.cart', $product->productCode)}}">Add to cart</a></p>
+                        <a href="{{route('add.to.cart', $product->productCode)}}">
+                            <p>Add to cart</p>
+                        </a>
 
                     </div>
                     @endif
