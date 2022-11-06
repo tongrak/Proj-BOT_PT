@@ -39,12 +39,20 @@ class CommissionController extends Controller
     }
 
     public function salerepConfirm($customerNum){
-        // $cart = Cart::find($customerNum)->first();
-        // $cartDetail = CartDetail::find($customerNum)->get();
-        // DB::transaction()
-        // $cart->custoConfirm = true;
-        // $cart->save();
-        // return view('Home')->with('success', 'cart have been confirm');
+        $cart = Cart::where('customerNumber','=',$customerNum)->first();
+        $cartDetails = CartDetail::where('customerNumber','=',$customerNum)->get();
+        DB::transaction(function()use($cart,$cartDetails){
+            foreach($cartDetails as $cd){
+                // TODO: add to orderdetail
+
+                $cd->delete();
+            }
+            $cart->custoConfirm = false; 
+            $cart->salerepNumber = false; 
+            $cart->save();
+        });
+        
+        return view('Home')->with('success', 'cart have been confirm');
     }
 
     public function insertSaleRep($customerID){
