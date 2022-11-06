@@ -105,7 +105,7 @@ class CommissionController extends Controller
     public function insertSaleRep($customerID){
         $adminID = Session::get('login-id');
         $customer = Customer::where('customerNumber','=',$customerID)->first();
-        $cart = Cart::where('customerpNumber', '=', $customerID)->first();
+        $cart = Cart::where('customerNumber', '=', $customerID)->first();
         DB::transaction(function () use($adminID, $customer, $cart) {
             $customer->salesRepEmployeeNumber = $adminID;
             $cart->salerepNumber = $adminID;
