@@ -94,7 +94,6 @@
 
                     <!-- text -->
                     <div class="space-y-1 py-3 pt-8 text-xl">
-                        <!-- <p>customerNumber: {{$cart->customerNumber}}</p> -->
                         <p>productCode: {{$cart->productCode}}</p>
                         <p>quantity: {{$cart->quantity}}</p>
                     </div>
@@ -104,6 +103,7 @@
                         <button class="del">Delete</button>
                     </form>
 
+
                 </div>
                 @endforeach
                 @endif
@@ -111,15 +111,43 @@
 
             </div>
 
+            @if(($cartStatus->custoConfirm) == 0)
             <!-- order button -->
-            <form method="post" action="{{route('confirm.order')}}">
-            @csrf
+            <form method="POST" action="{{route('confirm.order')}}">
+                @csrf
                 <div class="flex">
                     <div class="bottom-0 right-10 absolute">
-                        <button class="text-white rounded-md py-2 px-5 bg-green-400 hover:bg-green-600 active:bg-green-500 text-2xl">Order</button>
+                        <button type="submit" class="text-white rounded-md py-2 px-5 bg-green-400 hover:bg-green-600 active:bg-green-500 text-2xl">Order</button>
                     </div>
                 </div>
             </form>
+
+            @else
+            <!-- order button -->
+
+            <form method="POST" action="{{route('cancel.order')}}">
+                @csrf
+                <div class="">
+                    <!-- button -->
+                    <div class="bottom-0 right-10 absolute space-y-5">
+                        <div class="flex space-x-5">
+                            <img class="animate-spin" src="/Models/loading.png" alt="" width="30px" height="30px" background-position="1500px">
+                            <p class="text-2xl">Waiting for confirmation</p>
+                            <!-- <p>
+                                <span></span>
+                            </p> -->
+
+                        </div>
+                        <button type="submit" class="flex text-white rounded-md ml-10 py-2 px-5 bg-red-500 hover:bg-red-700 active:bg-green-500 text-2xl">
+                            <p class="">Cancel Orders</p>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+
+            @endif
+
 
 
         </div>
