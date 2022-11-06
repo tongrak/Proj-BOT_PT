@@ -74,8 +74,9 @@
         <div class="h-screen overflow-y-scroll">
 
             <!-- Title -->
-            <div class="flex pl-64 pt-16 ">
-                <h1 class="text-5xl">Cart</h1>
+            <div class="flex pl-64 pt-16 space-x-5">
+                <h1 class="text-7xl font-bold">Cart</h1>
+                <img src="/Models/shopping-cart.png" alt="" width="60px" height="60px" background-position="1500px">
             </div>
 
             <!-- products -->
@@ -86,13 +87,33 @@
                 <div class="cart">
 
                     <!-- text -->
-                    <div class="space-y-1 py-3 pt-8 text-lg mx-16 my-8">
-                        <p>Name : {{$cart->productName}}</p>
-                        <p>Description : {{$cart->productDescription}}</p>
-                        <p>productCode: {{$cart->productCode}}</p>
-                        <p>quantity: {{$cart->quantity}}</p>
-                        <p></p>
+                    <div class="space-y-2 py-3 pt-8 text-lg ml-16 my-8">
+                        <div class="flex space-x-2">
+                            <p class="font-bold">Name:</p>
+                            <p>{{$cart->productName}}</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <p class="font-bold">Description:</p>
+                            <p>{{$cart->productDescription}}</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <p class="font-bold">productCode:</p>
+                            <p>{{$cart->productCode}}</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <p class="font-bold">quantity:</p>
+                            <p>{{$cart->quantity}}</p>
+
+                            <p class="font-bold pl-16">Price:</p>
+                            <p >{{$cart->buyPrice}} $</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <p class="font-bold">Total Price:</p>
+                            <p class="text-red-600">{{$cart->buyPrice*$cart->quantity}} $</p>
+                        </div>
                     </div>
+
+                    <!-- delete button -->
                     <div>
                         <form method="POST" action="{{route('remove.from.cart', $cart->productCode)}}">
                             @csrf
@@ -102,12 +123,12 @@
                     </div>
 
 
-
                 </div>
                 @endforeach
                 @else
+                <!-- cart empty -->
                 <div class="flex justify-center pt-48 text-8xl">
-                    <p class="ring-1 p-8 rounded-2xl ring-pink-200 bg-pink-200 text-white">Cart is Emtry</p>
+                    <p class="ring-1 p-8 rounded-2xl ring-pink-200 bg-pink-200 text-white">Cart is empty</p>
                 </div>
                 @endif
 
@@ -149,7 +170,7 @@
             @endif
             @endif
         </div>
-        
+
 
 
         <!-- copyrigth -->

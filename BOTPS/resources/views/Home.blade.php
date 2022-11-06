@@ -14,7 +14,7 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
 </head>
 
-<body class="fontA bg-gray-200">
+<body class="fontA">
 
 
     <div class="justify-between w-full h-fit">
