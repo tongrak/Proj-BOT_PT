@@ -125,6 +125,16 @@ body {
     padding: 25px;
 }
 
+.tableBG_div {
+    width: 1330px;
+    min-height: 175px;
+    background: #b3dfe9;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 25px;
+}
+
 .new_customer {
     position: relative;
     top: 25px;
@@ -195,6 +205,42 @@ body {
     text-align: left;
     color: #000000;
 }
+.productName {
+    top: 243.19px;
+    left: 1187px;
+    width: 1000px;
+    height: 40.75px;
+    overflow: hidden;
+    font-family: Dosis;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    color: #000000;
+}
+.productCodeItalic {
+    top: 243.19px;
+    left: 1187px;
+    width: 1000px;
+    height: 40.75px;
+    overflow: hidden;
+    font-family: Dosis;
+    font-size: 16px;
+    font-style: italic;
+    text-align: left;
+    color: #000000;
+}
+.description {
+    top: 243.19px;
+    left: 1187px;
+    width: 1000px;
+    height: flex;
+    overflow: hidden;
+    font-family: Dosis;
+    font-size: 18px;
+    text-align: left;
+    padding-top: 36px;
+    color: #000000;
+}
 
 .btn_frame {
     display: flex;
@@ -237,7 +283,7 @@ body {
     background: #ffffff;
     cursor: pointer;
 
-    padding-top: 18.5px;
+    padding-top: 7px;
     overflow: hidden;
     font-family: Dosis;
     font-size: 20px;
@@ -245,6 +291,33 @@ body {
     color: rgba(13.21, 211.44, 33.04, 1);
 }
 .confirm_btn:hover {
+    background: rgba(13.21, 211.44, 33.04, 1);
+    color: #ffffff;
+}
+.btn_right {
+    display: flex;
+    justify-content: flex-end;
+}
+.addToCart_btn {
+    width: 162px;
+    height: 44px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(13.21, 211.44, 33.04, 1);
+    background: #ffffff;
+    cursor: pointer;
+
+    padding-top: 7px;
+    overflow: hidden;
+    font-family: Dosis;
+    font-size: 20px;
+    text-align: center;
+    color: rgba(13.21, 211.44, 33.04, 1);
+}
+.addToCart_btn:hover {
     background: rgba(13.21, 211.44, 33.04, 1);
     color: #ffffff;
 }
@@ -266,25 +339,27 @@ body {
     height: 70px;
 }
 .product_btn {
-    width: 162px;
-    height: 44px;
+    width: 250px;
+    height: 72px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;
-    border: 1px solid black;
-    background: #ffffff;
+    border: 1px solid white;
+    background: #4db5cc;
     cursor: pointer;
-    margin: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
 
     overflow: hidden;
     font-family: Dosis;
     font-size: 20px;
     text-align: center;
-    color: black;
+    color: white;
 }
 .product_btn:hover {
-    background: gray;
-    color: #ffffff;
+    background: #fcf5cf;
+    border: 1px solid #f4c025;
+    color: #f4c025;
 }
