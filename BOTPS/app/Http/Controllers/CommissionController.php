@@ -64,16 +64,19 @@ class CommissionController extends Controller
         $cartDetails = CartDetail::where('customerNumber','=',$customerNum)->get();
         DB::transaction(function()use($cart,$cartDetails){
             $dateArr = $this->getDatesForOrder();
+            $orderDate = $dateArr[0];
+            $orderReq  = $dateArr[1];
+            $orderShip  = $dateArr[2];
             $currOrderNum = $this->getLastestOrderNumber();
-            DB::table('order')->
+            DB::table('orders')->
                 insert([
                     'orderNumber'=>$currOrderNum,
-                    'orderDate'=> $this->$dateArr[0],
-                    'requiredDate'=> $this->$dateArr[1],
-                    'shippedDate'=> $this->$dateArr[2],
+                    'orderDate'=> $orderDate,
+                    'requiredDate'=> $orderReq,
+                    'shippedDate'=> $orderShip,
                     'status'=> "In Process",
                     'comments'=> "added by function",
-                    'customer'=> $cart->customerNumber
+                    'customerNumber'=> $cart->customerNumber
                 ]);
             foreach($cartDetails as $cd){
                 $currPrice = $this->getPriceOfProduct($cd->productCode);
@@ -88,9 +91,9 @@ class CommissionController extends Controller
                     where('customerNumber','=',$cart->customerNumber)->
                     where('productCode','=',$cd->productCode)->delete();
             }
-            $cart->custoConfirm = false; 
-            $cart->salerepNumber = false; 
-            $cart->save();
+            DB::table('carts')->
+                where('customerNumber','=',$cart->customerNumber)->
+                update(['custoConfirm'=>false,'salerepNumber'=>false]);
         });
         
         return redirect()->back('/home')->with('success', 'cart have been confirm');
