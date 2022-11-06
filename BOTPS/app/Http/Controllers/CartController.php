@@ -63,25 +63,20 @@ class CartController extends Controller
         $product = Product::findOrFail($productId);
         if (!Session::has('login-id')) return view('login');
         $cusId = Session::get('login-id');
-        $cart = DB::table('carts')->where('customerNumber','Like',$cusId)->first();
+        $cart = DB::table('carts')->where('customerNumber','=',$cusId)->first();
         DB::transaction(function()use($product, $cart){
-            if($cart != null){
-                $cartDe = DB::table('cartdetails')
-                    ->where('cartNumber','like',$cart->cartNumber)
-                    ->where('productCode','like',$product->productCode)
-                    ->first();
-                if(isNull($cartDe)){
+                $cartDe = CartDetail::find($cart->customerNumber)->where('productCode','=',$product->productCode)->first();
+                if($cartDe == null){
                     return redirect()->back()->with('removeFail','no such product in cart');
-                }else{
+                }else if($cartDe->quantity > 1){
                     $cartDe->quantity = $cartDe->quantity-1;
+                    $cartDe->save();
+                }else{
+                    $cartDe->delete();
                 }
-                $cartDe->save();
-            }else return redirect()->back()->with('removeFail','no cart detected');
-            
+                $product->quantityInStock = $product->quantityInStock+1;
+            $product->save();
         });
-
-        $product->quantityInStock = $product->quantityInStock+1;
-        $product->save();
         $this->showCartDetail($cusId)->with('Success', 'the item have been remove');
     }
 
@@ -92,8 +87,12 @@ class CartController extends Controller
         $toRe = array();
         if($carts != null){
             foreach ($carts as $cart) {
-                $res = DB::table('cartdetails')->select()->where('customerNumber','Like',$cart->customerNumber)->get();
-                array_push($toRe,array($cart->customerNumber=>compact('res')));
+                $res = DB::select('
+                    SELECT p.productName, p.productCode, quantity, p.buyPrice as pricePerUnit, quantity * p.buyPrice as totalPrice
+                    FROM cartdetails as cd, products as p
+                    WHERE cd.productCode = p.productCode AND cd.customerNumber =' . $cart->customerNumber);
+                if($res != null) 
+                    array_push($toRe,array($cart->customerNumber=>compact('res')));
             }
         }
         return $toRe;

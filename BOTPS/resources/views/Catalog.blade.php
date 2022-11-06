@@ -81,9 +81,10 @@
 
         <div class="m-5 py-2 grid-flow-row auto-rows-max">
             <h1 class="new_customer">Products in Catalog</h1>
+
         </div>
 
-        <div class="comm_div">
+        <div>
             <div class="table">
                 <row>
                     <col>
@@ -93,7 +94,7 @@
                     <button class="product_btn">Motorcycles</button>
                     </col>
                     <col>
-                    <button class="product_btn">Plains</button>
+                    <button class="product_btn">Planes</button>
                     </col>
                     <col>
                     <button class="product_btn">Ships</button>
@@ -123,40 +124,52 @@
         @foreach($products as $product)
         <div class="comm_div">
             <div class="m-5 py-2">
+
+
+                <button class="productName ">Name: {{$product->productName}}</button>
+                <div>
+                    <button class="productCodeItalic">Code: {{$product -> productCode}}
+
+                        , Line: {{$product -> productLine}}
+
+                        , Scale: {{$product -> productScale}}</button>
+                </div>
+
+
+            </div>
+            <div class="m-10 py-2 grid-flow-row auto-rows-max">
                 <row>
                     <col>
-                    <button>Name: {{$product->productName}}</button>
+                    <div class="description">Vendor: {{$product -> productVendor}}</div>
                     </col>
-                    <col>
-                    <button>Code: {{$product -> productCode}}</button>
+
+                    <div class="description">Description: {{$product -> productDescription}}</div>
                     </col>
+
                     <col>
-                    <button>Line: {{$product -> productLine}}</button>
+                    <div class="description">Stock: {{$product -> quantityInStock}}</div>
                     </col>
+
                     <col>
-                    <button>Scale: {{$product -> productScale}}</button>
+                    <div class="description">Price: {{$product -> buyPrice}} $</div>
                     </col>
                 </row>
-            </div>
-            <div class="m-5 py-2 grid-flow-row auto-rows-max">
-                <row>
-                    <col>
-                    <button>Vendor : {{$product -> productVendor}}</button>
-                    </col>
-                    <col>
-                    <button>Description: {{$product -> productDescription}}</button>
-                    </col>
-                    <col>
-                    <button>Stock: {{$product -> quantityInStock}}</button>
-                    </col>
-                    <col>
-                    <button>Price: {{$product -> buyPrice}}</button>
-                    </col>
-                    <div class="confirm_btn">
+                <div class="btn_right">
+                    <!-- check role -->
+                    @if(Session::has('login-id'))
+
+                    <div class="addToCart_btn">
                         <p><a href="{{route('add.to.cart', $product->productCode)}}">Add to cart</a></p>
 
                     </div>
-                </row>
+
+
+
+
+                    @endif
+
+
+                </div>
             </div>
         </div>
 
