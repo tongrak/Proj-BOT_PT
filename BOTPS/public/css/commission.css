@@ -283,7 +283,7 @@ body {
 
 .cancel_btn {
     width: 162px;
-    height: 44px;
+    height: 65px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -294,7 +294,6 @@ body {
     cursor: pointer;
     text-decoration: none;
 
-    padding-top: 18.5px;
     overflow: hidden;
     font-family: Dosis;
     font-size: 20px;
@@ -308,7 +307,7 @@ body {
 
 .confirm_btn {
     width: 162px;
-    height: 44px;
+    height: 65px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -319,7 +318,6 @@ body {
     cursor: pointer;
     text-decoration: none;
 
-    padding-top: 18.5px;
     overflow: hidden;
     font-family: Dosis;
     font-size: 20px;
@@ -331,6 +329,32 @@ body {
     background: rgba(13.21, 211.44, 33.04, 1);
     color: #ffffff;
 }
+
+.denied_btn {
+    width: 162px;
+    height: 65px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    border: 1px solid rgb(0, 0, 0);
+    background: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+
+    overflow: hidden;
+    font-family: Dosis;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.denied_btn:hover {
+    background: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
 .btn_right {
     display: flex;
     justify-content: flex-end;
