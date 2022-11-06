@@ -54,6 +54,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         Route::get('/add-to-cart/{pId}', 'CartController@addToCart')->name('add.to.cart');
         Route::delete('/remove-from-cart/{pId}', 'ProductController@remove')->name('remove.from.cart');
         
+        Route::get('/confirm-order', 'CommissionController@customerConfirm')->name('confirm.order');
     });
     
     // this route is for 'admin' only
@@ -63,8 +64,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         // Route::post('/confirm-cart/{id}', 'CartController@confirm')->name('confirm.cart');
         
         // commsion action route:
-        // Route::post('/confirm-commis/{id}', 'CommissionController@confirm')->name('commission.confirm');
+        Route::post('/confirm-commit/{id}', 'CommissionController@confirm')->name('commission.confirm');
         Route::get('/commissions', 'CartController@showCartOfSaleRep')->name('commission.show');
+        
     });
     
     //this route is for 'user or admin' only
