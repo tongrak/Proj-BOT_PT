@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class CommissionController extends Controller
 {
-    public function customerConfirm(){
+    public function customerConfirm(Request $request){
         // if (!Session::has('login-id')) return view('login');
         $cusId = Session::get('login-id');
         $cart = Cart::where('customerNumber','=',$cusId)->first();
