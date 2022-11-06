@@ -91,9 +91,9 @@ class CommissionController extends Controller
                     where('customerNumber','=',$cart->customerNumber)->
                     where('productCode','=',$cd->productCode)->delete();
             }
-            $cart->custoConfirm = false; 
-            $cart->salerepNumber = false; 
-            $cart->save();
+            DB::table('carts')->
+                where('customerNumber','=',$cart->customerNumber)->
+                update(['custoConfirm'=>false,'salerepNumber'=>false]);
         });
         
         return redirect()->back('/home')->with('success', 'cart have been confirm');
