@@ -63,9 +63,9 @@ class CartController extends Controller
                     $product->quantityInStock = $product->quantityInStock-1;
                     $product->save();
             });
-        }else redirect()->back()->with('Cart Comfirmation Constraints', 'Your cart had been already comfirm. Please wait for sale representation or cancel your cart');
+        }else redirect()->back()->with('fail','Cart Comfirmation Constraints', 'Your cart had been already comfirm. Please wait for sale representation or cancel your cart');
         
-        return redirect()->back()->with('add product succ');
+        return redirect()->back()->with('success', $product->productName . ' added to card');
     }
 
     public function removeInCart($productId){
@@ -88,7 +88,7 @@ class CartController extends Controller
                 $product->quantityInStock = $product->quantityInStock+1;
             $product->save();
         });
-        return redirect()->back()->with('Success', 'the item have been remove');
+        return redirect()->back()->with('success', 'remove 1 ' . $product->productName . ' from the cart');
     }
 
     private function getCartOfSaleRep($salerepID = null){
