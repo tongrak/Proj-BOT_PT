@@ -41,7 +41,7 @@
 
             <!-- logo -->
             <div class="logo">
-                <img src="skins/logo_1.png" id="logo_1" />
+                <img src="{{asset('skins/logo_1.png')}}" id="logo_1" />
             </div>
 
             <!-- check role -->
@@ -138,7 +138,7 @@
 
     <!-- copyrigth -->
     <div class="bg-slate-500 flex justify-center place-self-end h-10">
-        <img src="skins/logo_2.png" id="logo_2" />
+        <img src="{{asset('skins/logo_2.png')}}" id="logo_2" />
         <h1 class="text-white pt-1">Team PS-BOT</h1>
     </div>
     </div>

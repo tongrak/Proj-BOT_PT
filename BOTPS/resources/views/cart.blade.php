@@ -82,8 +82,10 @@
             <!-- products -->
             <div class="h-auto">
 
+                @php $total = 0 @endphp
                 @if($cartDetails != null)
                 @foreach($cartDetails as $cart)
+                @php $total += $cart->buyPrice*$cart->quantity @endphp
                 <div class="cart">
 
                     <!-- text -->
@@ -105,7 +107,7 @@
                             <p>{{$cart->quantity}}</p>
 
                             <p class="font-bold pl-16">Price:</p>
-                            <p >{{$cart->buyPrice}} $</p>
+                            <p>{{$cart->buyPrice}} $</p>
                         </div>
                         <div class="flex space-x-2">
                             <p class="font-bold">Total Price:</p>
@@ -138,11 +140,17 @@
             <!-- order button -->
             @if($cartDetails != null)
             @if(($cartStatus->custoConfirm) == 0)
+
             <form method="POST" action="{{route('confirm.order')}}">
                 @csrf
-                <div class="flex">
+                <div class="">
                     <div class="bottom-0 right-10 absolute">
-                        <button type="submit" class="text-white rounded-md py-2 px-5 bg-green-400 hover:bg-green-600 active:bg-green-500 text-2xl">Order</button>
+                        <div class="flex pb-5 space-x-2 pr-2">
+                            <p class="text-2xl text-red-500">Cart total : </p>
+                            <p class="text-2xl">{{ $total }} USD</p>
+                        </div>
+
+                        <button type="submit" class="text-white rounded-md ml-24 py-2 px-5 bg-green-400 hover:bg-green-600 active:bg-green-500 text-2xl">Order</button>
                     </div>
                 </div>
             </form>

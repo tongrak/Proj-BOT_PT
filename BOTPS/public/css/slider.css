@@ -221,10 +221,7 @@ span:before {
     }
 }
 
-.move {
-    /* width: 100px;
-    height: 100px;
-    background: red; */
+.move:hover {
     position: relative;
     animation: mymove 3s;
     animation-iteration-count: 200;
