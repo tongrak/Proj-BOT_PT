@@ -195,7 +195,9 @@
                     @if(Session::has('login-id'))
 
                     <div class="addToCart_btn">
-                        <p><a href="{{route('add.to.cart', $product->productCode)}}">Add to cart</a></p>
+                        <a href="{{route('add.to.cart', $product->productCode)}}">
+                            <p>Add to cart</p>
+                        </a>
 
                     </div>
                     @endif

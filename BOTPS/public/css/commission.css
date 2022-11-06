@@ -400,7 +400,7 @@ body {
     background: #fcf5cf;
     border: 1px solid brown;
     color: brown;
-    box-shadow: 10px 10px 10px lightgray;
+    box-shadow: 10px 10px 5px #997950;
 }
 .icon {
     display: flex;
