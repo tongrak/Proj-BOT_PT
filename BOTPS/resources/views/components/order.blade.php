@@ -1,10 +1,16 @@
 <div class="comm_div">
-    <div class="customer_name">Customer Name: {{$cname}} {{$pname}}</div>
+    <div class="customer_name">Customer ID: {{key($cWr)}} </div>
 
     <!-- product description -->
     <div>
-        <x-product_des />
-        <x-product_des />
+        @foreach($cWr as $cds)
+            @foreach($cds as $cd)
+                @foreach($cd as $c)
+                    @component('components.product_des',['c' => $c])
+                    @endcomponent    
+                @endforeach
+            @endforeach
+        @endforeach
     </div>
 
     <!-- btn -->
