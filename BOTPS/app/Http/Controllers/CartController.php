@@ -19,7 +19,7 @@ class CartController extends Controller
         $cartStatus = DB::table('carts')->where('customerNumber','=',$cusId)->select('custoConfirm')->first();
         $cartDetails = DB::table('cartdetails')->where('customerNumber', '=', $cusId)->get();
 
-        return view('Cart', compact('cartDetails', 'cartStatus'));
+        return view('cart', compact('cartDetails', 'cartStatus'));
     }
 
     public function addToCart($pId){
