@@ -50,6 +50,10 @@ class CommissionController extends Controller
     public function adminDenied($customerID){
         DB::transaction(function () use($customerID) {
             DB::table('carts')->where('customerNumber','=',$customerID)->update(['custoConfirm'=>false],['saleConfirm'=>false]);
+            DB::table('cartdetails')->where('customerNumber', '=', $customerID)->orderBy('customerNumber')->lazy()->each(function ($cartDetail) {
+                // DB::table('products')->where('productCode', '=', $cartDetail->productCode)->update(['quantityInStock', '=', $cartDetail->quantity]);
+                DB::table('products')->increment('quantityInStock', $cartDetail->quantity, ['productCode'=>$cartDetail->productCode]);
+            });
             DB::table('cartdetails')->where('customerNumber', '=', $customerID)->delete();
         });
         return redirect()->back()->with('success', 'Order has been denied');
