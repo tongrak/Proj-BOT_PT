@@ -50,9 +50,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::middleware('isUser')->group(function() {
         // cart routing:
         Route::get('/cart', 'CartController@showCartDetail')->name('cart');
-
         Route::get('/add-to-cart/{pId}', 'CartController@addToCart')->name('add.to.cart');
-        Route::delete('/remove-from-cart/{pId}', 'ProductController@remove')->name('remove.from.cart');
+        Route::delete('/remove-from-cart/{pId}', 'ProductController@removeInCart')->name('remove.from.cart');
         
     });
     
