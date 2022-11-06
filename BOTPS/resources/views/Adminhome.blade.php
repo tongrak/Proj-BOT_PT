@@ -26,7 +26,7 @@
         </a>
     </div>
     @if(session('success'))
-        <div>
+        <div class="popup">
             {{session('success')}}
         </div>
     @endif
@@ -35,7 +35,7 @@
     <!-- component -->
 
     @foreach($cartNoRep as $cNr )
-        @component('components.order',['cWr' => $cNr])
+        @component('components.newCustomer',['cWr' => $cNr])
         @endcomponent
     @endforeach
 

@@ -20,17 +20,4 @@
         </button>
     </form>
 
-    <script>
-        function cancel() {
-            alert("Cancel completed");
-        }
-
-        function confirm() {
-            alert("Confirm completed");
-        }
-
-        function deniend() {
-            alert("Deniend completed");
-        }
-    </script>
 </div>

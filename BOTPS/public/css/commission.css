@@ -281,6 +281,11 @@ body {
     justify-content: space-between;
 }
 
+.btn_frameAlter {
+    display: flex;
+    justify-content: space-around;
+}
+
 .cancel_btn {
     width: 162px;
     height: 65px;
@@ -427,4 +432,13 @@ body {
     border: 1px solid brown;
     color: brown;
     box-shadow: 10px 10px 2px #997950;
+}
+
+.popup{
+    width: 1550px;
+    text-align: center;
+    font-family: Dosis;
+    font-size: 20px;
+    margin-top: 5px;
+    background: rgb(55, 237, 70);
 }
