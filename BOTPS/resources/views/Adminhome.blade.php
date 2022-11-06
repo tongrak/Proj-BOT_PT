@@ -29,18 +29,25 @@
     <div class="new_customer">New Customer</div>
 
     <!-- component -->
-    @foreach(array_keys($cartWithRep) as $key )
+    @foreach($cartWithRep as $cWr )
     <div>
         <div>
-            <p>{{$key}}</p>
+            <p>{{key($cWr)}}</p>
         </div>
-        @foreach($cartWithRep[$key] as $cd)
-        <div>
-            <p>{{$cd}}</p>
-        </div>
+        @foreach($cWr as $cds)
+            @foreach($cds as $cd)
+                @foreach($cd as $c)
+                    <div>{{$c->productCode}}</div>    
+                @endforeach
+            @endforeach
         @endforeach
     </div>
     @endforeach
+
+    <x-order>
+        <x-slot name="cname">Bank</x-slot>
+        <x-slot name="pname">IQ</x-slot>
+    </x-order>
 
     <div class="old_customer">Customer in Commissioned</div>
 
