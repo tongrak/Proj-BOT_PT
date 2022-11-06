@@ -63,16 +63,16 @@ class CartController extends Controller
         }else redirect('Home')->with('Cart Comfirmation Constraints', 'Your cart had been already comfirm. Please wait for sale representation or cancel your cart');
         
         
-        $this->showCartDetail($cusId)->with('Success','an item have been added');
+        return redirect()->back()->with('add product succ');
     }
 
     public function removeInCart($productId){
         $product = Product::findOrFail($productId);
         if (!Session::has('login-id')) return view('login');
         $cusId = Session::get('login-id');
-        $cart = DB::table('carts')->where('customerNumber','=',$cusId)->first();
-        DB::transaction(function()use($product, $cart){
-                $cartDe = CartDetail::find($cart->customerNumber)->where('productCode','=',$product->productCode)->first();
+        echo($cusId);
+        DB::transaction(function()use($product, $cusId){
+                $cartDe = CartDetail::where('productCode','=',$product->productCode)->where('customerNumber', '=', $cusId)->first();
                 if($cartDe == null){
                     return redirect()->back()->with('removeFail','no such product in cart');
                 }else if($cartDe->quantity > 1){
@@ -84,7 +84,7 @@ class CartController extends Controller
                 $product->quantityInStock = $product->quantityInStock+1;
             $product->save();
         });
-        $this->showCartDetail($cusId)->with('Success', 'the item have been remove');
+        return redirect()->back()->with('Success', 'the item have been remove');
     }
 
     private function getCartOfSaleRep($salerepID = null){
