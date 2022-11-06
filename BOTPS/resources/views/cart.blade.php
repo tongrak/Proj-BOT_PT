@@ -70,6 +70,12 @@
 
         </div>
 
+        @if(session('success'))
+        <div class="popup mt-5">
+            {{session('success')}}
+        </div>
+        @endif
+
         <!-- contents -->
         <div class="h-screen overflow-y-scroll">
 

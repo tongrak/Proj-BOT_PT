@@ -68,6 +68,12 @@
 
     </div>
 
+    @if(session('success'))
+    <div class="popup mt-5">
+        {{session('success')}}
+    </div>
+    @endif
+
     <!-- contents -->
     <div class="h-screen pt-16">
 
@@ -112,7 +118,7 @@
                         </button>
                     </button>
                 </form>
-               
+
 
                 <form action="{{ route('catelog.show.category', "Planes")}}" method="get">
                     <button type="submit">
@@ -159,7 +165,7 @@
                         </button>
                     </button>
                 </form>
-               
+
 
                 <form action="{{ route('catelog.show.category', "Trucks and Buses")}}" method="get">
                     <button type="submit">
@@ -173,7 +179,7 @@
                         </button>
                     </button>
                 </form>
-                
+
                 <form action="{{ route('catelog.show.category', "Vintage cars")}}" method="get">
                     <button type="submit">
                         <button class="product_btn">
@@ -186,7 +192,7 @@
                         </button>
                     </button>
                 </form>
-                
+
                 <form action="{{ route('catalog.show.search', ['term' => 'term' ])}}" method="get">
                     <button type="submit">
                         <button class="product_btn">
