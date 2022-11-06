@@ -68,7 +68,7 @@ class CommissionController extends Controller
             $orderReq  = $dateArr[1];
             $orderShip  = $dateArr[2];
             $currOrderNum = $this->getLastestOrderNumber();
-            DB::table('order')->
+            DB::table('orders')->
                 insert([
                     'orderNumber'=>$currOrderNum,
                     'orderDate'=> $orderDate,
