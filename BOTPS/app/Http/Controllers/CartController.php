@@ -64,8 +64,7 @@ class CartController extends Controller
                     $product->quantityInStock = $product->quantityInStock-1;
                     $product->save();
             });
-        }else redirect('Home')->with('Cart Comfirmation Constraints', 'Your cart had been already comfirm. Please wait for sale representation or cancel your cart');
-        
+        }else redirect()->back()->with('Cart Comfirmation Constraints', 'Your cart had been already comfirm. Please wait for sale representation or cancel your cart');
         
         return redirect()->back()->with('add product succ');
     }
