@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommissionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -67,6 +68,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         Route::post('/confirm-commit/{id}', 'CommissionController@confirm')->name('commission.confirm');
         Route::get('/commissions', 'CartController@showCartOfSaleRep')->name('commission.show');
         
+        // use for canceling order
+        Route::post('/admin-cancel-order/{cID}', 'CommissionController@adminCancel')->name('admin.cancel.order');
     });
     
     //this route is for 'user or admin' only
