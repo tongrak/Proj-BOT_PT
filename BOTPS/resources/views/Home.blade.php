@@ -81,6 +81,12 @@
         <!-- contents -->
         <div class="h-full space-y-5 pt-5">
 
+            @if(session('success'))
+            <div>
+                {{session('success')}}
+            </div>
+            @endif
+
 
             <!-- search box -->
             <form action="{{ route('catalog.show.search', ['term' => 'term' ])}}" method="get">
