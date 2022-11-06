@@ -42,6 +42,11 @@
     </div>
     @endforeach
 
+    <x-order>
+        <x-slot name="cname">Bank</x-slot>
+        <x-slot name="pname">IQ</x-slot>
+    </x-order>
+
     <div class="old_customer">Customer in Commissioned</div>
 
     <!-- component -->

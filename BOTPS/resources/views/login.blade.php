@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/skins/logo_3.ico" type="image/x-icon">
     <link rel="StyleSheet" href="{{ asset('css/styles.css') }}" />
     <link rel="StyleSheet" href="{{ asset('css/auth.css') }}" />
     <script src="https://secure.exportkit.com/cdn/js/ek_googlefonts.js?v=6"></script>
