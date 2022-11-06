@@ -69,6 +69,17 @@
 
         </div>
 
+        @if(session('success'))
+        <div class="popup1 mt-5">
+            {{session('success')}}
+        </div>
+        @endif
+        @if(session('fail'))
+        <div class="popup2 mt-5">
+            {{session('fail')}}
+        </div>
+        @endif
+
         <!-- Text slider -->
         <div class="">
             <div id='rssBlock' class="flex justify-center">
@@ -80,12 +91,6 @@
 
         <!-- contents -->
         <div class="h-full space-y-5 pt-5">
-
-            @if(session('success'))
-            <div>
-                {{session('success')}}
-            </div>
-            @endif
 
 
             <!-- search box -->

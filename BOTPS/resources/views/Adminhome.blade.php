@@ -26,25 +26,34 @@
         </a>
     </div>
     @if(session('success'))
-        <div>
-            {{session('success')}}
-        </div>
+    <div class="popup1 mt-5">
+        {{session('success')}}
+    </div>
     @endif
+    @if(session('fail'))
+    <div class="popup2 mt-5">
+        {{session('fail')}}
+    </div>
+    @endif
+
+    <script>
+
+    </script>
     <div class="new_customer">New Customer</div>
 
     <!-- component -->
 
     @foreach($cartNoRep as $cNr )
-        @component('components.order',['cWr' => $cNr])
-        @endcomponent
+    @component('components.newCustomer',['cWr' => $cNr])
+    @endcomponent
     @endforeach
 
     <div class="old_customer">Customer in Commissioned</div>
 
     <!-- component -->
     @foreach($cartWithRep as $cWr )
-        @component('components.order',['cWr' => $cWr])
-        @endcomponent
+    @component('components.order',['cWr' => $cWr])
+    @endcomponent
     @endforeach
 
     <!-- footer -->

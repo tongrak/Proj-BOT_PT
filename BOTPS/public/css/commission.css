@@ -281,6 +281,11 @@ body {
     justify-content: space-between;
 }
 
+.btn_frameAlter {
+    display: flex;
+    justify-content: space-around;
+}
+
 .cancel_btn {
     width: 162px;
     height: 65px;
@@ -427,4 +432,56 @@ body {
     border: 1px solid brown;
     color: brown;
     box-shadow: 10px 10px 2px #997950;
+}
+
+.popup1{
+    width: 1550px;
+    text-align: center;
+    font-family: Dosis;
+    font-size: 20px;
+    margin-top: 5px;
+    background: rgb(255, 255, 255);
+    animation: time_pop  5s;
+    opacity: 0;
+}
+
+@keyframes time_pop1{
+    0%{
+        opacity: 1;
+        background: rgb(55, 237, 70);
+    }
+    50%{
+        opacity: 1;
+        background: rgb(55, 237, 70);
+    }
+    100%{
+        opacity: 0.5;
+        background: rgb(55, 237, 70);
+    }
+}
+
+.popup2{
+    width: 1550px;
+    text-align: center;
+    font-family: Dosis;
+    font-size: 20px;
+    margin-top: 5px;
+    background: rgb(255, 255, 255);
+    animation: time_pop  5s;
+    opacity: 0;
+}
+
+@keyframes time_pop2{
+    0%{
+        opacity: 1;
+        background: rgb(219, 10, 10);
+    }
+    50%{
+        opacity: 1;
+        background: rgb(219, 10, 10);
+    }
+    100%{
+        opacity: 0.5;
+        background: rgb(219, 10, 10);
+    }
 }
