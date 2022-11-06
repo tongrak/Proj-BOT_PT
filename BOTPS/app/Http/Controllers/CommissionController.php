@@ -64,13 +64,16 @@ class CommissionController extends Controller
         $cartDetails = CartDetail::where('customerNumber','=',$customerNum)->get();
         DB::transaction(function()use($cart,$cartDetails){
             $dateArr = $this->getDatesForOrder();
+            $orderDate = $dateArr[0];
+            $orderReq  = $dateArr[1];
+            $orderShip  = $dateArr[2];
             $currOrderNum = $this->getLastestOrderNumber();
             DB::table('order')->
                 insert([
                     'orderNumber'=>$currOrderNum,
-                    'orderDate'=> $this->$dateArr[0],
-                    'requiredDate'=> $this->$dateArr[1],
-                    'shippedDate'=> $this->$dateArr[2],
+                    'orderDate'=> $orderDate,
+                    'requiredDate'=> $orderReq,
+                    'shippedDate'=> $orderShip,
                     'status'=> "In Process",
                     'comments'=> "added by function",
                     'customer'=> $cart->customerNumber
