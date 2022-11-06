@@ -65,7 +65,7 @@ class CartController extends Controller
             });
             return redirect()->back()->with('success', $product->productName . ' added to card');
 
-        }else redirect()->back()->with('fail','Cart Comfirmation Constraints', 'Your cart had been already comfirm. Please wait for sale representation or cancel your cart');
+        }else return redirect()->back()->with('fail','Cart Comfirmation Constraints', 'Your cart had been already comfirm. Please wait for sale representation or cancel your cart');
         
     }
 
