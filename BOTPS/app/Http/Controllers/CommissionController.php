@@ -38,6 +38,18 @@ class CommissionController extends Controller
         return redirect()->back()->with('success', 'cart have been confirm');
     }
 
+    public function adminCancel($customerID){
+        $cart = Cart::where('customerNumber','=',$customerID)->first();
+        DB::transaction(function () use($cart) {
+            $cart->custoConfirm = false;
+            $cart->save();
+        });
+    }
+
+    public function adminAccept($customerID){
+        
+    }
+
     public function salerepConfirm($customerNum){
         $cart = Cart::where('customerNumber','=',$customerNum)->first();
         $cartDetails = CartDetail::where('customerNumber','=',$customerNum)->get();
