@@ -73,6 +73,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
 
         // use for denied order
         Route::post('/admin-denied-order/{cID}', 'CommissionController@adminDenied')->name('admin.denied.order');
+
+        // use for insert SaleRep to customer
+        Route::post('admin-add-sale/{cID}', 'CommissionController@insertSaleRep')->name('admin.add.sale');
     });
     
     //this route is for 'user or admin' only
