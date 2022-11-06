@@ -1,8 +1,8 @@
 <div class="btn_frame">
-    <div class="cancel_btn">
+    <a href="home" class="cancel_btn">
         Cancel Order
-    </div>
-    <div class="confirm_btn">
+    </a>
+    <a href="home" class="confirm_btn">
         Confirm Order
-    </div>
+    </a>
 </div>

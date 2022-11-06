@@ -291,6 +291,7 @@ body {
     border: 1px solid rgba(255, 34, 204, 1);
     background: #ffffff;
     cursor: pointer;
+    text-decoration: none;
 
     padding-top: 18.5px;
     overflow: hidden;
@@ -315,14 +316,16 @@ body {
     border: 1px solid rgba(13.21, 211.44, 33.04, 1);
     background: #ffffff;
     cursor: pointer;
+    text-decoration: none;
 
-    padding-top: 7px;
+    padding-top: 18.5px;
     overflow: hidden;
     font-family: Dosis;
     font-size: 20px;
     text-align: center;
     color: rgba(13.21, 211.44, 33.04, 1);
 }
+
 .confirm_btn:hover {
     background: rgba(13.21, 211.44, 33.04, 1);
     color: #ffffff;
