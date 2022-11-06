@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>home</title>
     <link rel="icon" href="/skins/logo_3.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
 </head>
 
-<body class="fontA">
+<body class="fontA bg-gray-200">
 
 
     <div class="justify-between w-full h-fit">
@@ -65,8 +65,6 @@
                     <h1 class="btn_a">Sign-up</h1>
                 </a>
             </div>
-
-
             @endif
 
         </div>
@@ -83,28 +81,28 @@
             </form>
 
             <!-- Top Hits -->
-            <div class="flex pl-64 pt-16 space-x-2">
+            <div class="flex pl-64 pt-16">
                 <h1 class="tophit">Top Hits</h1>
-                <img src="/Models/fire.jpg" alt="" width="30px" height="20px" background-position="1500px">
+                <img src="/Models/fire.png" alt="" width="60px" height="60px" background-position="1500px">
             </div>
 
 
             <!-- Products -->
             <div class="carousel flex pt-5 bg-fuchsia-200 mt-5 pb-10 drop-shadow-2xl">
 
-                @for($i = 0;$i < 10; $i++) <div class="mx-10 container" width="300" height="400">
+                @for($i = 0;$i < 10; $i++) 
+                <div class="mx-10 container" width="300" height="400">
                     <form action="{{ route('catalog.show.search', ['term' => 'term' ])}}" method="get">
                         <button type="submit">
                             <input type="search" name="term" value="{{$products[$i]->productName}}" class="invisible">
                             <img src="{{$imageAddresses[$i]}}" alt="" class="border-2 " onmouseover="show(this)">
                             <div class="overlay">
-                                <div class="textA">Name: {{$products[$i]->productName}} <br> Description: {{$products[$i] -> productDescription}} </div>
+                                <div class="textA overflow-y-scroll">Name: {{$products[$i]->productName}} <br> Description: {{$products[$i] -> productDescription}} </div>
                             </div>
                         </button>
-
                     </form>
-            </div>
-            @endfor
+                </div>
+                @endfor
         </div>
 
     </div>
@@ -143,7 +141,7 @@
             infinite: false,
             speed: 1000,
             slidesToShow: 4,
-            slidesToScroll: 3,
+            slidesToScroll: 2,
             responsive: [{
                     breakpoint: 1024,
                     settings: {
