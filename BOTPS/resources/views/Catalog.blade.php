@@ -79,9 +79,9 @@
             </div>
         </form>
 
-        <div class="m-5 py-2 grid-flow-row auto-rows-max">
-            <h1 class="new_customer">Products in Catalog</h1>
-
+        <div class="flex  pt-16">
+            <h1 class="productInCatalog ">Products in Catalog</h1>
+            <img src="/Models/shoppingBag.png" width="80px" height="60px" background-position="15px">
         </div>
 
         <div>
@@ -162,10 +162,6 @@
                         <p><a href="{{route('add.to.cart', $product->productCode)}}">Add to cart</a></p>
 
                     </div>
-
-
-
-
                     @endif
 
 

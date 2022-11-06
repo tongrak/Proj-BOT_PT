@@ -192,6 +192,20 @@ body {
     color: #000000;
     margin-left: 20px;
 }
+.productInCatalog {
+    position: relative;
+    top: 35px;
+    left: 25px;
+    width: 320px;
+    height: 102px;
+    overflow: hidden;
+    font-family: Dosis;
+    font-size: 40px;
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 5px;
+    color: #000000;
+}
 
 .product_name {
     width: 587px;
@@ -353,10 +367,6 @@ body {
     text-align: center;
 }
 
-.th {
-    border: 1px solid black;
-    height: 70px;
-}
 .product_btn {
     width: 250px;
     height: 72px;
@@ -376,9 +386,11 @@ body {
     font-size: 20px;
     text-align: center;
     color: white;
+    box-shadow: 10px 10px 2px lightblue;
 }
 .product_btn:hover {
     background: #fcf5cf;
     border: 1px solid #f4c025;
     color: #f4c025;
+    box-shadow: 10px 10px 10px lightgray;
 }
