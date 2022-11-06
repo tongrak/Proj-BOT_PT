@@ -313,6 +313,8 @@ CREATE TABLE Users (
 			on delete CASCADE
 );
 
+INSERT INTO users SELECT customerNumber, contactLastName, customerName FROM customers
+
 DROP TABLE IF EXISTS Admins;
 CREATE TABLE Admins (
     EmployeeID int(11) NOT NULL,
@@ -324,3 +326,8 @@ CREATE TABLE Admins (
 			on delete cascade
 );
 
+INSERT INTO Admins SELECT employeeNumber, firstName, lastName FROM employees
+
+ALTER TABLE users ADD isAdmin Boolean DEFAULT false;
+
+ALTER TABLE admins ADD isAdmin BOOLEAN DEFAULT true;
