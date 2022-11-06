@@ -70,6 +70,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         
         // use for canceling order
         Route::post('/admin-cancel-order/{cID}', 'CommissionController@adminCancel')->name('admin.cancel.order');
+
+        // use for denied order
+        Route::post('/admin-denied-order/{cID}', 'CommissionController@adminDenied')->name('admin.denied.order');
     });
     
     //this route is for 'user or admin' only
