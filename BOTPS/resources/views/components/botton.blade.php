@@ -6,7 +6,7 @@
         </button>
     </form>
 
-    <form action="">
+    <form method="post" action="{{ route('admin.denied.order', key($cusID)) }}">
         @csrf
         <button class="denied_btn">
             Denied Order
