@@ -111,6 +111,9 @@
                     <col>
                     <button class="product_btn">Vintage cars</button>
                     </col>
+                    <col>
+                    <button class="product_btn">All products</button>
+                    </col>
 
                 </row>
             </div>
