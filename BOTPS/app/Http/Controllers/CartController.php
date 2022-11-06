@@ -28,7 +28,7 @@ class CartController extends Controller
         $cart = DB::table('carts')->where('customerNumber','=',$cusId)->first();
         DB::transaction(function()use($pId, $product, $cart , $cusId, $salerep){
             if($cart != null){
-                $cartDe = DB::table("cartdetails")->where('customerNumber','Like',$cusId)->where('productCode','=', $pId)->first();
+                $cartDe = CartDetail::find( $cusId)->where('customerNumber','Like',$cusId)->where('productCode','=', $pId)->first();
                 if($cartDe == null){
                     $cartDe = new CartDetail();
                     $cartDe->customerNumber = $cart->customerNumber;
