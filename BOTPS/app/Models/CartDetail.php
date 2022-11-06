@@ -9,10 +9,10 @@ class CartDetail extends Model
 {
     // use HasFactory;
     protected $table = 'cartdetails';
-    protected $primaryKey = 'cartNumber';
+    protected $primaryKey = 'customerNumber';
 
     protected $fillable = [
-        'cartNumber',
+        'customerNumber',
         'productCode',
         'quantity'
     ];

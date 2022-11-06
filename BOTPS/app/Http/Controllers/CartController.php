@@ -24,14 +24,14 @@ class CartController extends Controller
         $product =  Product::findOrFail($pId);
         if (!session()->has('login-id')) return view('login')->with('Login required');
         $cusId = session()->get('login-id');
-        $salerep = DB::table('customers')->where('customerNumber','like',$cusId)->first('salesRepEmployeeNumber');
-        $cart = DB::table('carts')->where('customerNumber','Like',$cusId)->first();
+        $salerep = DB::table('customers')->where('customerNumber','=',$cusId)->first('salesRepEmployeeNumber');
+        $cart = DB::table('carts')->where('customerNumber','=',$cusId)->first();
         DB::transaction(function()use($pId, $product, $cart , $cusId, $salerep){
             if($cart != null){
-                $cartDe = DB::table("cartdetails")->where('customerNumber','Like',$cusId)->where('productCode','like',"\"" . $pId."\"")->first();
+                $cartDe = CartDetail::find( $cusId)->where('customerNumber','Like',$cusId)->where('productCode','=', $pId)->first();
                 if($cartDe == null){
                     $cartDe = new CartDetail();
-                    $cartDe->cartNumber = $cart->cartNumber;
+                    $cartDe->customerNumber = $cart->customerNumber;
                     $cartDe->productCode= $pId;
                     $cartDe->quantity   = 1;
                 }else{

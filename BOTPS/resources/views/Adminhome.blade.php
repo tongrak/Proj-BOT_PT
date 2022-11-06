@@ -29,56 +29,19 @@
     <div class="new_customer">New Customer</div>
 
     <!-- component -->
-    @foreach($cartWithRep as $cWr )
-    <div>
-        <div>
-            <p>{{key($cWr)}}</p>
-        </div>
-        @foreach($cWr as $cds)
-            @foreach($cds as $cd)
-                @foreach($cd as $c)
-                    <div>{{$c->productCode}}</div>    
-                @endforeach
-            @endforeach
-        @endforeach
-    </div>
-    @endforeach
 
-    <x-order>
-        <x-slot name="cname">Bank</x-slot>
-        <x-slot name="pname">IQ</x-slot>
-    </x-order>
+    @foreach($cartNoRep as $cNr )
+        @component('components.order',['cWr' => $cNr])
+        @endcomponent
+    @endforeach
 
     <div class="old_customer">Customer in Commissioned</div>
 
     <!-- component -->
-    <div class="comm_div">
-        <div class="customer_name">Customer Name:</div>
-
-        <!-- product description -->
-        <div>
-            <div style="display: flex;">
-                <div class="product_description">-Product Name : </div>
-                <div class="quantity">Quantity:</div>
-                <div class="price">Price:</div>
-            </div>
-
-        </div>
-
-        <!-- btn -->
-        <div class="btn_frame">
-            <div class="cancel_btn">
-                <div class="cancel_text">
-                    Cancel Order
-                </div>
-            </div>
-            <div class="confirm_btn">
-                <div class="confirm_text">
-                    Confirm Order
-                </div>
-            </div>
-        </div>
-    </div>
+    @foreach($cartWithRep as $cWr )
+        @component('components.order',['cWr' => $cWr])
+        @endcomponent
+    @endforeach
 
     <!-- footer -->
     <footer class="footer_frame">
