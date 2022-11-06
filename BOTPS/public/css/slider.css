@@ -271,7 +271,7 @@ span:before {
     }
 }
 
-.popup{
+.popup1{
     width: 1550px;
     text-align: center;
     font-family: Dosis;
@@ -282,7 +282,7 @@ span:before {
     opacity: 0;
 }
 
-@keyframes time_pop{
+@keyframes time_pop1{
     0%{
         opacity: 1;
         background: rgb(55, 237, 70);
@@ -294,6 +294,32 @@ span:before {
     100%{
         opacity: 0.5;
         background: rgb(55, 237, 70);
+    }
+}
+
+.popup2{
+    width: 1550px;
+    text-align: center;
+    font-family: Dosis;
+    font-size: 20px;
+    margin-top: 5px;
+    background: rgb(255, 255, 255);
+    animation: time_pop  5s;
+    opacity: 0;
+}
+
+@keyframes time_pop2{
+    0%{
+        opacity: 1;
+        background: rgb(219, 10, 10);
+    }
+    50%{
+        opacity: 1;
+        background: rgb(219, 10, 10);
+    }
+    100%{
+        opacity: 0.5;
+        background: rgb(219, 10, 10);
     }
 }
 
