@@ -16,19 +16,10 @@ class CartController extends Controller
     public function showCartDetail(){
         if (!Session::has('login-id')) return view('login');
         $cusId = Session::get('login-id');
-        $cartNum = DB::table('carts')->where('customerNumber', 'like', $cusId)->first('cartNumber');
-        if(isNull($cartNum)){
-            $cartDetails = array();
-            return view('Cart', compact($cartDetails));
-        } 
-        $cartDetails = DB::table('cartdetails')->where('cartNumber','like',$cartNum->cartNumber)->get();
+        $cartDetails = DB::table('cartdetails')->where('customerNumber', 'like', $cusId)->get();
         return view('Cart', compact('cartdetails'));
     }
 
-    private function getLastestCartNumber():int{
-        $lastest = DB::table('carts')->orderByDesc('cartNumber')->first('cartNumber');
-        return intval($lastest->cartNumber);
-    }
 
     public function addToCart($pId){
         $product =  Product::findOrFail($pId);
@@ -38,7 +29,7 @@ class CartController extends Controller
         $cart = DB::table('carts')->where('customerNumber','Like',$cusId)->first();
         DB::transaction(function()use($pId, $product, $cart , $cusId, $salerep){
             if($cart != null){
-                $cartDe = DB::table("cartdetails")->where('cartNumber','=',$cart->cartNumber)->where('productCode','like',"\"" . $pId."\"")->first();
+                $cartDe = DB::table("cartdetails")->where('customerNumber','Like',$cusId)->where('productCode','like',"\"" . $pId."\"")->first();
                 if($cartDe == null){
                     $cartDe = new CartDetail();
                     $cartDe->cartNumber = $cart->cartNumber;
@@ -51,17 +42,15 @@ class CartController extends Controller
             }else{
                 $cart = new Cart();
                 $cart->customerNumber   = $cusId;
-                $newCartNum = $this->getLastestCartNumber() + 1;
-                $cart->cartNumber       = $newCartNum;
                 $cart->custoConfirm     = False;
                 $cart->saleConfirm      = False;
                 $cart->salerepNumber    = $salerep->salesRepEmployeeNumber;
                 $cart->save();
 
                 $cartDetail = new CartDetail();
-                $cartDetail->cartNumber = $newCartNum;
-                $cartDetail->productCode= $pId;
-                $cartDetail->quantity   = 1;
+                $cartDetail->customerNumber     = $cusId;
+                $cartDetail->productCode        = $pId;
+                $cartDetail->quantity           = 1;
                 $cartDetail->save();
             }
                 $product->quantityInStock = $product->quantityInStock-1;
@@ -100,14 +89,14 @@ class CartController extends Controller
     private function getCartOfSaleRep($salerepID = null){
         $val = $salerepID;
         if($salerepID == null) $val = 'NULL';
-
         $carts = DB::table('carts')->select()->where('salerepNumber','=',$salerepID)->get();
         $toRe = array();
         if($carts != null){
             foreach ($carts as $cart) {
-                $res = DB::table('cartdetails')->select()->where('cartNumber', '=', $cart->cartNumber)->get();
+                $res = DB::table('cartdetails')->select()->where('customerNumber','Like',$carts->customerNumber)->get();
                 echo($cart->cartNumber);
-                array_push($toRe,array($cart->cartNumber=>compact($res)));
+                $cn = $cart->cartNumber;
+                array_push($toRe,array($cn=>compact('res')));
             }
         }
         return $toRe;
