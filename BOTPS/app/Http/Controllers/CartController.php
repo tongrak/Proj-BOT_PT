@@ -16,8 +16,14 @@ class CartController extends Controller
     public function showCartDetail(){
         if (!Session::has('login-id')) return view('login');
         $cusId = Session::get('login-id');
-        $cartDetails = DB::table('cartdetails')->where('customerNumber', 'like', $cusId)->get();
-        return view('Cart', compact('cartDetails'));
+        $cartStatus = DB::table('carts')->where('customerNumber','=',$cusId)->select('custoConfirm')->first();
+        $cartDetails = DB::select('
+            SELECT p.productCode, p.productVendor, p.productName, p.productDescription, p.buyPrice, cd.quantity
+            FROM products as p, cartdetails as cd
+            WHERE cd.productCode = p.productCode AND cd.customerNumber =
+        ' . $cusId);
+
+        return view('cart', compact('cartDetails', 'cartStatus'));
     }
 
     public function addToCart($pId){
@@ -26,48 +32,50 @@ class CartController extends Controller
         $cusId = session()->get('login-id');
         $salerep = DB::table('customers')->where('customerNumber','=',$cusId)->first('salesRepEmployeeNumber');
         $cart = DB::table('carts')->where('customerNumber','=',$cusId)->first();
-        DB::transaction(function()use($pId, $product, $cart , $cusId, $salerep){
-            if($cart != null){
-                $dummy = DB::table('cartdetails')->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
-                if($dummy == null){
-                    $cartDe = new CartDetail();
-                    $cartDe->customerNumber = $cart->customerNumber;
-                    $cartDe->productCode= $pId;
-                    $cartDe->quantity   = 1;
+        if(!$cart->custoConfirm){
+            DB::transaction(function()use($pId, $product, $cart , $cusId, $salerep){
+                if($cart != null){
+                    $dummy = DB::table('cartdetails')->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
+                    if($dummy == null){
+                        $cartDe = new CartDetail();
+                        $cartDe->customerNumber = $cart->customerNumber;
+                        $cartDe->productCode= $pId;
+                        $cartDe->quantity   = 1;
+                    }else{
+                        $cartDe = CartDetail::find($cusId)->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
+                        $cartDe->quantity   = $cartDe->quantity+1;
+                    }
+                    $cartDe->save();
+    
                 }else{
-                    $cartDe = CartDetail::find($cusId)->where('customerNumber','=',$cusId)->where('productCode','=', $pId)->first();
-                    $cartDe->quantity   = $cartDe->quantity+1;
+                    $cart = new Cart();
+                    $cart->customerNumber   = $cusId;
+                    $cart->custoConfirm     = False;
+                    $cart->saleConfirm      = False;
+                    $cart->salerepNumber    = $salerep->salesRepEmployeeNumber;
+                    $cart->save();
+    
+                    $cartDetail = new CartDetail();
+                    $cartDetail->customerNumber     = $cusId;
+                    $cartDetail->productCode        = $pId;
+                    $cartDetail->quantity           = 1;
+                    $cartDetail->save();
                 }
-                $cartDe->save();
-
-            }else{
-                $cart = new Cart();
-                $cart->customerNumber   = $cusId;
-                $cart->custoConfirm     = False;
-                $cart->saleConfirm      = False;
-                $cart->salerepNumber    = $salerep->salesRepEmployeeNumber;
-                $cart->save();
-
-                $cartDetail = new CartDetail();
-                $cartDetail->customerNumber     = $cusId;
-                $cartDetail->productCode        = $pId;
-                $cartDetail->quantity           = 1;
-                $cartDetail->save();
-            }
-                $product->quantityInStock = $product->quantityInStock-1;
-                $product->save();
-        });
+                    $product->quantityInStock = $product->quantityInStock-1;
+                    $product->save();
+            });
+        }else redirect()->back()->with('Cart Comfirmation Constraints', 'Your cart had been already comfirm. Please wait for sale representation or cancel your cart');
         
-        $this->showCartDetail($cusId)->with('Success','an item have been added');
+        return redirect()->back()->with('add product succ');
     }
 
     public function removeInCart($productId){
         $product = Product::findOrFail($productId);
         if (!Session::has('login-id')) return view('login');
         $cusId = Session::get('login-id');
-        $cart = DB::table('carts')->where('customerNumber','=',$cusId)->first();
-        DB::transaction(function()use($product, $cart){
-                $cartDe = CartDetail::find($cart->customerNumber)->where('productCode','=',$product->productCode)->first();
+        echo($cusId);
+        DB::transaction(function()use($product, $cusId){
+                $cartDe = CartDetail::where('productCode','=',$product->productCode)->where('customerNumber', '=', $cusId)->first();
                 if($cartDe == null){
                     return redirect()->back()->with('removeFail','no such product in cart');
                 }else if($cartDe->quantity > 1){
@@ -79,7 +87,7 @@ class CartController extends Controller
                 $product->quantityInStock = $product->quantityInStock+1;
             $product->save();
         });
-        $this->showCartDetail($cusId)->with('Success', 'the item have been remove');
+        return redirect()->back()->with('Success', 'the item have been remove');
     }
 
     private function getCartOfSaleRep($salerepID = null){

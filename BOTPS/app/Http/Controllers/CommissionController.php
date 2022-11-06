@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\CartDetail;
 use App\Models\Customer;
 // use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,21 +12,46 @@ use Illuminate\Support\Facades\DB;
 
 class CommissionController extends Controller
 {
-    public function customerConfirm(){
+    public function customerConfirm(Request $request){
         // if (!Session::has('login-id')) return view('login');
         $cusId = Session::get('login-id');
-        $cart = Cart::table('carts')->where('customerNumber','=',$cusId)->first();
+        $cart = Cart::where('customerNumber','=',$cusId)->first();
         DB::transaction(function () use($cusId, $cart) {
-            $cart->custoConfirm = true;
-            $cart->save();
+            if(!$cart->custoConfirm){
+                $cart->custoConfirm = true;
+                $cart->save();
+            }
         });
         return redirect()->back()->with('success', 'cart have been confirm');
     }
 
-    public function salerepConfirm($cartID){
-        $cart = Cart::find($cartID)->first();
-        $cart->custoConfirm = true;
-        $cart->save();
+    public function customerCancel(){
+        // if (!Session::has('login-id')) return view('login');
+        $cusId = Session::get('login-id');
+        $cart = Cart::where('customerNumber','=',$cusId)->first();
+        DB::transaction(function () use($cusId, $cart) {
+            if($cart->custoConfirm){
+                $cart->custoConfirm = false;
+                $cart->save();
+            }
+        });
+        return redirect()->back()->with('success', 'cart have been confirm');
+    }
+
+    public function salerepConfirm($customerNum){
+        $cart = Cart::where('customerNumber','=',$customerNum)->first();
+        $cartDetails = CartDetail::where('customerNumber','=',$customerNum)->get();
+        DB::transaction(function()use($cart,$cartDetails){
+            foreach($cartDetails as $cd){
+                // TODO: add to orderdetail
+
+                $cd->delete();
+            }
+            $cart->custoConfirm = false; 
+            $cart->salerepNumber = false; 
+            $cart->save();
+        });
+        
         return view('Home')->with('success', 'cart have been confirm');
     }
 
