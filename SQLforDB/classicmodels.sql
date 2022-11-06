@@ -274,7 +274,7 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2019-10-14 16:31:16
-DROP TABLE IF EXISTS carts;
+
 CREATE TABLE carts(
     `customerNumber` int(11) NOT NULL,
     `custoConfirm` boolean NOT NULL,
@@ -287,7 +287,6 @@ CREATE TABLE carts(
 
 INSERT INTO carts SELECT customerNumber, 0,salesRepEmployeeNumber, 0 FROM customers
 
-DROP TABLE IF EXISTS cartdetails;
 CREATE TABLE cartdetails(
 	 `customerNumber` int(11) NOT NULL,
   	`productCode` varchar(15) NOT NULL,
@@ -300,9 +299,8 @@ CREATE TABLE cartdetails(
 INSERT INTO cartdetails
 SELECT 	customerNumber, productCode, quantityOrdered
 FROM orders as o, orderdetails as od
-WHERE o.orderNumber = od.orderNumber AND o.status LIKE "In Process"
+WHERE o.orderNumber = od.orderNumber AND o.status LIKE "In Process";
 
-DROP TABLE IF EXISTS Users;
 CREATE TABLE Users (
     CustomerID int(11) NOT NULL,
     Username varchar(255) NOT NULL,
@@ -313,9 +311,8 @@ CREATE TABLE Users (
 			on delete CASCADE
 );
 
-INSERT INTO users SELECT customerNumber, contactLastName, customerName FROM customers
+INSERT INTO users SELECT customerNumber, contactLastName, customerName FROM customers;
 
-DROP TABLE IF EXISTS Admins;
 CREATE TABLE Admins (
     EmployeeID int(11) NOT NULL,
     Username varchar(255) NOT NULL,
@@ -326,7 +323,7 @@ CREATE TABLE Admins (
 			on delete cascade
 );
 
-INSERT INTO Admins SELECT employeeNumber, firstName, lastName FROM employees
+INSERT INTO Admins SELECT employeeNumber, firstName, lastName FROM employees;
 
 ALTER TABLE users ADD isAdmin Boolean DEFAULT false;
 
