@@ -62,12 +62,6 @@ class RegisterController extends Controller
         $newUser->timestamps=false;
         $newUser->save();
 
-        $newCart = new Cart();
-        $newCart->customerNumber = $customerID;
-        $newCart->custoConfirm = false;
-        $newCart->saleConfirm = false;
-        $newCart->salerepNumber = null;
-        $newCart->save();
         //if can register
         $request->session()->put('login-id', $customerID);
         $request->session()->put('isAdmin', 0);
@@ -102,6 +96,13 @@ class RegisterController extends Controller
             $newUser->isAdmin = 0;
             $newUser->timestamps=false;
             $newUser->save();
+
+            $newCart = new Cart();
+            $newCart->customerNumber = $customerID;
+            $newCart->custoConfirm = false;
+            $newCart->saleConfirm = false;
+            $newCart->salerepNumber = null;
+            $newCart->save();
             
             //if register success
             $request->session()->put('login-id', $customerID);
