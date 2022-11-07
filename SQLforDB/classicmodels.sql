@@ -305,6 +305,7 @@ CREATE TABLE Users (
     CustomerID int(11) NOT NULL,
     Username varchar(255) NOT NULL,
     Password varchar(255) NOT NULL,
+    PRIMARY KEY (customerID),
 		Foreign key (CustomerID) 
 			references Customers(CustomerNumber) 
 			on update CASCADE
@@ -317,9 +318,10 @@ CREATE TABLE Admins (
     EmployeeID int(11) NOT NULL,
     Username varchar(255) NOT NULL,
     Password varchar(255) NOT NULL,
+    PRIMARY KEY (employeeID),
 		Foreign key (EmployeeID) 
 			references employees(employeeNumber)
-			on update CASCADE 
+			on update CASCADE
 			on delete cascade
 );
 
