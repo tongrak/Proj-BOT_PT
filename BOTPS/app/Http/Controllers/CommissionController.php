@@ -99,7 +99,7 @@ class CommissionController extends Controller
                 update(['custoConfirm'=>false,'saleConfirm'=>false]);
         });
         
-        return redirect('/home')->with('success', 'cart have been confirm');
+        return redirect()->back()->with('success', 'cart have been confirm');
     }
 
     public function insertSaleRep($customerID){
