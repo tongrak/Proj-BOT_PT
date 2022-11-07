@@ -62,8 +62,6 @@
                 <h1 class="btn_a">Sign-up</h1>
             </a>
         </div>
-
-
         @endif
 
     </div>

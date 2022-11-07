@@ -19,6 +19,16 @@
 
         <div id="master_of_all_page">
             <x-navbar />
+            @if(session('success'))
+            <div class="popup1 mt-5">
+                {{session('success')}}
+            </div>
+            @endif
+            @if(session('fail'))
+            <div class="popup2 mt-5">
+                {{session('fail')}}
+            </div>
+            @endif
             <div id="foot_bg"></div>
             <div id="team_ps_bot">
                 Team PS-BOT
