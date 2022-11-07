@@ -67,6 +67,7 @@ class RegisterController extends Controller
         $newCart->custoConfirm = false;
         $newCart->saleConfirm = false;
         $newCart->salerepNumber = null;
+        $newCart->save();
         //if can register
         $request->session()->put('login-id', $customerID);
         $request->session()->put('isAdmin', 0);
