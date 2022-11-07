@@ -281,8 +281,15 @@ CREATE TABLE carts(
     `salerepNumber` int(11),
     `saleConfirm` boolean NOT NULL,
     CONSTRAINT pk_custocart PRIMARY KEY (`customerNumber`),
-    CONSTRAINT fk_custoref FOREIGN KEY (`customerNumber`) REFERENCES `customers`(`customerNumber`),
-    CONSTRAINT fk_saleref FOREIGN KEY (`salerepNumber`) REFERENCES `employees`(`employeeNumber`)
+    CONSTRAINT fk_custoref FOREIGN KEY (`customerNumber`) 
+      REFERENCES `customers`(`customerNumber`) 
+      on update CASCADE
+			on delete CASCADE,
+    CONSTRAINT fk_saleref FOREIGN KEY (`salerepNumber`) 
+      REFERENCES `employees`(`employeeNumber`)
+      on update CASCADE
+      on delete set null
+
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO carts SELECT customerNumber, 0,salesRepEmployeeNumber, 0 FROM customers;
@@ -292,8 +299,14 @@ CREATE TABLE cartdetails(
   	`productCode` varchar(15) NOT NULL,
   	`quantity` int CHECK (`quantity`>0),
   	PRIMARY KEY (`customerNumber`, `productCode`),
-    CONSTRAINT fk_custorefcd FOREIGN KEY (`customerNumber`) REFERENCES `customers`(`customerNumber`),
-  	CONSTRAINT `fk_productCoderef` FOREIGN KEY (`productCode`) REFERENCES `products`(`productCode`)
+    CONSTRAINT fk_custorefcd FOREIGN KEY (`customerNumber`) 
+      REFERENCES `customers`(`customerNumber`)
+      on update CASCADE
+			on delete CASCADE,
+  	CONSTRAINT `fk_productCoderef` FOREIGN KEY (`productCode`) 
+      REFERENCES `products`(`productCode`)
+      on update CASCADE
+			on delete CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO cartdetails
