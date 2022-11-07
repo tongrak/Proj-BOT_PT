@@ -28,15 +28,15 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
     Route::middleware('isGuest')->group(function() {
         
 
-        Route::get('/test', function () {return view('login2');});
-        Route::get('/test/home', 'TestController@show')->name('test.home');
+        // Route::get('/test', function () {return view('login2');});
+        // Route::get('/test/home', 'TestController@show')->name('test.home');
         
         
-        Route::get('/test/login', 'LoginController@showLogin')->name('test.showLogin');
-        Route::post('/test/login', 'LoginController@login')->name('test.login');
+        // Route::get('/test/login', 'LoginController@showLogin')->name('test.showLogin');
+        // Route::post('/test/login', 'LoginController@login')->name('test.login');
         
-        Route::post('/test/register', 'RegisterController@registerTest')->name('test.register');
-        Route::get('/test/register', 'RegisterController@showTest')->name('test.showRegister');
+        // Route::post('/test/register', 'RegisterController@registerTest')->name('test.register');
+        // Route::get('/test/register', 'RegisterController@showTest')->name('test.showRegister');
         
         // Registing route
         Route::get('/register', 'RegisterController@show')->name('register.show');
@@ -83,7 +83,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function(){
         // catalog route
         
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
-        Route::get('/test/logout', 'LogoutController@perform')->name('test.logout');
+        // Route::get('/test/logout', 'LogoutController@perform')->name('test.logout');
     });
     
     // this route is for 'guest or admin' only

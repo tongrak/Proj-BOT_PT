@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Models\Cart;
 use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -60,6 +61,12 @@ class RegisterController extends Controller
         $newUser->isAdmin = 0;
         $newUser->timestamps=false;
         $newUser->save();
+
+        $newCart = new Cart();
+        $newCart->customerNumber = $customerID;
+        $newCart->custoConfirm = false;
+        $newCart->saleConfirm = false;
+        $newCart->salerepNumber = null;
         //if can register
         $request->session()->put('login-id', $customerID);
         $request->session()->put('isAdmin', 0);

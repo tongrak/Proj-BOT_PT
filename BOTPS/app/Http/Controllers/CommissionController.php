@@ -35,7 +35,7 @@ class CommissionController extends Controller
                 $cart->save();
             }
         });
-        return redirect()->back()->with('success', 'cart have been confirm');
+        return redirect()->back()->with('success', 'cart have been cancel');
     }
 
     public function adminCancel($customerID){
@@ -59,7 +59,7 @@ class CommissionController extends Controller
             });
             DB::table('cartdetails')->where('customerNumber', '=', $customerID)->delete();
         });
-        return redirect()->back()->with('success', 'Order has been denied');
+        return redirect()->back()->with('success', 'Order has been deny');
     }
 
     public function salerepConfirm($customerNum){
@@ -112,7 +112,7 @@ class CommissionController extends Controller
             $cart->save();
             $customer->save();
         });
-        return redirect()->back()->with('success', 'SaleRep has been add to customer.');
+        return redirect()->back()->with('success', 'Salerep has been add to customer.');
     }
 
     private function getLastestOrderNumber():int{

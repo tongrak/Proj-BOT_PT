@@ -32,14 +32,14 @@ class LoginController extends Controller
         if($user){
             Session::put('login-id', $user->CustomerID);
             Session::put('isAdmin', $user->isAdmin);
-            return redirect('/home')->with('success', 'You are logged in as user');
+            return redirect('/home')->with('success', 'You log in as user');
         }
         else{
             //if user is admin
             if($admin){
                 Session::put('login-id', $admin->EmployeeID);
                 Session::put('isAdmin', $admin->isAdmin);
-                return redirect('/commissions')->with('success', 'You are logged in as admin');
+                return redirect('/commissions')->with('success', 'You log in as admin');
             }
             //if username or password is not in database.
             else{
