@@ -23,7 +23,7 @@ class AdminMiddleware
         } 
         //if you are not admin
         else{
-            return redirect()->back();
+            return redirect()->back()->with('fail', 'You don\'t have permission to that link');
         }
     }
 }

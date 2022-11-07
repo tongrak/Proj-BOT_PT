@@ -19,7 +19,7 @@ class GuestOrUserMiddleware
     {
         // if client is admin
         if(Session::get('isAdmin') == 1){
-            return redirect()->back();
+            return redirect()->back()->with('fail', 'You don\'t have permission to that link');
         }
         // if client is not admin
         else{

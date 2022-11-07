@@ -21,7 +21,7 @@ class UserOrAdminMiddleware
             return $next($request);
         }
         else{
-            return redirect()->back();
+            return redirect()->back()->with('fail', 'You don\'t have permission to that link');
         }
     }
 }
